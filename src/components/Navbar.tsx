@@ -9,7 +9,7 @@ import NavItem from "./NavItem";
 
 const Navbar = () => {
   return (
-    <div className="bg-black py-7 sticky">
+    <div className="bg-black/0 py-7 sticky">
       <header>
         <MaxWidthWrapper>
           <div className="flex justify-between ">

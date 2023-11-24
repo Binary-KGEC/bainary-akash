@@ -1,3 +1,4 @@
+import About from "@/components/About";
 import FAQs from "@/components/FAQs";
 import Hero from "@/components/Hero";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <MaxWidthWrapper>
         <Hero />
+        <About />
         <Timeline />
         <Tracks />
         <Prizes />
