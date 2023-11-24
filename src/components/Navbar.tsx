@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="flex justify-between gap-10 items-center">
               {items.map((item) => {
                 return (
-                  <NavItem name={item.name} link={item.link} />
+                  <NavItem key={item.name} name={item.name} link={item.link} />
                 );
               })}
             </div>
