@@ -1,6 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "SFPixelate";
+  src: url("/fonts/SFPixelate.ttf");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "AnultraSlabRegular";
+  src: url("/fonts/SFPixelate-Bold.ttf");
+  font-weight: 700;
+  font-display: swap;
+  font-style: bold;
+}
  
 @layer base {
   :root {
