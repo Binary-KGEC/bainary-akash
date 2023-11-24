@@ -7,7 +7,7 @@ import { items } from "@/lib/config";
 
 const Navbar = () => {
   return (
-    <div className="bg-black py-3">
+    <div className="bg-black py-2">
       <header>
         <MaxWidthWrapper>
           <div className="flex justify-between ">
