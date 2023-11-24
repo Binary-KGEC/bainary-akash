@@ -5,14 +5,15 @@ import styles from "./NavItem.module.css";
 const NavItem = ({ name, link }: { name: string; link: string }) => {
   return (
     <div className="relative h-12">
-      <Button
+      <a
+        href={link}
         className={cn(
-          "underline-hover bg-black text-white hover:bg-black text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none w-[96px] flex justify-center",
+          "underline-hover gap-5 w-[84px] text-white hover:bg-black text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
           styles.underlineHover
         )}
       >
         {name}
-      </Button>
+      </a>
       <span className=""></span>
     </div>
   );

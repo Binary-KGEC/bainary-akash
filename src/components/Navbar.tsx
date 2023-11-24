@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className="relative w-[150px] h-[60px]">
               <Image src="/thumbnail.png" alt="Binary Hackathon" fill />
             </div>
-            <div className="flex justify-between gap-4 items-center">
+            <div className="flex justify-between gap-10 items-center">
               {items.map((item) => {
                 return (
                   <NavItem name={item.name} link={item.link} />
