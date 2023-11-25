@@ -1,3 +1,4 @@
+
 import Link from "next/link";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import { Button, buttonVariants } from "./ui/button";
@@ -5,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { items } from "@/lib/config";
 import Image from "next/image";
 import NavItem from "./NavItem";
+
 
 
 const Navbar = () => {
