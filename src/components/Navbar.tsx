@@ -9,7 +9,7 @@ import NavItem from "./NavItem";
 
 const Navbar = () => {
   return (
-    <div className="bg-black py-7 sticky">
+    <div className="bg-black/0 py-7 sticky top-0 z-50">
       <header>
         <MaxWidthWrapper>
           <div className="flex justify-between ">
@@ -19,7 +19,7 @@ const Navbar = () => {
             <div className="flex justify-between gap-10 items-center">
               {items.map((item) => {
                 return (
-                  <NavItem name={item.name} link={item.link} />
+                  <NavItem key={item.name} name={item.name} link={item.link} />
                 );
               })}
             </div>

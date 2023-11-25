@@ -1,11 +1,17 @@
-import Image from "next/image";
 import PageSection from "./PageSection";
 import BinaryLogo from "./BinaryLogo";
+import CountdownClock from "./CountdownClock";
 
 const Hero = () => {
   return (
-    <PageSection>
-      <BinaryLogo />
+    <PageSection className="flex flex-col">
+      <div className="">
+        <BinaryLogo />
+      </div>
+      <div className="h-[40%]" />
+      <div className="">
+        <CountdownClock />
+      </div>
     </PageSection>
   );
 };
