@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 import styles from "./NavItem.module.css";
 import React, { useState, useRef } from 'react';
 const Headline = ({ text }: { text: string }) => {
-  const letters = '0101011001110111011101001001';
+  const letters = '010101100111101001001';
   const [headlineText, setHeadlineText] = useState<string>(text);
 
   const handleMouseOver = () => {
@@ -24,7 +24,7 @@ const Headline = ({ text }: { text: string }) => {
           })
           .join('');
 
-        iteration += 1 / 3;
+        iteration += 1 / 9;
 
         if (iteration >= length) {
           setHeadlineText(text);

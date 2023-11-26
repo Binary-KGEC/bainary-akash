@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <PageSection className="flex flex-col">
       <div className="">
-        <BinaryLogo />
+        {/*<BinaryLogo />*/}
       </div>
       <div className="h-[40%]" />
       <div className="">

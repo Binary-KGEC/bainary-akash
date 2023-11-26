@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import "./logo.css";
 
 const BinaryLogo = () => {
+ 
+
   return (
-    <div className="bg-transparent" id="home">
+    <div className="bg-transparent "  id="home">
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -377,7 +379,7 @@ const BinaryLogo = () => {
             </motion.g>
             <motion.g
               initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{
                 duration: 0.3,
                 ease: [0, 0.71, 0.2, 1.01],

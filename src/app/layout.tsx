@@ -27,7 +27,7 @@ export default function RootLayout({
         <main className="relative flex flex-col min-h-screen">
 			    <MatrixRain timeout={75} />
           <div className="bg-black/70">
-            <Navbar />
+            
             <div className="flex-grow flex-1">{children}</div>
           </div>
         </main>
