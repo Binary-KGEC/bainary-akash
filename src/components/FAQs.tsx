@@ -8,9 +8,6 @@ const FAQs = () => {
     null
   );
 
-  const handleItemClick = (index: number) => {
-    setExpandedItemIndex((prevIndex) => (prevIndex === index ? null : index));
-  };
   return (
     <PageSection>
       <div
@@ -28,7 +25,9 @@ const FAQs = () => {
                   <li key={index} className="group">
                     <div
                       onClick={() => {
-                        handleItemClick(index);
+                        setExpandedItemIndex((prevIndex) =>
+                          prevIndex === index ? null : index
+                        );
                       }}
                       className="flex items-center justify-between gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer shadow-green-700"
                     >
