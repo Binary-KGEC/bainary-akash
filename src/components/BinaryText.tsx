@@ -1,19 +1,26 @@
-"use client"
+"use client";
 
+import useIsInViewport from "@/hooks/useIsInViewport";
 import { cn } from "@/lib/utils";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
 
 const BinaryText = ({
   className,
-  text,
+  children,
+  reveal,
 }: {
   className?: string;
-  text: string;
+  children: ReactNode;
+  reveal?: boolean;
 }) => {
+	const text = children as string;
   const letters = "01010110111101001001";
   const [headlineText, setHeadlineText] = useState<string>(text);
 
-  const handleMouseOver = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isOnScreen = useIsInViewport(ref);
+
+  const scrambleReveal = () => {
     let iteration = 0;
     let requestId: number | null = null;
     const { length } = headlineText;
@@ -46,8 +53,12 @@ const BinaryText = ({
     requestId = requestAnimationFrame(scrambleText);
   };
 
+  useEffect(() => {
+    if (reveal) scrambleReveal();
+  }, [isOnScreen]);
+
   return (
-    <span onMouseOver={handleMouseOver} className={cn("font-pixelate", className)}>
+    <span ref={ref} className={cn("block", className)}>
       {headlineText}
     </span>
   );
