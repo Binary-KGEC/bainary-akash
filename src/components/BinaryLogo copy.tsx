@@ -176,7 +176,7 @@ transition={{
     animate={{
       opacity: 1,
     }}
-    transition={{ ease: "easeInOut", delay:4 }}
+    transition={{ ease: "easeInOut", delay:5 }}
     whileHover={{ scale: 1.2 }}
     onHoverStart={(e) => {}}
     onHoverEnd={(e) => {}}
@@ -194,13 +194,15 @@ transition={{
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                         1, 1, 1, 1, 1, 1,1, 1, 1, 1, 1, 1,1,1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1,
-                        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0,
-                        0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,0, 0, 0, 0, 0, 0,0,
+                        0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,
                         
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 3, delay:3 }}
+                    transition={{ ease: "easeInOut", duration: 2, delay:3 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-4">
@@ -210,15 +212,14 @@ transition={{
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                        0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
-                        0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-                        0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
-                        1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-                        0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0,
-                        0, 0, 0, 0, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 4, times: [] ,}}
+                    transition={{ ease: "easeInOut", duration: 2,delay:3}}
                   />
                 </motion.g>
               </motion.g>
@@ -244,11 +245,11 @@ transition={{
                 <motion.path
                   className="st3"
                   d="M385.4,129.6h13.2v-10.1H427v10.1h-28.4v39h-13.2V129.6z M427.1,130h13.7v8.8h-13.7V130z"
-                  initial={{ opacity: 1 }}
+                  initial={{ opacity: 0 }}
                   animate={{
-                    opacity: 0,
+                    opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:1.2 }}
+                  transition={{ ease: "easeInOut", delay:5.5 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -267,16 +268,15 @@ transition={{
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                        0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
-                        0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
-                        0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
-                        1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
-                        0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0,
-                        0, 0, 0, 0, 0,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                        1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,0, 0, 0, 0, 0, 0,0,
+                        0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                       ],
                       
                     }}
-                    transition={{ ease: "easeInOut", duration: 4.5,  }}
+                    transition={{ ease: "easeInOut", duration: 2.5, delay:3 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-3">
@@ -286,15 +286,14 @@ transition={{
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                        0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1,
-                        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0,
-                        0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1,
-                        1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0,
-                        0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1,
-                        1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0,
+                        0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,0
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 4.5, times: [],  }}
+                    transition={{ ease: "easeInOut", duration: 2.5,delay:3  }}
                   />
                 </motion.g>
               </motion.g>
@@ -324,11 +323,11 @@ transition={{
                   className="st3"
                   d="M287.6,149.8h14.5v-9.6h42.8V130h13.2v38.6h-70.6L287.6,149.8L287.6,149.8z M302.7,120.4h41.6v8.8h-41.6
 		L302.7,120.4L302.7,120.4z M302.7,150.2v8.8h41.6v-8.8H302.7L302.7,150.2z"
-    initial={{ opacity: 1 }}
+    initial={{ opacity: 0 }}
     animate={{
-      opacity: 0,
+      opacity: 1,
     }}
-    transition={{ ease: "easeInOut", delay:1.67 }}
+    transition={{ ease: "easeInOut", delay:5.7 }}
     whileHover={{ scale: 1.2 }}
     onHoverStart={(e) => {}}
     onHoverEnd={(e) => {}}
@@ -345,14 +344,14 @@ transition={{
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: [
-                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
-                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
-                      0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
-                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
-                      0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3.2, times: [], }}
+                  transition={{ ease: "easeInOut", duration: 2.7, delay:3, }}
                 />
               </motion.g>
               <motion.g id="_x30_-2">
@@ -363,14 +362,14 @@ transition={{
                   initial={{ opacity: 0 }}
                   animate={{
                     opacity: [
-                      0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
-                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
-                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
-                      0,
+                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,0, 0, 0, 0, 0, 0,0,
+                      0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3.2 ,repeat:1 }}
+                  transition={{ ease: "easeInOut", duration: 2.7,  delay:3 }}
                 />
               </motion.g>
             </motion.g>
@@ -403,7 +402,7 @@ transition={{
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:6 }}
+                  transition={{ ease: "easeInOut", delay:6.1 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -422,17 +421,18 @@ transition={{
                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
                       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                      0, 0, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
                       0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3,  delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.9,  delay:3.2 }}
                 />
               </motion.g>
               <motion.g id="_x30_-6">
                 <motion.path
                   className="st3"
+                  
                   d="M211.4,168.7h27.2V136h-8.6v10.3h-9.1V157H211v11.2h-8.6V113h8.6v-10.3h27.6V113h-27.2v32.8h9.5v-10.3h9.1
                   v-10.8h9.1v-11.2h8.6v55.3H239V179h-27.6V168.7L211.4,168.7z"
                   initial={{ opacity: 0 }}
@@ -441,11 +441,11 @@ transition={{
                       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
                       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
-                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                      1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0,0, 0, 0, 0, 0, 0,0,
                       0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3,delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.9,  delay:3.2 }}
                 />
               </motion.g>
             </motion.g>
@@ -478,7 +478,7 @@ transition={{
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:6 }}
+                  transition={{ ease: "easeInOut", delay:5.3 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -502,7 +502,7 @@ transition={{
                       0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3, times: [] ,delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.3, times: [] ,delay:3 }}
                 />
               </motion.g>
               <motion.g id="_x30_-6">
@@ -522,7 +522,7 @@ transition={{
                       
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 3,delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.3,delay:3 }}
                 />
               </motion.g>
               </motion.g>

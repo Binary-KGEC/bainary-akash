@@ -5,13 +5,19 @@ import BinaryLogo from "@/components/BinaryLogo";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
 import "./globals.css";
-import { useState,useCallback } from 'react';
+import { useState,useCallback,useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import BinaryLogo2 from '@/components/BinaryLogo copy';
-
+import TextScramble from "@/components/text"
+import { motion } from 'framer-motion';
+const DelayedComponent = () => {
+  return <div><div className='by absolute inset-x-0 bottom-20 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'>By</div>
+  <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'><TextScramble/></div></div>;
+};
 export default function Home() {
-  
+  const [showDelayedComponent, setShowDelayedComponent] = useState(false);
   const [showFunction1, setShowFunction1] = useState(true);
+  const [showButton, setShowButton] = useState(false);
   const handleClick = () => {
     function1();
 
@@ -48,6 +54,7 @@ export default function Home() {
       router.push('/Landing');
     }, 3700); 
   };
+  
   const glitch: GlitchHandle = useGlitch({
     "playMode": "hover",
     "createContainers": true,
@@ -76,8 +83,23 @@ export default function Home() {
   });
   const router = useRouter();
   const [isNavigating, setIsNavigating] = useState(false);
+  
+  
 
+  useEffect(() => {
+    // Set showDelayedComponent to true after 3 seconds
+    const timeout = setTimeout(() => {
+      setShowDelayedComponent(true);
+    }, 3000);
 
+    // Clear the timeout to avoid memory leaks when the component unmounts
+    return () => clearTimeout(timeout);
+    clearTimeout(timeout2);
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
+  const timeout2 = setTimeout(() => {
+    setShowButton(true);
+  }, 5000);
 
   return (
     <>
@@ -87,9 +109,24 @@ export default function Home() {
      <div className=' absolute inset-y-0 flex flex-col '>
      {showFunction1 ? function2() : function3()}
      </div>
-     <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'>
-      <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">Get Started</Button>
-    </div></div></div>
+     {showDelayedComponent && <DelayedComponent />}
+     <motion.div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'
+     initial={{ y: "2%", scale: 0 ,opacity:0}}
+     animate={{ y: "0%", scale: 1 ,opacity:1}}
+     transition={{
+       duration: 0.3,
+       delay: 5,
+       
+       scale: {
+         type: "spring",
+         damping: 20,
+         stiffness: 100,
+         restDelta: 0.001,
+       },}}
+       >
+     {showButton && <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">Get Started</Button>}
+   
+     </motion.div></div> </div>
     </>
   );
 }
