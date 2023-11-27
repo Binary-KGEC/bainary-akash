@@ -8,9 +8,10 @@ const BinaryLogo = () => {
  
 
   return (
+    
     <div className="bg-transparent "  id="home">
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
+        initial={{ opacity: 1, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
         className=""
@@ -24,12 +25,12 @@ const BinaryLogo = () => {
             bottom: "50%",
           }}
         >
-          <svg
-            version="1.1"
+          <motion.svg
             xmlns="http://www.w3.org/2000/svg"
-            xmlnsXlink="http://www.w3.org/1999/xlink"
-            x="0px"
-            y="0px"
+            
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
             viewBox="0 0 537.8 188.2"
             xmlSpace="preserve"
           >
@@ -42,11 +43,11 @@ const BinaryLogo = () => {
             </motion.g>
             <motion.g
               id={"bro1st"}
-              initial={{ x: "36%", scale: 1.15 }}
-              animate={{ x: 0, scale: 1 }}
+              initial={{ x: "0%", scale: 1.15 ,opacity:1}}
+              animate={{ x: "36%", scale: 1 ,opacity:[]}}
               transition={{
                 duration: 0.3,
-                delay: 2.5,
+                delay: 3.7,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
                   type: "spring",
@@ -57,7 +58,7 @@ const BinaryLogo = () => {
               }}
             >
               <motion.g
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 1, scale: 0 }}
                 animate={{ opacity: 1, scale: 0.8 }}
                 transition={{
                   duration: 0.3,
@@ -132,9 +133,17 @@ const BinaryLogo = () => {
                 </motion.g>
               </motion.g>
             </motion.g>
+<motion.g
 
+initial={{ x: "0%", scale: 1 ,opacity:1}}
+animate={{ x: "-36%", scale: 0 ,opacity:0}}
+transition={{
+  duration: 0.3,
+  delay: 3.5,
+  }}
+>
             <motion.g
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 1, scale: 0 }}
               animate={{ opacity: 1, scale: 0.8 }}
               transition={{
                 duration: 0.3,
@@ -144,7 +153,7 @@ const BinaryLogo = () => {
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
-                  delay: 4,
+                  delay: 0,
                 },
               }}
             >
@@ -157,19 +166,20 @@ const BinaryLogo = () => {
                   className="st3"
                   d="M468.5,178.7h13.2V169h13.9v-20.2h15.1v-9.6h13.9v-19.7h13.2v19.7h-13.2v9.6h-13.9V169h-15.1v9.6h-13.9v9.2
 		h-13.2V178.7z M468.5,119.6h12.6v20h-12.6C468.5,139.6,468.5,119.6,468.5,119.6z M482.4,139.9H495v8.8h-12.6V139.9z"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: [
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1,
-                    ],
-                  }}
-                  transition={{ ease: "easeInOut", duration: 5 }}
-                  whileHover={{ scale: 1.2 }}
-                  onHoverStart={(e) => {}}
-                  onHoverEnd={(e) => {}}
+    initial={{ opacity: 1 }}
+    animate={{
+      opacity: 0,
+    }}
+    transition={{ ease: "easeInOut", delay:1.3 }}
+    whileHover={{ scale: 1.2 }}
+    onHoverStart={(e) => {}}
+    onHoverEnd={(e) => {}}
+    
                 />
+                <motion.g
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:1.3}}>
                 <motion.g id="_x30_-4">
                   <motion.path
                     className="st3"
@@ -186,7 +196,7 @@ const BinaryLogo = () => {
                         1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0,
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 5 }}
+                    transition={{ ease: "easeInOut", duration: 4, repeat:2 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-4">
@@ -196,7 +206,7 @@ const BinaryLogo = () => {
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
+                        0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                         0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
                         0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
                         1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
@@ -204,24 +214,21 @@ const BinaryLogo = () => {
                         0, 0, 0, 0, 0,
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 5, times: [] }}
+                    transition={{ ease: "easeInOut", duration: 4, times: [] , repeat:2}}
                   />
                 </motion.g>
               </motion.g>
             </motion.g>
-
+            </motion.g>
             <motion.g
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 1, scale: 0 }}
               animate={{ opacity: 1, scale: 0.8 }}
               transition={{
                 duration: 0.3,
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
-                  type: "spring",
-                  damping: 5,
-                  stiffness: 100,
-                  restDelta: 0.001,
-                  delay: 3.7,
+                 
+                  
                 },
               }}
             >
@@ -233,19 +240,21 @@ const BinaryLogo = () => {
                 <motion.path
                   className="st3"
                   d="M385.4,129.6h13.2v-10.1H427v10.1h-28.4v39h-13.2V129.6z M427.1,130h13.7v8.8h-13.7V130z"
-                  initial={{ opacity: 0 }}
+                  initial={{ opacity: 1 }}
                   animate={{
-                    opacity: [
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      1,
-                    ],
+                    opacity: 0,
                   }}
-                  transition={{ ease: "easeInOut", duration: 4.5 }}
+                  transition={{ ease: "easeInOut", delay:1.2 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
+                  
                 />
+                <motion.g
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:1.2}}
+                >
                 <motion.g id="_x30_-3">
                   <motion.path
                     className="st3"
@@ -254,15 +263,16 @@ const BinaryLogo = () => {
                     initial={{ opacity: 0 }}
                     animate={{
                       opacity: [
-                        1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
+                        0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0,
                         0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1,
                         0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1,
                         1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0,
                         0, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0,
                         0, 0, 0, 0, 0,
                       ],
+                      
                     }}
-                    transition={{ ease: "easeInOut", duration: 4.5 }}
+                    transition={{ ease: "easeInOut", duration: 4.5, repeat:3 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-3">
@@ -280,16 +290,17 @@ const BinaryLogo = () => {
                         1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0,
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 4.5, times: [] }}
+                    transition={{ ease: "easeInOut", duration: 4.5, times: [], repeat:3 }}
                   />
                 </motion.g>
               </motion.g>
+              </motion.g>
             </motion.g>
             <motion.g
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 1, scale: 0 }}
               animate={{ opacity: 1, scale: 0.8 }}
               transition={{
-                duration: 0.3,
+                
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
                   type: "spring",
@@ -297,7 +308,7 @@ const BinaryLogo = () => {
                   stiffness: 100,
                   restDelta: 0.001,
                 },
-                delay: 3.5,
+                
               }}
             >
               <motion.g
@@ -309,16 +320,20 @@ const BinaryLogo = () => {
                   className="st3"
                   d="M287.6,149.8h14.5v-9.6h42.8V130h13.2v38.6h-70.6L287.6,149.8L287.6,149.8z M302.7,120.4h41.6v8.8h-41.6
 		L302.7,120.4L302.7,120.4z M302.7,150.2v8.8h41.6v-8.8H302.7L302.7,150.2z"
-                  initial={{ opacity: 0 }}
-                  animate={{
-                    opacity: [
-                      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                      0, 0, 0, 0, 0, 0, 1,
-                    ],
-                  }}
-                  transition={{ ease: "easeInOut", duration: 4.2 }}
+    initial={{ opacity: 1 }}
+    animate={{
+      opacity: 0,
+    }}
+    transition={{ ease: "easeInOut", delay:1.67 }}
+    whileHover={{ scale: 1.2 }}
+    onHoverStart={(e) => {}}
+    onHoverEnd={(e) => {}}
                 />
-              </motion.g>
+                <motion.g
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:1.7}}>
+              
               <motion.g id="_x31_-2">
                 <motion.path
                   className="st3"
@@ -328,10 +343,12 @@ const BinaryLogo = () => {
                     opacity: [
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
                       0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+                      0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
                       0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 4.2, times: [] }}
+                  transition={{ ease: "easeInOut", duration: 3.2, times: [],repeat:3 }}
                 />
               </motion.g>
               <motion.g id="_x30_-2">
@@ -344,25 +361,29 @@ const BinaryLogo = () => {
                     opacity: [
                       0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
                       0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 4.2 }}
+                  transition={{ ease: "easeInOut", duration: 3.2 ,repeat:3 }}
                 />
               </motion.g>
             </motion.g>
+            </motion.g>
+            </motion.g>
             <motion.g
-              initial={{ opacity: 0, scale: 0 }}
+              initial={{ opacity: 1, scale: 0 }}
               animate={{ opacity: 1, scale: 0.8 }}
               transition={{
-                duration: 0.3,
+                
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
                   type: "spring",
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
-                  delay: 3.25,
+                 
                 },
               }}
             >
@@ -371,24 +392,68 @@ const BinaryLogo = () => {
                 whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <path
+                <motion.path
                   className="st3"
                   d="M190.6,119.5H246v10.1h-42.2v39h-13.2L190.6,119.5L190.6,119.5z M247.3,130h12.6v38.6h-12.6V130z"
+                  initial={{ opacity: 1 }}
+                  animate={{
+                    opacity: 0,
+                  }}
+                  transition={{ ease: "easeInOut", delay:2.17 }}
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                />
+                <motion.g
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:2.2}}>
+                <motion.g id="_x31_-6">
+                <motion.path
+                  className="st3"
+                  d="M216.6,105.3h16.8v69.4h-16.8V105.3z"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: [
+                      0,1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+                      0,
+                    ],
+                  }}
+                  transition={{ ease: "easeInOut", duration: 2, times: [] ,repeat:5 }}
+                />
+              </motion.g>
+              <motion.g id="_x30_-6">
+                <motion.path
+                  className="st3"
+                  d="M211.4,168.7h27.2V136h-8.6v10.3h-9.1V157H211v11.2h-8.6V113h8.6v-10.3h27.6V113h-27.2v32.8h9.5v-10.3h9.1
+                  v-10.8h9.1v-11.2h8.6v55.3H239V179h-27.6V168.7L211.4,168.7z"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: [
+                      0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0,
+                    ],
+                  }}
+                  transition={{ ease: "easeInOut", duration: 2,repeat:5 }}
                 />
               </motion.g>
             </motion.g>
+            </motion.g>
+            </motion.g>
             <motion.g
-              initial={{ opacity: 0, scale: 0 }}
-              animate={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 1, scale: 0 }}
+              animate={{ opacity: 1, scale: 0.8 }}
               transition={{
-                duration: 0.3,
+                
                 ease: [0, 0.71, 0.2, 1.01],
                 scale: {
                   type: "spring",
                   damping: 5,
                   stiffness: 100,
                   restDelta: 0.001,
-                  delay: 3.0,
+                  
                 },
               }}
             >
@@ -397,13 +462,58 @@ const BinaryLogo = () => {
                 whileHover={{ scale: 1.3 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
               >
-                <path
+       <motion.path
                   className="st3"
                   d="M148.5,120.4h13.9v48.2h-13.9C148.5,168.6,148.5,120.4,148.5,120.4z"
+                  initial={{ opacity: 1 }}
+                  animate={{
+                    opacity: 0,
+                  }}
+                  transition={{ ease: "easeInOut", delay:2.37 }}
+                  whileHover={{ scale: 1.2 }}
+                  onHoverStart={(e) => {}}
+                  onHoverEnd={(e) => {}}
+                />
+                  <motion.g
+                initial={{opacity:0}}
+                animate={{opacity:1}}
+                transition={{delay:2.4}}>
+                <motion.g id="_x31_-6">
+                <motion.path
+                  className="st3"
+                  d="M147,105.3h16.8v69.4H147V105.3z"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: [
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0,
+                      0,
+                    ],
+                  }}
+                  transition={{ ease: "easeInOut", duration: 1.7, times: [] ,repeat:6 }}
                 />
               </motion.g>
+              <motion.g id="_x30_-6">
+                <motion.path
+                  className="st3"
+                  d="M141.9,168.7H169V136h-8.6v10.3h-9.1V157h-9.9v11.2h-8.6V113h8.6v-10.3H169V113h-27.2v32.8h9.5v-10.3h9.1
+                  v-10.8h9.1v-11.2h8.6v55.3h-8.6V179h-27.6V168.7L141.9,168.7z"
+                  initial={{ opacity: 0 }}
+                  animate={{
+                    opacity: [
+                      0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
+                      1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,
+                      0,
+                    ],
+                  }}
+                  transition={{ ease: "easeInOut", duration: 1.7,repeat:6 }}
+                />
+              </motion.g>
+              </motion.g>
             </motion.g>
-          </svg>
+            </motion.g>
+            </motion.g>
+          </motion.svg>
         </div>
       </motion.div>
     </div>

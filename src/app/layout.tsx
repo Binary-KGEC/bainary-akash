@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import localFont from 'next/font/local'
 import MatrixRain from "@/components/MatrixRain";
-
+import MatrixRain2 from "@/components/MatrixRainingEffect";
 // const inter = Inter({ subsets: ["latin"] });
 const sfPixelate = localFont({ src: "../../public/fonts/SFPixelate.ttf" });
 
@@ -25,9 +25,9 @@ export default function RootLayout({
         className={cn("relative h-full font-sans antialiased bg-black", sfPixelate.className)}
       >
         <main className="relative flex flex-col min-h-screen">
-			    <MatrixRain timeout={75} />
-          <div className="bg-black/70">
-            
+			    {/*<MatrixRain2  />*/}<div className="bg-black/70 ">
+          <div className="bg-black/70 opacity-20 ">
+            <MatrixRain timeout={75}/></div>
             <div className="flex-grow flex-1">{children}</div>
           </div>
         </main>

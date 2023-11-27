@@ -1,24 +1,16 @@
 'use client';
 import { useGlitch, GlitchHandle } from 'react-powerglitch';
-import About from "@/components/About";
-import FAQs from "@/components/FAQs";
-import Hero from "@/components/Hero";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Mentors from "@/components/Mentors";
-import Prizes from "@/components/Prizes";
-import Sponsors from "@/components/Sponsors";
-import Timeline from "@/components/Timeline";
-import Tracks from "@/components/Tracks";
 import { useRouter } from 'next/navigation';
 import BinaryLogo from "@/components/BinaryLogo";
-
-
-
-import { useState } from 'react';
+import { loadFull } from "tsparticles";
+import Particles from "react-tsparticles";
+import "./globals.css";
+import { useState,useCallback } from 'react';
 import { Button } from "@/components/ui/button";
 import BinaryLogo2 from '@/components/BinaryLogo copy';
 
 export default function Home() {
+  
   const [showFunction1, setShowFunction1] = useState(true);
   const handleClick = () => {
     function1();
@@ -39,13 +31,13 @@ export default function Home() {
   const function2 = () => {
     // Logic for the second function
     return <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6 ">
-    <BinaryLogo/></div>;
+    <BinaryLogo2/></div>;
   };
 
   const function3 = () => {
     // Logic for the third function
     return <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6 ">
-    <BinaryLogo2/></div>;
+    <BinaryLogo/></div>;
   };
 
   const function4 = () => {
@@ -54,7 +46,7 @@ export default function Home() {
    
     setTimeout(() => {
       router.push('/Landing');
-    }, 3000); 
+    }, 3700); 
   };
   const glitch: GlitchHandle = useGlitch({
     "playMode": "hover",
@@ -91,11 +83,12 @@ export default function Home() {
     <>
      <div className=" bg-transparent " >
      <div className='container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10' >
+
      <div className=' absolute inset-y-0 flex flex-col '>
      {showFunction1 ? function2() : function3()}
      </div>
      <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'>
-      <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch">Get Started</Button>
+      <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">Get Started</Button>
     </div></div></div>
     </>
   );
