@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CountdownClock.module.css";
 import { cn } from "@/lib/utils";
-
+import { useGlitch, GlitchHandle } from 'react-powerglitch';
 interface CountdownState {
   days: number;
   hours: number;
@@ -12,6 +12,32 @@ interface CountdownState {
 }
 
 const CountdownClock: React.FC = () => {
+  const glitch = useGlitch(
+    {
+      "playMode": "always",
+      "createContainers": true,
+      "hideOverflow": true,
+      "timing": {
+        "duration": 7050
+      },
+      "glitchTimeSpan": {
+        "start": 0.5,
+        "end": 0.7
+      },
+      "shake": {
+        "velocity": 10,
+        "amplitudeX": 0.1,
+        "amplitudeY": 0.1
+      },
+      "slice": {
+        "count": 3,
+        "velocity": 5,
+        "minHeight": 0.02,
+        "maxHeight": 0.15,
+        "hueRotate": true
+      },
+      "pulse": false
+    });
   const [countdownDate, setCountdownDate] = useState<number>(
     new Date("12/25/2025").getTime()
   );
@@ -58,7 +84,7 @@ const CountdownClock: React.FC = () => {
     }
   };
 
-  return (
+  return (<div ref={glitch.ref}>
     <div className={cn("font-pixelate", styles.countdownWrapper)}>
       <div className={styles.timeSection}>
         <div className={styles.time}>{state.days || "0"}</div>
@@ -85,7 +111,7 @@ const CountdownClock: React.FC = () => {
         <div className={styles.time}>{state.seconds || "00"}</div>
         <small className="time-text">Seconds</small>
       </div>
-    </div>
+    </div></div>
   );
 };
 

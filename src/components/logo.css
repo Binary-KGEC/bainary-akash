@@ -10,3 +10,25 @@
 .st3 {
   fill: #ffffff;
 }
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.textScramble {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-family: "SFPixelate", monospace;
+  font-size: 30px;
+  padding: 90px 0px;
+}
+.by{
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+  font-family: "SFPixelate", monospace;
+  font-size: 20px;
+  padding: 90px 0px;
+  position: relative;
+  
+}
