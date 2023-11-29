@@ -51,7 +51,7 @@ export default function Home() {
 
    
     setTimeout(() => {
-      router.push('/Landing');
+      router.push('/home');
     }, 3700); 
   };
   
