@@ -13,8 +13,8 @@ import Navbar from '@/components/Navbar';
 const landing = () => {
   return (
     <>
+      <Navbar/>
       <MaxWidthWrapper>
-        <Navbar/>
         <Hero />
         <About />
         <Timeline />

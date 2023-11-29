@@ -3,52 +3,10 @@ import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import styles from "./NavItem.module.css";
 import React, { useState, useRef } from 'react';
-const Headline = ({ text }: { text: string }) => {
-  const letters = '010101100111101001001';
-  const [headlineText, setHeadlineText] = useState<string>(text);
 
-  const handleMouseOver = () => {
-    let iteration = 0;
-    let requestId: number | null = null;
-    const { length } = headlineText;
-
-    const scrambleText = () => {
-      setHeadlineText(prevText => {
-        const scrambledText = prevText
-          .split('')
-          .map((letter, index) => {
-            if (index < iteration) {
-              return text[index];
-            }
-            return letters[Math.floor(Math.random() * length)];
-          })
-          .join('');
-
-        iteration += 1 / 9;
-
-        if (iteration >= length) {
-          setHeadlineText(text);
-          cancelAnimationFrame(requestId!);
-        }
-
-        return scrambledText;
-      });
-
-      requestId = requestAnimationFrame(scrambleText);
-    };
-
-    requestId = requestAnimationFrame(scrambleText);
-  };
-
-  return (
-    <h1 onMouseOver={handleMouseOver}>
-      {headlineText}
-    </h1>
-  );
-};
 const NavItem = ({ name, link }: { name: string; link: string }) => {
   return (
-    <div className="relative h-12">
+    <div className="relative flex py-2 h-12 items-center">
       <a
         href={link}
         className={cn(
@@ -56,7 +14,7 @@ const NavItem = ({ name, link }: { name: string; link: string }) => {
           styles.underlineHover
         )}
       >
-        <Headline text={name}/>
+        <span>{name}</span>
         
       </a>
       <span className=""></span>
