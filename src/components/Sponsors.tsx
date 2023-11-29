@@ -1,4 +1,5 @@
 import PageSection from "./PageSection";
+import BinaryText from "./BinaryText";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,15 +8,16 @@ const Sponsors = () => {
     <PageSection>
       <div
         id="sponsors_section"
-        className="flex flex-col mb-20 my-5 sm:mb-20 justify-center items-center text-white"
+        className="flex flex-col mb-20 my-5 sm:mb-20 text-white font-pixelate"
       >
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-6xl text-center font-bold my-16 sm:mt-24 mb-24">
+        <div>
+          <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
             Sponsors
-          </h2>
+          </BinaryText>
+
 
           <div className="flex items-center justify-center flex-col">
-            <h2 className="text-4xl text-center font-bold my-8">
+            <h2 className="text-[2rem] md:text-[3rem] text-center font-bold my-8">
               Tera Sponsor
             </h2>
             <div className="w-[calc(80vw)] md:w-[calc(60vw)] backdrop-blur-sm bg-black/5 p-5 grid grid-cols-1 gap-4 border-2 rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#1C1,0_0_15px_#0A0,0_0_30px_#060]">
