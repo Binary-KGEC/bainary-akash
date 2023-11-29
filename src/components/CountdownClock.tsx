@@ -48,13 +48,6 @@ const CountdownClock: React.FC = () => {
     seconds: 0,
   });
 
-  useEffect(() => {
-    const intervalId = setInterval(() => setNewTime(), 1000);
-
-    // Cleanup interval on component unmount
-    return () => clearInterval(intervalId);
-  }, []);
-
   const setNewTime = () => {
     if (countdownDate) {
       const currentTime = new Date().getTime();
@@ -83,6 +76,13 @@ const CountdownClock: React.FC = () => {
       setState({ days, hours, minutes, seconds });
     }
   };
+
+  useEffect(() => {
+    const intervalId = setInterval(() => setNewTime(), 1000);
+
+    // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
+  }, [setNewTime]);
 
   return (<div ref={glitch.ref}>
     <div className={cn("font-pixelate", styles.countdownWrapper)}>
