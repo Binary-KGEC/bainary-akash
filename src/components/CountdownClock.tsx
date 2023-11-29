@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./CountdownClock.module.css";
 import { cn } from "@/lib/utils";
-import { useGlitch, GlitchHandle } from 'react-powerglitch';
+import { useGlitch, GlitchHandle } from "react-powerglitch";
 interface CountdownState {
   days: number;
   hours: number;
@@ -12,35 +12,36 @@ interface CountdownState {
 }
 
 const CountdownClock: React.FC = () => {
-  const glitch = useGlitch(
-    {
-      "playMode": "always",
-      "createContainers": true,
-      "hideOverflow": true,
-      "timing": {
-        "duration": 7050
-      },
-      "glitchTimeSpan": {
-        "start": 0.5,
-        "end": 0.7
-      },
-      "shake": {
-        "velocity": 10,
-        "amplitudeX": 0.1,
-        "amplitudeY": 0.1
-      },
-      "slice": {
-        "count": 3,
-        "velocity": 5,
-        "minHeight": 0.02,
-        "maxHeight": 0.15,
-        "hueRotate": true
-      },
-      "pulse": false
-    });
+  const glitch = useGlitch({
+    playMode: "always",
+    createContainers: true,
+    hideOverflow: true,
+    timing: {
+      duration: 7050,
+    },
+    glitchTimeSpan: {
+      start: 0.5,
+      end: 0.7,
+    },
+    shake: {
+      velocity: 10,
+      amplitudeX: 0.1,
+      amplitudeY: 0.1,
+    },
+    slice: {
+      count: 3,
+      velocity: 5,
+      minHeight: 0.02,
+      maxHeight: 0.15,
+      hueRotate: true,
+    },
+    pulse: false,
+  });
+
   const [countdownDate, setCountdownDate] = useState<number>(
     new Date("12/25/2025").getTime()
   );
+
   const [state, setState] = useState<CountdownState>({
     days: 0,
     hours: 0,
@@ -84,34 +85,36 @@ const CountdownClock: React.FC = () => {
     return () => clearInterval(intervalId);
   }, [setNewTime]);
 
-  return (<div ref={glitch.ref}>
-    <div className={cn("font-pixelate", styles.countdownWrapper)}>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>{state.days || "0"}</div>
-        <small className="time-text">Days</small>
+  return (
+    <div ref={glitch.ref}>
+      <div className={cn("font-pixelate", styles.countdownWrapper)}>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">{state.days || "0"}</div>
+          <small className="time-text">Days</small>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">:</div>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">{state.hours || "00"}</div>
+          <small className="time-text">Hours</small>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">:</div>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">{state.minutes || "00"}</div>
+          <small className="time-text">Minutes</small>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">:</div>
+        </div>
+        <div className={styles.timeSection}>
+          <div className="text-[1rem] md:text-[4rem]">{state.seconds || "00"}</div>
+          <small className="time-text">Seconds</small>
+        </div>
       </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>:</div>
-      </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>{state.hours || "00"}</div>
-        <small className="time-text">Hours</small>
-      </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>:</div>
-      </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>{state.minutes || "00"}</div>
-        <small className="time-text">Minutes</small>
-      </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>:</div>
-      </div>
-      <div className={styles.timeSection}>
-        <div className={styles.time}>{state.seconds || "00"}</div>
-        <small className="time-text">Seconds</small>
-      </div>
-    </div></div>
+    </div>
   );
 };
 
