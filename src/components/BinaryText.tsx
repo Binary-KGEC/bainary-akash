@@ -1,8 +1,35 @@
 "use client";
 
-import useIsInViewport from "@/hooks/useIsInViewport";
+// import useIsInViewport from "@/hooks/useIsInViewport";
 import { cn } from "@/lib/utils";
-import { ReactNode, useEffect, useRef, useState } from "react";
+// import { ReactNode, useEffect, useRef, useState } from "react";
+
+import { ReactNode, RefObject, useEffect, useMemo, useRef, useState } from "react";
+
+// const useIsInViewport = (ref: RefObject<HTMLElement>) => {
+//   const [isIntersecting, setIsIntersecting] = useState(false);
+
+//   const observer = useMemo(
+//     () =>
+//       new IntersectionObserver(([entry]) =>
+//         setIsIntersecting(entry.isIntersecting)
+//       ),
+//     []
+//   );
+
+//   useEffect(() => {
+//     // if (!ref.current) return;
+
+//     observer.observe(ref.current as Element);
+
+//     return () => {
+//       observer.disconnect();
+//     };
+//   }, [ref, observer]);
+
+//   return isIntersecting;
+// }
+
 
 const BinaryText = ({
   className,
@@ -18,7 +45,7 @@ const BinaryText = ({
   const [headlineText, setHeadlineText] = useState<string>(text);
 
   const ref = useRef<HTMLDivElement>(null);
-  const isOnScreen = useIsInViewport(ref);
+  // const isOnScreen = useIsInViewport(ref);
 
   const scrambleReveal = () => {
     let iteration = 0;
@@ -53,9 +80,10 @@ const BinaryText = ({
     requestId = requestAnimationFrame(scrambleText);
   };
 
-  useEffect(() => {
-    if (reveal) scrambleReveal();
-  }, [isOnScreen]);
+  // useEffect(() => {
+  //   if (isOnScreen) 
+  //     scrambleReveal();
+  // }, [isOnScreen]);
 
   return (
     <span ref={ref} className={cn("block", className)}>

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
 import localFont from 'next/font/local'
 import MatrixRain from "@/components/MatrixRain";
-import MatrixRain2 from "@/components/MatrixRainingEffect";
+// import MatrixRain2 from "@/components/MatrixRainingEffect";
 // const inter = Inter({ subsets: ["latin"] });
 const sfPixelate = localFont({ src: "../../public/fonts/SFPixelate.ttf" });
 

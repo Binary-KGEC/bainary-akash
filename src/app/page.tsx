@@ -8,11 +8,11 @@ import "./globals.css";
 import { useState,useCallback,useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import BinaryLogo2 from '@/components/BinaryLogo copy';
-import TextScramble from "@/components/text"
+// import TextScramble from "@/components/text"
 import { motion } from 'framer-motion';
 const DelayedComponent = () => {
   return <div><div className='by absolute inset-x-0 bottom-20 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'>By</div>
-  <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'><TextScramble/></div></div>;
+  <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'></div></div>;
 };
 export default function Home() {
   const [showDelayedComponent, setShowDelayedComponent] = useState(false);
@@ -94,7 +94,7 @@ export default function Home() {
 
     // Clear the timeout to avoid memory leaks when the component unmounts
     return () => clearTimeout(timeout);
-    clearTimeout(timeout2);
+    // clearTimeout(timeout2);
   }, []); // Empty dependency array ensures the effect runs only once on mount
 
   const timeout2 = setTimeout(() => {
