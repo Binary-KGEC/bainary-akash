@@ -1,19 +1,18 @@
 import PageSection from "./PageSection";
+import BinaryText from "./BinaryText";
 
 const Prizes = () => {
   return (
     <PageSection>
       <div
         id="prizes_section"
-        className="flex flex-col mb-20 my-5 sm:mb-20 justify-center items-center text-white"
+        className="flex flex-col my-7 text-white"
       >
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-4xl text-center font-bold my-16 sm:mt-24 mb-8">
-            Prizes
-          </h2>
-          <div className="m-5 lg:mx-64 p-3">
-            <p>Coming Soon...</p>
-          </div>
+        <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem]" reveal>
+          Prizes
+        </BinaryText>
+        <div className="my-5 font-pixelate">
+          <p className="">Coming Soon...</p>
         </div>
       </div>
     </PageSection>
