@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import PageSection from "./PageSection";
 import { faqItems } from "@/lib/config";
+import { TypeAnimation } from "react-type-animation";
 
 const FAQs = () => {
   const [expandedItemIndex, setExpandedItemIndex] = useState<number | null>(
@@ -18,7 +19,7 @@ const FAQs = () => {
           <h2 className="text-4xl text-center font-bold my-16 sm:mt-24 mb-8">
             Frequently Asked Questions
           </h2>
-          <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16">
+          <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate">
             <ul className="max-w-2xl mx-auto mt-20 divide-y backdrop-blur-sm bg-black/50 shadow shadow-green-700 rounded-xl">
               {faqItems.map((faq, index) => {
                 return (
@@ -51,8 +52,18 @@ const FAQs = () => {
                     </div>
 
                     {expandedItemIndex === index && (
-                      <div className="px-4 pb-4">
-                        <p>{faq.answer}</p>
+                      <div className="text-base pb-4 bg-gr0">
+                        {/* <div className="w-100 bg-gray-900 h-4 p-0.5 flex items-center">
+                          <div className="w-2.5 h-2.5 bg-green-500 rounded-full mx-1"></div>
+                          <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full mx-1"></div>
+                          <div className="w-2.5 h-2.5 bg-red-500 rounded-full mx-1"></div>
+                        </div> */}
+                        <p className="px-4">
+                          <TypeAnimation
+                            sequence={[2500, `${faq.answer}`]}
+                            speed={50}
+                          />
+                        </p>
                       </div>
                     )}
                   </li>
