@@ -10,7 +10,7 @@ const PageSection = ({
   children: ReactNode;
 }) => {
   return (
-    <div className={cn("min-h-[calc(100dvh-96px)] md:h-[calc(100dvh-116px)]", className)}>
+    <div className={cn("min-h-[calc(100dvh-96px)] md:h-[calc(100dvh-116px)] py-3 md:py-5", className)}>
       <MaxWidthWrapper>{children}</MaxWidthWrapper>
     </div>
   );

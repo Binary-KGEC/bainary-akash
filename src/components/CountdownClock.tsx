@@ -39,7 +39,7 @@ const CountdownClock: React.FC = () => {
   });
 
   const [countdownDate, setCountdownDate] = useState<number>(
-    new Date("12/25/2025").getTime()
+    new Date("1/23/2024").getTime()
   );
 
   const [state, setState] = useState<CountdownState>({
@@ -86,7 +86,10 @@ const CountdownClock: React.FC = () => {
   }, [setNewTime]);
 
   return (
-    <div ref={glitch.ref}>
+    <div
+
+      className="w-full mx-auto pl-3.5"
+    >
       <div className={cn("font-pixelate", styles.countdownWrapper)}>
         <div className={styles.timeSection}>
           <div className="text-[1rem] md:text-[4rem]">{state.days || "0"}</div>
