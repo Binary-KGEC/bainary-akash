@@ -6,7 +6,7 @@
   height: 5px;
   left: 50%;
   position: absolute;
-  background: #16783C;
+  background: #ffffff;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }

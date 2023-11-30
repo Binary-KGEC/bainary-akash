@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="bg-black/0 py-7 sticky top-0 z-50">
+    <div className="bg-green-900 py-3 md:py-4 sticky top-0 z-50">
       <header>
         <MaxWidthWrapper>
           <div className="hidden md:flex justify-between ">
