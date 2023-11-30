@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import PageSection from "./PageSection";
 import { faqItems } from "@/lib/config";
 import { TypeAnimation } from "react-type-animation";
+import BinaryText from "./BinaryText";
 
 const FAQs = () => {
   const [expandedItemIndex, setExpandedItemIndex] = useState<number | null>(
@@ -13,13 +14,14 @@ const FAQs = () => {
     <PageSection>
       <div
         id="faq_section"
-        className="flex flex-col mb-20 my-5 sm:mb-20 justify-center items-center text-white"
+        className="flex flex-col mb-20 my-5 sm:mb-20 text-white"
       >
-        <div className="px-4 mx-auto sm:px-6 lg:px-8 max-w-7xl">
-          <h2 className="text-4xl text-center font-bold my-16 sm:mt-24 mb-8">
+        <div>
+
+          <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
             Frequently Asked Questions
-          </h2>
-          <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate">
+          </BinaryText>
+          <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">
             <ul className="max-w-2xl mx-auto mt-20 divide-y backdrop-blur-sm bg-black/50 shadow shadow-green-700 rounded-xl">
               {faqItems.map((faq, index) => {
                 return (
@@ -35,9 +37,8 @@ const FAQs = () => {
                       <span className="text-lg">{faq.question}</span>
 
                       <svg
-                        className={`w-5 h-5 text-gray-500 transition group-hover:text-gray-300 group-active:text-gray-200 ${
-                          expandedItemIndex === index ? "rotate-90" : ""
-                        }`}
+                        className={`w-5 h-5 text-gray-500 transition group-hover:text-gray-300 group-active:text-gray-200 ${expandedItemIndex === index ? "rotate-90" : ""
+                          }`}
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
