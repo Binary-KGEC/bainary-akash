@@ -11,11 +11,16 @@ import { useGlitch, GlitchHandle } from "react-powerglitch";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 
-const Navbar = () => {
+const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="bg-green-900 py-3 md:py-4 sticky top-0 z-50">
+    <div
+      className={cn("py-3 md:py-4 sticky top-0 z-50", {
+        "bg-black/0 transition-all duration-500": heroTopInView,
+        "bg-green-900 transition-all duration-500": !heroTopInView,
+      })}
+    >
       <header>
         <MaxWidthWrapper>
           <div className="hidden md:flex justify-between ">
@@ -28,13 +33,18 @@ const Navbar = () => {
               />
             </div>
 
-            <div className="flex justify-between gap-10 items-center">
+            <ul className="flex justify-between gap-10 items-center">
               {items.map((item) => {
                 return (
-                  <NavItem key={item.name} name={item.name} link={item.link} />
+                  <NavItem
+                    key={item.name}
+                    name={item.name}
+                    link={item.link}
+                    isActive={false}
+                  />
                 );
               })}
-            </div>
+            </ul>
           </div>
         </MaxWidthWrapper>
 
@@ -59,7 +69,11 @@ const Navbar = () => {
                   setIsOpen((prev) => !prev);
                 }}
               >
-                {isOpen ? <X className="text-black" /> : <Menu className="text-black" />}
+                {isOpen ? (
+                  <X className="text-black" />
+                ) : (
+                  <Menu className="text-black" />
+                )}
               </Button>
             </div>
           </MaxWidthWrapper>
@@ -72,19 +86,18 @@ const Navbar = () => {
               })}
             >
               <div className="absolute inset-0 top-1/2 shadow">
-                <div
-                  className="relative flex flex-col items-center gap-2 justify-around bg-black"
-                >
+                <ul className="relative flex flex-col items-center gap-2 justify-around bg-black">
                   {items.map((item) => {
                     return (
                       <NavItem
                         key={item.name}
                         name={item.name}
                         link={item.link}
+                        isActive={false}
                       />
                     );
                   })}
-                </div>
+                </ul>
                 <div className="h-[500px] bg-black"></div>
               </div>
             </div>

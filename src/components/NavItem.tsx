@@ -1,24 +1,61 @@
-"use client"
+"use client";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import styles from "./NavItem.module.css";
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef } from "react";
+import { useGlitch } from "react-powerglitch";
 
-const NavItem = ({ name, link }: { name: string; link: string }) => {
+const NavItem = ({
+  name,
+  link,
+  isActive,
+}: {
+  name: string;
+  link: string;
+  isActive: boolean;
+}) => {
+  const glitch = useGlitch({
+    playMode: "hover",
+    createContainers: true,
+    hideOverflow: false,
+    timing: {
+      duration: 250,
+      iterations: 1,
+    },
+    glitchTimeSpan: {
+      start: 0,
+      end: 1,
+    },
+    shake: {
+      velocity: 15,
+      amplitudeX: 0.2,
+      amplitudeY: 0.2,
+    },
+    slice: {
+      count: 6,
+      velocity: 15,
+      minHeight: 0.02,
+      maxHeight: 0.15,
+      hueRotate: true,
+    },
+    pulse: false,
+  });
+
+  const underlineClass = isActive ? styles.underloine : "";
+
   return (
-    <div className="relative flex py-2 h-12 items-center">
+    <li ref={glitch.ref} className="relative flex py-2 h-12 items-center">
       <a
         href={link}
         className={cn(
-          "underline-hover gap-5 w-[84px] text-white hover:bg-green-900 text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
-          styles.underlineHover
+          "gap-5 w-[84px] bg-black/0 text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
+          underlineClass,
         )}
       >
         <span>{name}</span>
-        
       </a>
       <span className=""></span>
-    </div>
+    </li>
   );
 };
 
