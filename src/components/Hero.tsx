@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
 
         <div className="w-full flex justify-center md:text-[1.5rem] text-center">
-          <span className="font-pixelate text-white md:text-[1.5rem]">Until then, why don't you have a look around...</span>
+          <span className="font-pixelate text-white md:text-[1.5rem]">Until then, why don&apos;t you have a look around...</span>
         </div>
       </div>
     </PageSection>
