@@ -10,7 +10,7 @@ const NavItem = ({ name, link }: { name: string; link: string }) => {
       <a
         href={link}
         className={cn(
-          "underline-hover gap-5 w-[84px] text-white hover:bg-black text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
+          "underline-hover gap-5 w-[84px] text-white hover:bg-green-900 text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
           styles.underlineHover
         )}
       >

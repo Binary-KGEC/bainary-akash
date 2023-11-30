@@ -1,35 +1,15 @@
 "use client";
 
-// import useIsInViewport from "@/hooks/useIsInViewport";
 import { cn } from "@/lib/utils";
-// import { ReactNode, useEffect, useRef, useState } from "react";
-
-import { ReactNode, RefObject, useEffect, useMemo, useRef, useState } from "react";
-
-// const useIsInViewport = (ref: RefObject<HTMLElement>) => {
-//   const [isIntersecting, setIsIntersecting] = useState(false);
-
-//   const observer = useMemo(
-//     () =>
-//       new IntersectionObserver(([entry]) =>
-//         setIsIntersecting(entry.isIntersecting)
-//       ),
-//     []
-//   );
-
-//   useEffect(() => {
-//     // if (!ref.current) return;
-
-//     observer.observe(ref.current as Element);
-
-//     return () => {
-//       observer.disconnect();
-//     };
-//   }, [ref, observer]);
-
-//   return isIntersecting;
-// }
-
+import {
+  ReactNode,
+  RefObject,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
+import { useInView } from "react-intersection-observer";
 
 const BinaryText = ({
   className,
@@ -40,12 +20,9 @@ const BinaryText = ({
   children: ReactNode;
   reveal?: boolean;
 }) => {
-	const text = children as string;
+  const text = children as string;
   const letters = "01010110111101001001";
   const [headlineText, setHeadlineText] = useState<string>(text);
-
-  const ref = useRef<HTMLDivElement>(null);
-  // const isOnScreen = useIsInViewport(ref);
 
   const scrambleReveal = () => {
     let iteration = 0;
@@ -64,7 +41,7 @@ const BinaryText = ({
           })
           .join("");
 
-        iteration += 1 / text.length;
+        iteration += 1 / 9;
 
         if (iteration >= length) {
           setHeadlineText(text);
@@ -74,16 +51,22 @@ const BinaryText = ({
         return scrambledText;
       });
 
-      requestId = requestAnimationFrame(scrambleText);
+      setTimeout(() => {
+        requestId = requestAnimationFrame(scrambleText);
+      }, 9);
     };
 
     requestId = requestAnimationFrame(scrambleText);
   };
 
-  // useEffect(() => {
-  //   if (isOnScreen) 
-  //     scrambleReveal();
-  // }, [isOnScreen]);
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    fallbackInView: true,
+  });
+
+  useEffect(() => {
+    if (inView) scrambleReveal();
+  });
 
   return (
     <span ref={ref} className={cn("block", className)}>
