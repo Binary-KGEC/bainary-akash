@@ -1,35 +1,35 @@
 export const items = [
   {
     name: "Home",
-    link: "#",
+    link: "home",
   },
   {
     name: "About",
-    link: "#",
+    link: "about",
   },
   {
     name: "Timeline",
-    link: "#",
+    link: "timeline",
   },
   {
     name: "Tracks",
-    link: "#",
+    link: "tracks",
   },
   {
     name: "Prizes",
-    link: "#prizes_section",
+    link: "prizes_section",
   },
   {
     name: "Mentors",
-    link: "#",
+    link: "mentors",
   },
   {
     name: "Sponsors",
-    link: "#sponsors_section",
+    link: "sponsors_section",
   },
   {
     name: "FAQs",
-    link: "#faq_section",
+    link: "faq_section",
   },
 ];
 

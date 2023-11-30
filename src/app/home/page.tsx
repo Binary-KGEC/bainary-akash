@@ -1,4 +1,6 @@
-import React from 'react'
+"use client";
+
+import React from "react";
 import About from "@/components/About";
 import FAQs from "@/components/FAQs";
 import Hero from "@/components/Hero";
@@ -8,14 +10,20 @@ import Prizes from "@/components/Prizes";
 import Sponsors from "@/components/Sponsors";
 import Timeline from "@/components/Timeline";
 import Tracks from "@/components/Tracks";
-import Navbar from '@/components/Navbar';
+import Navbar from "@/components/Navbar";
+import { useInView } from "react-intersection-observer";
 
-const landing = () => {
+const Landing = () => {
+  const [heroTopRef, heroTopInView] = useInView({
+    threshold: 0.5,
+    initialInView: true,
+  });
+
   return (
     <>
-      <Navbar/>
+      <Navbar heroTopInView={heroTopInView} />
       <MaxWidthWrapper>
-        <Hero />
+        <Hero heroTopRef={heroTopRef} />
         <About />
         <Timeline />
         <Tracks />
@@ -25,8 +33,7 @@ const landing = () => {
         <FAQs />
       </MaxWidthWrapper>
     </>
+  );
+};
 
-  )
-}
-
-export default landing
+export default Landing;
