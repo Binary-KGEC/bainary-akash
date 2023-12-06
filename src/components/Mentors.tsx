@@ -3,8 +3,8 @@ import PageSection from "./PageSection";
 
 const Mentors = () => {
   return (
-    <PageSection>
-      <div className="mt-7">
+    <PageSection id="mentors">
+      <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem]" reveal>
           Mentors
         </BinaryText>

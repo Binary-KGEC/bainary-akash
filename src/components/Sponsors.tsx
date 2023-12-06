@@ -7,13 +7,15 @@ const Sponsors = () => {
   return (
     <PageSection>
       <div
-        id="sponsors_section"
-        className="flex flex-col mb-20 my-5 sm:mb-20 text-white font-pixelate"
+        id="sponsors"
+        className="flex flex-col mb-20 sm:mb-20 text-white font-pixelate"
       >
         <div>
-          <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-            Sponsors
-          </BinaryText>
+          <div className="mt-[96px] md:mt-[116px]">
+            <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
+              Sponsors
+            </BinaryText>
+          </div>
 
 
           <div className="flex items-center justify-center flex-col">

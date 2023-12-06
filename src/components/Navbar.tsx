@@ -17,8 +17,8 @@ const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
   return (
     <div
       className={cn("py-3 md:py-4 sticky top-0 z-50", {
-        "bg-black/0 transition-all duration-500": heroTopInView,
-        "bg-green-900 transition-all duration-500": !heroTopInView,
+        "bg-black/0 transition-all duration-100": heroTopInView,
+        "bg-green-900 transition-all duration-100": !heroTopInView,
       })}
     >
       <header>

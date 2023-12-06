@@ -3,8 +3,8 @@ import PageSection from "./PageSection";
 
 const Tracks = () => {
   return (
-    <PageSection>
-      <div className="mt-7">
+    <PageSection id="tracks">
+      <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
           Tracks
         </BinaryText>

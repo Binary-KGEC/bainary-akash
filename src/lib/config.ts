@@ -5,31 +5,31 @@ export const items = [
   },
   {
     name: "About",
-    link: "about",
+    link: "#about",
   },
   {
     name: "Timeline",
-    link: "timeline",
+    link: "#timeline",
   },
   {
     name: "Tracks",
-    link: "tracks",
+    link: "#tracks",
   },
   {
     name: "Prizes",
-    link: "prizes_section",
+    link: "#prizes",
   },
   {
     name: "Mentors",
-    link: "mentors",
+    link: "#mentors",
   },
   {
     name: "Sponsors",
-    link: "sponsors_section",
+    link: "#sponsors",
   },
   {
     name: "FAQs",
-    link: "faq_section",
+    link: "#faqs",
   },
 ];
 
