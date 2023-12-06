@@ -41,6 +41,7 @@ const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
                     name={item.name}
                     link={item.link}
                     isActive={false}
+                    
                   />
                 );
               })}
@@ -94,6 +95,7 @@ const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
                         name={item.name}
                         link={item.link}
                         isActive={false}
+                        setIsOpen={setIsOpen}
                       />
                     );
                   })}
