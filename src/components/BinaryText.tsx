@@ -65,7 +65,7 @@ const BinaryText = ({
   });
 
   useEffect(() => {
-    if (inView) scrambleReveal();
+    // if (inView) scrambleReveal();
   });
 
   return (

@@ -2,17 +2,19 @@
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import styles from "./NavItem.module.css";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, Dispatch, SetStateAction } from "react";
 import { useGlitch } from "react-powerglitch";
 
 const NavItem = ({
   name,
   link,
   isActive,
+  setIsOpen,
 }: {
   name: string;
   link: string;
   isActive: boolean;
+  setIsOpen?: Dispatch<SetStateAction<boolean>>;
 }) => {
   const glitch = useGlitch({
     playMode: "hover",
@@ -44,12 +46,18 @@ const NavItem = ({
   const underlineClass = isActive ? styles.underloine : "";
 
   return (
-    <li ref={glitch.ref} className="relative flex py-2 h-12 items-center">
+    <li
+      ref={glitch.ref}
+      className="relative flex py-2 h-12 items-center"
+      onClick={() => {
+        if (setIsOpen) setIsOpen(false);
+      }}
+    >
       <a
         href={link}
         className={cn(
           "gap-5 w-[84px] bg-black/0 text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center",
-          underlineClass,
+          underlineClass
         )}
       >
         <span>{name}</span>

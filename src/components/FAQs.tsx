@@ -13,14 +13,16 @@ const FAQs = () => {
   return (
     <PageSection>
       <div
-        id="faq_section"
-        className="flex flex-col mb-20 my-5 sm:mb-20 text-white"
+        id="faqs"
+        className="flex flex-col mb-20 sm:mb-20 text-white"
       >
         <div>
 
-          <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-            Frequently Asked Questions
-          </BinaryText>
+          <div className="mt-[96px] md:mt-[116px]">
+            <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
+              Frequently Asked Questions
+            </BinaryText>
+          </div>
           <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">
             <ul className="max-w-2xl mx-auto mt-20 divide-y backdrop-blur-sm bg-black/50 shadow shadow-green-700 rounded-xl">
               {faqItems.map((faq, index) => {
