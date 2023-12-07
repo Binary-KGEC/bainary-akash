@@ -33,6 +33,49 @@ export const items = [
   },
 ];
 
+export const sponsorItems = [
+  {
+    title: "Tera Sponsor",
+    sponsors: [
+      {
+        logo: "",
+        link: "",
+        alt: "",
+      },
+    ],
+  },
+  {
+    title: "Giga Sponsor",
+    sponsors: [
+      {
+        logo: "",
+        link: "",
+        alt: "",
+      },
+    ],
+  },
+  {
+    title: "Mega Sponsor",
+    sponsors: [
+      {
+        logo: "",
+        link: "",
+        alt: "",
+      },
+    ],
+  },
+  {
+    title: "Kilo Sponsor",
+    sponsors: [
+      {
+        logo: "",
+        link: "",
+        alt: "",
+      },
+    ],
+  },
+];
+
 export const faqItems = [
   {
     question: "What is Binary?",

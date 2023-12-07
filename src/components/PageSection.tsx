@@ -15,8 +15,8 @@ const PageSection = ({
     <div
       id={id}
       className={cn(
-        "min-h-[calc(100dvh-96px)] md:h-[calc(100dvh-116px)] py-3 md:py-5",
-        className,
+        "min-h-[calc(100dvh-96px)] md:min-h-[calc(100dvh-116px)] py-3 md:py-5",
+        className
       )}
     >
       <MaxWidthWrapper>{children}</MaxWidthWrapper>
