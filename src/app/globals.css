@@ -91,6 +91,7 @@
 }
 
 * {
+  scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: rgb(7, 90, 16) rgba(0, 0, 0, 0.6);
 }

@@ -12,14 +12,13 @@ const FAQs = () => {
 
   return (
     <PageSection>
-      <div
-        id="faqs"
-        className="flex flex-col mb-20 sm:mb-20 text-white"
-      >
+      <div id="faqs" className="flex flex-col mb-20 sm:mb-20 text-white">
         <div>
-
           <div className="mt-[96px] md:mt-[116px]">
-            <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
+            <BinaryText
+              className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
+              reveal
+            >
               Frequently Asked Questions
             </BinaryText>
           </div>
@@ -39,8 +38,9 @@ const FAQs = () => {
                       <span className="text-lg">{faq.question}</span>
 
                       <svg
-                        className={`w-5 h-5 text-gray-500 transition group-hover:text-gray-300 group-active:text-gray-200 ${expandedItemIndex === index ? "rotate-90" : ""
-                          }`}
+                        className={`w-5 h-5 text-gray-500 transition group-hover:text-gray-300 group-active:text-gray-200 ${
+                          expandedItemIndex === index ? "rotate-90" : ""
+                        }`}
                         xmlns="http://www.w3.org/2000/svg"
                         width="16"
                         height="16"
@@ -63,8 +63,8 @@ const FAQs = () => {
                         </div> */}
                         <p className="px-4">
                           <TypeAnimation
-                            sequence={[2500, `${faq.answer}`]}
-                            speed={50}
+                            sequence={[2000, `${faq.answer}`]}
+                            speed={70}
                           />
                         </p>
                       </div>
