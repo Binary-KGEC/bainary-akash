@@ -33,6 +33,39 @@ export const items = [
   },
 ];
 
+export const timelineItems = [
+  {
+    title: "Registration Start",
+    date: "January 16",
+    description: "Registration start",
+  },
+  {
+    title: "Registration Close",
+    date: "March 15",
+    description: "Registration close",
+  },
+  {
+    title: "Online Quiz",
+    date: "March 15",
+    description: "Online quiz round",
+  },
+  {
+    title: "Hackathon Start",
+    date: "March 20",
+    description: "Hackathon Start",
+  },
+  {
+    title: "Submission",
+    date: "March 21",
+    description: "Last date of submission",
+  },
+  {
+    title: "Results",
+    date: "March 21",
+    description: "Results will be declared",
+  },
+];
+
 export const sponsorItems = [
   {
     title: "Tera Sponsor",
