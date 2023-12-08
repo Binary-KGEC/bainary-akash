@@ -23,7 +23,10 @@ const Sponsors = () => {
 
           {sponsorItems.map((sponsorItem) => {
             return (
-              <div className="flex items-center justify-center flex-col m-16">
+              <div
+                className="flex items-center justify-center flex-col m-16"
+                key={sponsorItem.title}
+              >
                 <h2 className="text-[1.5em] md:text-[2rem] text-center font-bold mb-8">
                   {sponsorItem.title}
                 </h2>
