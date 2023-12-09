@@ -120,7 +120,7 @@ export default function Home() {
      {showFunction1 ? function2() : function3()}
      </div>
      <div> <div>
-      <h1>Scrambled Text:</h1>
+      
       
     </div></div>
      {showDelayedComponent && <DelayedComponent />}
