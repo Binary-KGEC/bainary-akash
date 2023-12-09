@@ -20,8 +20,8 @@ const DelayedComponent = () => {
    ];
   const textRef = useTextScramble(phrases1);
   const textRef2 = useTextScramble(phrases2);
-  return <div><div className='by absolute inset-x-0 bottom-20   items-center justify-center'> <div className="text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl" ref={textRef}></div></div>
-  <div className='by absolute inset-x-0 bottom-10   items-center justify-center'><div className="text-white text-lg sm:text-xl md:text-0.7xl lg:text-1.7xl xl:text-2.3xl" ref={textRef2}><div></div></div></div></div>;
+  return <div><div className='by fixed inset-x-0 bottom-20   items-center justify-center'> <div className="text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl" ref={textRef}></div></div>
+  <div className='by fixed inset-x-0 bottom-10   items-center justify-center'><div className="text-white text-lg sm:text-xl md:text-0.7xl lg:text-1.7xl xl:text-2.3xl" ref={textRef2}><div></div></div></div></div>;
 };
 export default function Home() {
 
