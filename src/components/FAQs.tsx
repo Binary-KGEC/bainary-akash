@@ -4,8 +4,14 @@ import PageSection from "./PageSection";
 import { faqItems } from "@/lib/config";
 import { TypeAnimation } from "react-type-animation";
 import BinaryText from "./BinaryText";
-
+import useTextScramble from "./text";
 const FAQs = () => {
+ 
+    const phrases = [
+      " Frequently Asked Questions"
+     ];
+     
+     const textRef = useTextScramble(phrases);
   const [expandedItemIndex, setExpandedItemIndex] = useState<number | null>(
     null
   );
@@ -18,8 +24,8 @@ const FAQs = () => {
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            >
-              Frequently Asked Questions
+            ><div className="text-white" ref={textRef}></div>
+             
             </BinaryText>
           </div>
           <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">

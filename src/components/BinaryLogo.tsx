@@ -9,7 +9,7 @@ const BinaryLogo = () => {
 
   return (
     
-    <div className="bg-transparent "  id="home">
+    <div className="bg-transparent grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"  id="home">
       <motion.div
         initial={{ opacity: 1, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -17,13 +17,8 @@ const BinaryLogo = () => {
         className=""
       >
         <div
-          className="mx-auto flex flex-col  items-center justify-center "
-          style={{
-            width: "800px",
-            objectFit: "cover",
-            top: "50%",
-            bottom: "50%",
-          }}
+          className="logo mx-auto flex flex-col  items-center justify-center "
+          
         >
           <motion.svg
             xmlns="http://www.w3.org/2000/svg"

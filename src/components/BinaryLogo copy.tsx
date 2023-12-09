@@ -17,9 +17,9 @@ const BinaryLogo = () => {
         className=""
       >
         <div
-          className="mx-auto flex flex-col  items-center justify-center "
+          className=" logo mx-auto flex flex-col  items-center justify-center "
           style={{
-            width: "800px",
+            
             objectFit: "cover",
             top: "50%",
             bottom: "50%",
@@ -138,7 +138,7 @@ const BinaryLogo = () => {
 initial={{ x: "-36%%", scale: 0 ,opacity:0}}
 animate={{ x: "0%", scale: 1 ,opacity:1}}
 transition={{
-  duration: 0.6,
+  duration: 0.3,
   delay: 3.9,
   ease: [0, 0.71, 0.2, 1.01],
                 scale: {
@@ -176,7 +176,7 @@ transition={{
     animate={{
       opacity: 1,
     }}
-    transition={{ ease: "easeInOut", delay:5 }}
+    transition={{ ease: "easeInOut", delay:4.5 }}
     whileHover={{ scale: 1.2 }}
     onHoverStart={(e) => {}}
     onHoverEnd={(e) => {}}
@@ -202,7 +202,7 @@ transition={{
                         
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 2, delay:3 }}
+                    transition={{ ease: "easeInOut", duration: 1.5, delay:3 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-4">
@@ -219,7 +219,7 @@ transition={{
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,0
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 2,delay:3}}
+                    transition={{ ease: "easeInOut", duration: 1.5,delay:3}}
                   />
                 </motion.g>
               </motion.g>
@@ -249,7 +249,7 @@ transition={{
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:5.5 }}
+                  transition={{ ease: "easeInOut", delay:5.0 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -276,7 +276,7 @@ transition={{
                       ],
                       
                     }}
-                    transition={{ ease: "easeInOut", duration: 2.5, delay:3 }}
+                    transition={{ ease: "easeInOut", duration: 2.0, delay:3 }}
                   />
                 </motion.g>
                 <motion.g id="_x31_-3">
@@ -293,7 +293,7 @@ transition={{
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,0
                       ],
                     }}
-                    transition={{ ease: "easeInOut", duration: 2.5,delay:3  }}
+                    transition={{ ease: "easeInOut", duration: 2.0,delay:3  }}
                   />
                 </motion.g>
               </motion.g>
@@ -327,7 +327,7 @@ transition={{
     animate={{
       opacity: 1,
     }}
-    transition={{ ease: "easeInOut", delay:5.7 }}
+    transition={{ ease: "easeInOut", delay:5.3 }}
     whileHover={{ scale: 1.2 }}
     onHoverStart={(e) => {}}
     onHoverEnd={(e) => {}}
@@ -351,7 +351,7 @@ transition={{
                       1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1,0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.7, delay:3, }}
+                  transition={{ ease: "easeInOut", duration: 2.3, delay:3, }}
                 />
               </motion.g>
               <motion.g id="_x30_-2">
@@ -369,7 +369,7 @@ transition={{
                       0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.7,  delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.3,  delay:3 }}
                 />
               </motion.g>
             </motion.g>
@@ -402,7 +402,7 @@ transition={{
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:6.1 }}
+                  transition={{ ease: "easeInOut", delay:5.7 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -426,7 +426,7 @@ transition={{
                       0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.9,  delay:3.2 }}
+                  transition={{ ease: "easeInOut", duration: 2.5,  delay:3.2 }}
                 />
               </motion.g>
               <motion.g id="_x30_-6">
@@ -445,7 +445,7 @@ transition={{
                       0,0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0,
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.9,  delay:3.2 }}
+                  transition={{ ease: "easeInOut", duration: 2.5,  delay:3.2 }}
                 />
               </motion.g>
             </motion.g>
@@ -478,7 +478,7 @@ transition={{
                   animate={{
                     opacity: 1,
                   }}
-                  transition={{ ease: "easeInOut", delay:5.3 }}
+                  transition={{ ease: "easeInOut", delay:5.0 }}
                   whileHover={{ scale: 1.2 }}
                   onHoverStart={(e) => {}}
                   onHoverEnd={(e) => {}}
@@ -502,7 +502,7 @@ transition={{
                       0
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.3, times: [] ,delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.0, times: [] ,delay:3 }}
                 />
               </motion.g>
               <motion.g id="_x30_-6">
@@ -522,7 +522,7 @@ transition={{
                       
                     ],
                   }}
-                  transition={{ ease: "easeInOut", duration: 2.3,delay:3 }}
+                  transition={{ ease: "easeInOut", duration: 2.0,delay:3 }}
                 />
               </motion.g>
               </motion.g>

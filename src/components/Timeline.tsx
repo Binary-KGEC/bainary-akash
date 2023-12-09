@@ -1,16 +1,21 @@
 import BinaryText from "./BinaryText";
 import PageSection from "./PageSection";
 import { timelineItems } from "@/lib/config";
-
+import useTextScramble from "./text";
 const Timeline = () => {
+  const phrases = [
+    " Timeline"
+   ];
+   
+   const textRef = useTextScramble(phrases);
   return (
     <PageSection id="timeline">
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText
           className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
           reveal
-        >
-          Timeline
+        ><div className="text-white" ref={textRef}></div>
+         
         </BinaryText>
         <div className="flex flex-col my-5 sm:my-0 md:h-[calc(50vh)] justify-center items-center text-white">
           <ol className="items-center sm:flex">

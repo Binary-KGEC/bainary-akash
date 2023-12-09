@@ -4,17 +4,27 @@ import { useRouter } from 'next/navigation';
 import BinaryLogo from "@/components/BinaryLogo";
 import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
+import useTextScramble from "@/components/text";
 import "./globals.css";
 import { useState,useCallback,useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import BinaryLogo2 from '@/components/BinaryLogo copy';
-// import TextScramble from "@/components/text"
+import TextScramble from "@/components/text"
 import { motion } from 'framer-motion';
 const DelayedComponent = () => {
-  return <div><div className='by absolute inset-x-0 bottom-20 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'>By</div>
-  <div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'></div></div>;
+  const phrases1 = [
+    "By"
+   ];
+   const phrases2 = [
+    "DEV-SOCITY-KGEC"
+   ];
+  const textRef = useTextScramble(phrases1);
+  const textRef2 = useTextScramble(phrases2);
+  return <div><div className='by absolute inset-x-0 bottom-20 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'> <div className="text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl" ref={textRef}></div></div>
+  <div className='by absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'><div className="text-white text-lg sm:text-xl md:text-0.7xl lg:text-1.7xl xl:text-2.3xl" ref={textRef2}><div></div></div></div></div>;
 };
 export default function Home() {
+
   const [showDelayedComponent, setShowDelayedComponent] = useState(false);
   const [showFunction1, setShowFunction1] = useState(true);
   const [showButton, setShowButton] = useState(false);
@@ -109,6 +119,10 @@ export default function Home() {
      <div className=' absolute inset-y-0 flex flex-col '>
      {showFunction1 ? function2() : function3()}
      </div>
+     <div> <div>
+      <h1>Scrambled Text:</h1>
+      
+    </div></div>
      {showDelayedComponent && <DelayedComponent />}
      <motion.div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto flex flex-col   items-center justify-center'
      initial={{ y: "2%", scale: 0 ,opacity:0}}
@@ -124,7 +138,7 @@ export default function Home() {
          restDelta: 0.001,
        },}}
        >
-     {showButton && <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">Get Started</Button>}
+     {showButton && <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">button</Button>}
    
      </motion.div></div> </div>
     </>

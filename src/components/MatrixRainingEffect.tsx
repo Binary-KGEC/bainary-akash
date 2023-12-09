@@ -1,151 +1,142 @@
-// "use client"
-// /* eslint-disable jsx-a11y/anchor-is-valid */
-// import React, { useEffect, useRef, useState } from 'react';
-// import useInterval from '@use-it/interval';
+"use client"
+import { useEffect } from 'react';
 
-// // Constants
-// const VALID_CHARS = `01`;
-// const STREAM_MUTATION_ODDS = 0.02;
+class Vector2 {
+  x: number;
+  y: number;
 
-// const MIN_STREAM_SIZE = 15;
-// const MAX_STREAM_SIZE = 50;
+  constructor(x: number, y: number) {
+    this.x = x;
+    this.y = y;
+  }
 
-// const MIN_INTERVAL_DELAY = 50;
-// const MAX_INTERVAL_DELAY = 100;
+  add(vector: Vector2) {
+    this.x += vector.x;
+    this.y += vector.y;
+  }
 
-// const MIN_DELAY_BETWEEN_STREAMS = 0;
-// const MAX_DELAY_BETWEEN_STREAMS = 8000;
+  multiply(value: number) {
+    return new Vector2(this.x * value, this.y * value);
+  }
+}
 
-// const getRandInRange = (min, max) =>
-// 	Math.floor(Math.random() * (max - min)) + min;
+class Line {
+  el: HTMLDivElement | null = null;
+  isVertical: boolean = false;
+  position: Vector2 | null = null;
+  direction: Vector2 | null = null;
+  distance: number | null = null;
+  isOutOfScreen: boolean = false;
 
-// const getRandChar = () =>
-// 	VALID_CHARS.charAt(Math.floor(Math.random() * VALID_CHARS.length));
+  constructor() {
+    const el = (this.el = document.createElement('div'));
+    el.classList.add('string');
 
-// const getRandStream = () =>
-// 	new Array(getRandInRange(MIN_STREAM_SIZE, MAX_STREAM_SIZE))
-// 		.fill()
-// 		.map(_ => getRandChar());
+    let numbers: number[] = [];
+    for (let i = 0; i < 8; i++) {
+      numbers.push(Math.round(Math.random()));
+    }
 
-// const getMutatedStream = stream => {
-// 	const newStream = [];
-// 	for (let i = 1; i < stream.length; i++) {
-// 		if (Math.random() < STREAM_MUTATION_ODDS) {
-// 			newStream.push(getRandChar());
-// 		} else {
-// 			newStream.push(stream[i]);
-// 		}
-// 	}
-// 	newStream.push(getRandChar());
-// 	return newStream;
-// };
+    const isVertical = (this.isVertical = !!Math.round(Math.random()));
 
-// const RainStream = props => {
-// 	const [stream, setStream] = useState(getRandStream());
-// 	const [topPadding, setTopPadding] = useState(stream.length * -50);
-// 	const [intervalDelay, setIntervalDelay] = useState(null);
+    el.innerHTML = numbers.join('');
 
-// 	// Initialize intervalDelay
-// 	useEffect(() => {
-// 		setTimeout(() => {
-// 			setIntervalDelay(getRandInRange(MIN_INTERVAL_DELAY, MAX_INTERVAL_DELAY));
-// 		}, getRandInRange(MIN_DELAY_BETWEEN_STREAMS, MAX_DELAY_BETWEEN_STREAMS));
-// 	}, []);
+    if (this.isVertical) {
+      el.innerHTML = numbers.join('\n');
+    }
 
-// 	useInterval(() => {
-// 		if (!props.height) return;
+    const position = (this.position = new Vector2(
+      Math.floor(Math.random() * window.innerWidth),
+      Math.floor(Math.random() * window.innerHeight)
+    ));
 
-// 		if (!intervalDelay) return;
+    el.style.top = `${position.y}px`;
+    el.style.left = `${position.x}px`;
 
-// 		// If stream is off the screen, reset it after timeout
-// 		if (topPadding > props.height) {
-// 			setStream([]);
-// 			const newStream = getRandStream();
-// 			setStream(newStream);
-// 			setTopPadding(newStream.length * -44);
-// 			setIntervalDelay(null);
-// 			setTimeout(
-// 				() =>
-// 					setIntervalDelay(
-// 						getRandInRange(MIN_INTERVAL_DELAY, MAX_INTERVAL_DELAY),
-// 					),
-// 				getRandInRange(MIN_DELAY_BETWEEN_STREAMS, MAX_DELAY_BETWEEN_STREAMS),
-// 			);
-// 		} else {
-// 			setTopPadding(topPadding + 44);
-// 		}
-// 		// setStream(stream => [...stream.slice(1, stream.length), getRandChar()]);
-// 		setStream(getMutatedStream);
-// 	}, intervalDelay);
+    const hueRotate = Math.floor(Math.random() * 40);
 
-// 	return (
-// 		<div
-// 			style={{
-// 				fontFamily: 'SFPixelate',
-// 				color: '#16783c',
-// 				writingMode: 'vertical-rl',
-// 				textOrientation: 'upright',
-// 				userSelect: 'none',
-// 				whiteSpace: 'nowrap',
-// 				marginTop: topPadding,
-// 				marginLeft: -1,
-// 				marginRight: -1,
-// 				textShadow: '0px 0px 8px rgba(32, 194, 14, 0.8)',
-// 				fontSize: 15,
-// 			}}>
-// 			{stream.map((char, index) => (
-// 				<a key={char}
-// 					style={{
-// 						marginTop: -1,
-// 						// Reduce opacity for last chars
-// 						opacity: index < 6 ? 0.1 + index * 0.15 : 1,
-// 						color: index === stream.length - 1 ? '#fff' : undefined,
-// 						textShadow:
-// 							index === stream.length - 1
-// 								? '0px 0px 20px rgba(255, 255, 255, 1)'
-// 								: undefined,
-// 					}}>
-// 					{char}
-// 				</a>
-// 			))}
-// 		</div>
-// 	);
-// };
+    const distance = (this.distance = Math.floor(Math.random() * 5));
+    el.style.fontSize = `${28 - 2 * distance}px`;
+    el.style.filter = `blur(${distance}px) hue-rotate(${hueRotate}deg)`;
+    el.style.zIndex = `-${distance}`;
 
-// const MatrixRain2 = props => {
-// 	const containerRef = useRef(null);
-// 	const [containerSize, setContainerSize] = useState(null); // ?{width, height}
+    const dir = Math.round(Math.random()) === 1 ? -1 : 1;
 
-// 	useEffect(() => {
-// 		const boundingClientRect = containerRef.current.getBoundingClientRect();
-// 		setContainerSize({
-// 			width: boundingClientRect.width,
-// 			height: boundingClientRect.height,
-// 		});
-// 	}, []);
+    this.direction = new Vector2(dir, 0);
+    if (isVertical) {
+      this.direction = new Vector2(0, dir);
+    }
 
-// 	const streamCount = containerSize ? Math.floor(containerSize.width / 26) : 0;
+    el.style.opacity = `${Math.floor(Math.random() * 20) + 80}`;
 
-// 	return (
-// 		<div
-// 			style={{
-// 				background: 'black',
-// 				position: 'fixed',
-// 				top: 0,
-// 				left: 0,
-// 				bottom: 0,
-// 				right: 0,
-// 				overflow: 'ignore',
-// 				display: 'flex',
-// 				flexDirection: 'row',
-// 				justifyContent: 'center',
-// 			}}
-// 			ref={containerRef}>
-// 			{new Array(streamCount).fill().map((_, i) => (
-// 				<RainStream key={i} height={containerSize?.height} />
-// 			))}
-// 		</div>
-// 	);
-// };
+    document.body.append(this.el);
+  }
 
-// export default MatrixRain2;
+  update() {
+    if (this.el && this.position) {
+      this.el.style.top = `${this.position.y}px`;
+      this.el.style.left = `${this.position.x}px`;
+    }
+  }
+
+  move(value: number) {
+    if (this.position && this.direction && this.el) {
+      const divider = this.distance ? this.distance + 1 : 1;
+      this.position.add(this.direction.multiply(value / divider));
+
+      const { width, x, height, y } = this.el.getBoundingClientRect();
+
+      if (
+        x + width < 0 ||
+        x > window.innerWidth ||
+        y + height < 0 ||
+        y > window.innerHeight
+      ) {
+        this.isOutOfScreen = true;
+      }
+    }
+  }
+
+  destroy() {
+    if (this.el) {
+      this.el.remove();
+    }
+  }
+}
+
+// Init:
+const windowSquare = window.innerWidth * window.innerHeight;
+const quantity = Math.floor(windowSquare / 10000);
+const lines: Line[] = [];
+let startTime = 0;
+
+function animate() {
+  const deltaTime = Math.floor(performance.now() - startTime) / 1000;
+
+  for (let i = 0; i < lines.length; i++) {
+    lines[i].move(deltaTime * 24);
+    lines[i].update();
+
+    if (lines[i].isOutOfScreen) {
+      lines[i].destroy();
+      lines[i] = new Line();
+    }
+  }
+
+  requestAnimationFrame(animate);
+
+  startTime = performance.now();
+}
+
+const MyComponent = () => {
+  useEffect(() => {
+    for (let i = 0; i < quantity; i++) {
+      lines.push(new Line());
+    }
+    animate();
+  }, []);
+
+  return null;
+};
+
+export default MyComponent;
