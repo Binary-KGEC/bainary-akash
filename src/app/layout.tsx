@@ -21,13 +21,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className="h-full  ">
       <body
         className={cn("relative h-full font-sans antialiased bg-black", sfPixelate.className)}
       >
-        <main className="relative flex flex-col min-h-screen">
+        <main className="relative flex flex-col min-h-screen  overflow-hidden">
 			    {/*<MatrixRain2  />*/}<div className="bg-black/70 ">
-          <div className="bg-black/70 opacity-30 ">
+          <div className="bg-black/70 opacity-30 overflow-hidden ">
             {<MatrixRain timeout={75}/>}</div>
             <div className="flex-grow flex-1">{children}</div>
           </div>
