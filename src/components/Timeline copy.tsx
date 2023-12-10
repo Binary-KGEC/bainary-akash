@@ -33,6 +33,7 @@ const Data: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) =
     </figure>
       <motion.div initial={{y:50,x:150,opacity:0,scale:0.5}} className="backdrop-opacity-10 bg-green-900 bg-opacity-10 rounded-lg  backdrop-blur-3xl w-full"
       whileInView={{y:0,x:0,opacity:1,scale:1}}
+      viewport={{ once: true, amount: 0.8 }}
       transition={{duration:0.5,type:"spring"}}>
         <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-3 my-3 ">
           {head}; </h3> <a className="capitalize font-small text-0.5xl font-pixelate text-green-100 mx-3 my-3" href={links}></a>
