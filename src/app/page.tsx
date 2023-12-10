@@ -124,7 +124,7 @@ export default function Home() {
       
     </div></div>
      {showDelayedComponent && <DelayedComponent />}
-     <motion.div className='absolute inset-x-0 bottom-20 flex flex-col my-100 mx-auto   items-center justify-center'
+     <motion.div className='absolute inset-x-0 bottom-30 flex   items-center justify-center'
      initial={{ y: "2%", scale: 0 ,opacity:0}}
      animate={{ y: "0%", scale: 1 ,opacity:1}}
      transition={{
