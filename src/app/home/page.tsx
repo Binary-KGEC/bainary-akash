@@ -12,6 +12,7 @@ import Timeline from "@/components/Timeline";
 import Tracks from "@/components/Tracks";
 import Navbar from "@/components/Navbar";
 import { useInView } from "react-intersection-observer";
+import Timeline2 from "@/components/Timeline copy";
 
 const Landing = () => {
   const [heroTopRef, heroTopInView] = useInView({
@@ -25,7 +26,8 @@ const Landing = () => {
       <MaxWidthWrapper>
         <Hero heroTopRef={heroTopRef} />
         <About />
-        <Timeline />
+        {/*<Timeline />*/}
+        <Timeline2/>
         <Tracks />
         <Prizes />
         <Mentors />

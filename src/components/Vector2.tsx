@@ -1,4 +1,4 @@
-// components/Vector2.tsx
+
 
 import React, { useEffect } from 'react';
 
@@ -18,13 +18,13 @@ const Vector2: React.FC = () => {
     var allElements = document.getElementsByClassName('typeing');
     for (var j = 0; j < allElements.length; j++) {
       var currentElementId = allElements[j].id;
-      var currentElementIdContent = (data[0] as any)[currentElementId]; // Using type assertion
+      var currentElementIdContent = (data[0] as any)[currentElementId]; 
       var element = document.getElementById(currentElementId);
 
       if (element) {
         var devTypeText = currentElementIdContent;
 
-        // type code
+        
         var i = 0,
           isTag,
           text;
@@ -40,7 +40,7 @@ const Vector2: React.FC = () => {
         })();
       }
     }
-  }, []); // Empty dependency array means this effect runs once after the initial render
+  }, []); 
 
   return (
     <>
