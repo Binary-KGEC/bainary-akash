@@ -31,10 +31,8 @@ const Data: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) =
       </svg><svg className="absolute left-7 top-2 " height="19" viewBox="0 0 20 20">
         <path className="animate-pulse stroke-1 fill-green-100"viewBox="0 0 20 20"   d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" /></svg>
     </figure>
-      <motion.div initial={{y:50,x:150,opacity:0,scale:0.5}} className="backdrop-opacity-10 bg-green-900 bg-opacity-10 rounded-lg  backdrop-blur-3xl w-full"
-      whileInView={{y:0,x:0,opacity:1,scale:1}}
-      viewport={{ once: true, amount: 0.8 }}
-      transition={{duration:0.5,type:"spring"}}>
+      <motion.div  className="backdrop-opacity-10 bg-green-900 bg-opacity-10 rounded-lg  backdrop-blur-3xl w-full"
+    >
         <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-3 my-3 ">
           {head}; </h3> <a className="capitalize font-small text-0.5xl font-pixelate text-green-100 mx-3 my-3" href={links}></a>
        
