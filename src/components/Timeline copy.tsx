@@ -16,19 +16,19 @@ interface DataProps {
 const Data: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) => {
   const ref = useRef(null)
   return (
-    <li ref={ref} className="my-8 first:mt-0 w-[60%] mx-auto flex flex-col items-center justify-between mx:w-[80%]">
+    <li ref={ref} className="my-8 first:mt-0 w-[60%] mx-auto flex flex-col items-center justify-between mx:w-[80%]  ">
      
       <Icon refrence={ref}/> 
       <motion.div initial={{y:50,x:150,opacity:0,scale:0.5}} className="backdrop-opacity-10 bg-green-900 bg-opacity-10 rounded-lg  backdrop-blur-3xl w-full"
       whileInView={{y:0,x:0,opacity:1,scale:1}}
       transition={{duration:0.5,type:"spring"}}>
-        <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg  ">
-          {head}; </h3> <a className="capitalize font-small text-0.5xl font-pixelate text-green-100" href={links}></a>
+        <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-3 my-3 ">
+          {head}; </h3> <a className="capitalize font-small text-0.5xl font-pixelate text-green-100 mx-3 my-3" href={links}></a>
        
-        <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg text-white xs:text-sm ">
+        <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg text-white xs:text-sm mx-3 my-3 ">
           {date} | {add}
         </span>
-        <p className="font-thin text-0.4xl  text-white sm:text-xl xs:text-lg w-full mx:text-sm ">
+        <p className="font-thin text-0.4xl  text-white sm:text-xl xs:text-lg w-full mx:text-sm mx-3 my-3 ">
         {des}
         </p>
       </motion.div>
@@ -51,7 +51,7 @@ const Timeline2 = () => {
   return (
    
     <PageSection id="timeline">
-    <div className="my-0">
+    <div className="my-0 overflow-hidden">
       <BinaryText
         className="text-white font-pixelate text-[2rem] mx:text-[3rem] font-bold mb-30"
         reveal
