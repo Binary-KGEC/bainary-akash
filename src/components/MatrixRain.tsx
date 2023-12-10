@@ -697,7 +697,7 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
     }
   }
 }}/> 
-      <canvas ref={canvas} />
+      <canvas ref={canvas} className="fixed top-0 left-0 z-[-1] overflow-hidden"/>
     </div>
   );
 }
