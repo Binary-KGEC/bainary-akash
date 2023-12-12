@@ -74,14 +74,14 @@ const About = () => {
                 What started with three enthusiastic people in the year 2021, is now a community of over 1500 developers. Hack4Bengal has been growing from strength to strength and our aim is to go beyond the horizons and impact millions of tech talents by providing them with a platform to enhance their skills, collaborate and create. This time Hack4Bengal is back to leverage your expertise in the offline mode. See you there!
               </p>
               <p className="font-medium mb-4 my-5 text-green-400">
-                {/* about kgec content */}
+                {/* about content */}
                 Hack4Bengal believes in building for the future, empowering people irrespective of their fields, to showcase their skills and creativity for solving real-life problems.
               </p>
             </div>
             <div className="md:col-span-3 relative h-max opacity-70 gap-4 order-1 md:order-2">
               <ParticleImage
                 className="w-full md:w-[70%]"
-                src={"/binarylogo2.png"}
+                src={"./binarylogo2.png"}
                 width={300}
                 scale={0.70}
                 entropy={20}
