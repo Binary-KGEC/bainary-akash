@@ -21,7 +21,7 @@ const Data: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) =
     offset: ["center end", "center center"],
   });
   return (
-    <li ref={ref} className="my-8 first:mt-0 w-[60%] mx-auto flex flex-col items-center justify-between mx:w-[80%] ">
+    <li ref={ref} className="my-8 first:mt-0 w-[60%] mx-auto flex flex-col items-center justify-between mx:w-[80%]  ">
      <figure className="absolute left-0 stroke-green-600 ">
       <svg className="-rotate-90 mx:w-[60px] mx:h-[60px] xs:w-[60px] xs:h-[60px]" width="75" height="75" viewBox="0 0 100 100">
         <circle cx="75" cy="50" r="23" className="stroke-none  stroke-3 fill-black" />
