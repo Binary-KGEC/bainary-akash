@@ -88,32 +88,32 @@ const CountdownClock: React.FC = () => {
   return (
     <div
 
-      className="w-full mx-auto pl-3.5"
+      className="w-full mx-auto "
     >
       <div className={cn("font-pixelate", styles.countdownWrapper)}>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">{state.days || "0"}</div>
+          <div className="text-[1rem] md:text-[3rem]">{state.days || "0"}</div>
           <small className="time-text">Days</small>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">:</div>
+          <div className="text-[1rem] md:text-[3rem]">:</div>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">{state.hours || "00"}</div>
+          <div className="text-[1rem] md:text-[3rem]">{state.hours || "00"}</div>
           <small className="time-text">Hours</small>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">:</div>
+          <div className="text-[1rem] md:text-[3rem]">:</div>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">{state.minutes || "00"}</div>
+          <div className="text-[1rem] md:text-[3rem]">{state.minutes || "00"}</div>
           <small className="time-text">Minutes</small>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">:</div>
+          <div className="text-[1rem] md:text-[3rem]">:</div>
         </div>
         <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[4rem]">{state.seconds || "00"}</div>
+          <div className="text-[1rem] md:text-[3rem]">{state.seconds || "00"}</div>
           <small className="time-text">Seconds</small>
         </div>
       </div>

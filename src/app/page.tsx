@@ -143,13 +143,13 @@ export default function Home() {
         >
           {showButton && (
             <Button
-              variant={"enter"}
+              variant={"trapbutton"}
               onClick={handleClick}
               disabled={isNavigating}
               ref={glitch.ref}
               className="glitch font-SFPixelate"
             >
-              button
+             <h1 className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</h1> 
             </Button>
           )}
         </motion.div>

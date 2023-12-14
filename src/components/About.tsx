@@ -58,16 +58,16 @@ const About = () => {
 
   return (
     <PageSection id="about">
-      <main className="flex w-full flex-col items-center justify-center">
-        <div className="mt-[96px] md:mt-[116px]">
-          <BinaryText
-            className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold my-2"
+      <main className="flex w-full flex-col items-center justify-center  ">
+        <div className="mt-[96px] md:mt-[116px] ">
+          <BinaryText 
+            className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold my-2 mb-8 "
             reveal
           >
-            <div className="text-white text-center" ref={textRef}></div>
+            <div className="text-white text-center " ref={textRef}></div>
           </BinaryText>
           <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-16">
-            <div className="md:col-span-5 flex flex-col items-start justify-start order-2 md:order-1">
+            <div className="md:col-span-5 flex flex-col items-start justify-start order-2 md:order-1 ">
               <h2 className="mb-4 text-lg font-bold uppercase text-green-400"> hi everyone</h2>
               <p className="font-medium text-white">
                 {/* about binary content */}
