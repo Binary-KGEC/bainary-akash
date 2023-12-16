@@ -20,8 +20,8 @@ const DelayedComponent = () => {
    ];
   const textRef = useTextScramble(phrases1);
   const textRef2 = useTextScramble(phrases2);
-  return <div><div className='pos'> <div className="font-pixelate text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl" ref={textRef}></div></div>
-  <div className='pos2'><div className="font-pixelate text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl" ref={textRef2}></div></div></div>;
+  return <div><div className=''> <div className="font-pixelate text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl text-center" ref={textRef}></div></div>
+  <div className=''><div className="font-pixelate text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center mt-2" ref={textRef2}></div></div></div>;
 };
 export default function Home() {
 
@@ -46,13 +46,13 @@ export default function Home() {
 
   const function2 = () => {
     // Logic for the second function
-    return <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6 ">
+    return <div className="">
     <BinaryLogo2/></div>;
   };
 
   const function3 = () => {
     // Logic for the third function
-    return <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-6 ">
+    return <div className=" ">
     <BinaryLogo/></div>;
   };
 
@@ -113,34 +113,48 @@ export default function Home() {
 
   return (
     <>
-     <div className=" bg-transparent " >
-     <div className='container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10' >
+      <div className="bg-transparent w-full">
+      <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
+        <div className="flex flex-col md:flex-row md:justify-between">
+          <div className="relative flex-1">
+            {showFunction1 ? function2() : function3()}
+          </div>
+          
+        </div>
 
-     <div className=' absolute inset-y-0 flex flex-col '>
-     {showFunction1 ? function2() : function3()}
-     </div>
-     <div> <div>
-      <h1>Scrambled Text:</h1>
-      
-    </div></div>
-     {showDelayedComponent && <DelayedComponent />}
-     <motion.div className='absolute inset-x-0 bottom-10 flex flex-col my-100 mx-auto   items-center justify-center'
-     initial={{ y: "2%", scale: 0 ,opacity:0}}
-     animate={{ y: "0%", scale: 1 ,opacity:1}}
-     transition={{
-       duration: 0.3,
-       delay: 5,
-       
-       scale: {
-         type: "spring",
-         damping: 20,
-         stiffness: 100,
-         restDelta: 0.001,
-       },}}
-       >
-     {showButton && <Button variant={"enter"}  onClick={handleClick} disabled={isNavigating} ref={glitch.ref} className="glitch font-SFPixelate">button</Button>}
-   
-     </motion.div></div> </div>
+        <div className="mt-5 md:mt-10">
+          {showDelayedComponent && <DelayedComponent />}
+        </div>
+
+        <motion.div
+          className="flex flex-col md:flex-row items-center justify-center mt-4"
+          initial={{ y: "2%", scale: 0, opacity: 0 }}
+          animate={{ y: "0%", scale: 1, opacity: 1 }}
+          transition={{
+            duration: 0.3,
+            delay: 5,
+            scale: {
+              type: "spring",
+              damping: 20,
+              stiffness: 100,
+              restDelta: 0.001,
+            },
+          }}
+        >
+          {showButton && (
+            <Button
+              variant={"trapbutton"}
+              onClick={handleClick}
+              disabled={isNavigating}
+              ref={glitch.ref}
+              className="glitch font-SFPixelate"
+            >
+             <h1 className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</h1> 
+            </Button>
+          )}
+        </motion.div>
+      </div>
+    </div>
     </>
   );
 }

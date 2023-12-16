@@ -5,30 +5,37 @@ import { motion } from "framer-motion";
 import "./logo.css";
 
 const BinaryLogo = () => {
- 
-
   return (
-    
-    <div className="bg-transparent grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4"  id="home">
-      <motion.div
-        initial={{ opacity: 1, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
-        className=""
-      >
-        <div
-          className="logo mx-auto flex flex-col  items-center justify-center "
-          
-        >
-          <motion.svg
-            xmlns="http://www.w3.org/2000/svg"
-            
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            viewBox="0 0 537.8 188.2"
-            xmlSpace="preserve"
+   
+        <div className="bg-transparent" id="home">
+          <div
+            className="flex flex-col items-center justify-center lg:mt-[10%] mt-[15%]"
+            style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}
           >
+            <motion.div
+              initial={{ opacity: 1, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="w-screen"
+            >
+              <div
+                className="w-[80%] h-auto lg:w-[70%] mx-auto flex flex-col items-center justify-center"
+                style={{
+                   // Let the height adjust to maintain aspect ratio
+                }}
+              >
+                <motion.svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  viewBox="0 0 537.8 188.2"
+                  xmlSpace="preserve"
+                  style={{
+                    width: "100%", // Make the SVG take full width of its container
+                    height: "100%", // Make the SVG take full height of its container
+                  }}
+                >
             <style type="text/css"></style>
             <motion.g
               id="Layer_3_00000013885553299493029020000001813362791278450608_"
@@ -511,7 +518,7 @@ transition={{
           </motion.svg>
         </div>
       </motion.div>
-    </div>
+    </div></div>
   );
 };
 

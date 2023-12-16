@@ -7,11 +7,6 @@ import BinaryText from "./BinaryText";
 import useTextScramble from "./text";
 const FAQs = () => {
  
-    const phrases = [
-      " Frequently Asked Questions"
-     ];
-     
-     const textRef = useTextScramble(phrases);
   const [expandedItemIndex, setExpandedItemIndex] = useState<number | null>(
     null
   );
@@ -24,7 +19,7 @@ const FAQs = () => {
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            ><div className="text-white" ref={textRef}></div>
+            ><div className="text-white"> Frequently Asked Questions</div>
              
             </BinaryText>
           </div>

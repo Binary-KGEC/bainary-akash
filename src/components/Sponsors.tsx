@@ -6,11 +6,7 @@ import { sponsorItems } from "@/lib/config";
 import useTextScramble from "./text";
 
 const Sponsors = () => {
-  const phrases = [
-    "  Sponsors"
-   ];
-   
-   const textRef = useTextScramble(phrases);
+ 
   return (
     <PageSection>
       <div
@@ -22,7 +18,7 @@ const Sponsors = () => {
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            > <div className="text-white" ref={textRef}></div>
+            > <div className="text-white" >Sponsors</div>
              
             </BinaryText>
           </div>

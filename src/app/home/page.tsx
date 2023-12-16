@@ -1,18 +1,18 @@
-"use client";
-
-import React from "react";
-import About from "@/components/About";
-import FAQs from "@/components/FAQs";
-import Hero from "@/components/Hero";
-import MaxWidthWrapper from "@/components/MaxWidthWrapper";
-import Mentors from "@/components/Mentors";
-import Prizes from "@/components/Prizes";
-import Sponsors from "@/components/Sponsors";
-import Timeline from "@/components/Timeline";
-import Tracks from "@/components/Tracks";
-import Navbar from "@/components/Navbar";
+"use client"
+import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
-import Timeline2 from "@/components/Timeline copy";
+import dynamic from 'next/dynamic';
+import Footer from "@/components/Footer";
+const Navbar = dynamic(() => import('@/components/Navbar'));
+const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
+const Hero = dynamic(() => import('@/components/Hero'));
+const About = dynamic(() => import('@/components/About'));
+const Timeline2 = dynamic(() => import('@/components/Timeline copy'));
+const Tracks = dynamic(() => import('@/components/Tracks'));
+const Prizes = dynamic(() => import('@/components/Prizes'));
+const Mentors = dynamic(() => import('@/components/Mentors'));
+const Sponsors = dynamic(() => import('@/components/Sponsors'));
+const FAQs = dynamic(() => import('@/components/FAQs'));
 
 const Landing = () => {
   const [heroTopRef, heroTopInView] = useInView({
@@ -20,13 +20,19 @@ const Landing = () => {
     initialInView: true,
   });
 
+  useEffect(() => {
+    if (window && performance.navigation.type === performance.navigation.TYPE_RELOAD) {
+     
+      window.location.href = "/";
+    }
+  }, []);
+
   return (
     <>
-      <Navbar heroTopInView={heroTopInView} />
+      {typeof window !== 'undefined' && <Navbar heroTopInView={heroTopInView} />}
       <MaxWidthWrapper>
         <Hero heroTopRef={heroTopRef} />
         <About />
-        {/*<Timeline />*/}
         <Timeline2/>
         <Tracks />
         <Prizes />
@@ -34,6 +40,7 @@ const Landing = () => {
         <Sponsors />
         <FAQs />
       </MaxWidthWrapper>
+      <Footer/>
     </>
   );
 };
