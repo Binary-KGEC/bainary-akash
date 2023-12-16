@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useGlitch } from 'react-powerglitch'
 import useWindowSize from "@rooks/use-window-size";
 import ParticleImage, { ParticleOptions, Vector, forces, ParticleForce } from "react-particle-image";
+import logo from "../../public/binarylogo2.png"
 
 const particleOptions: ParticleOptions = {
   filter: ({ x, y, image }) => {
@@ -53,8 +54,7 @@ const About = () => {
     pulse: false,
   });
 
-  const phrases = [" About our Binary"];
-  const textRef = useTextScramble(phrases);
+ 
 
   return (
     <PageSection id="about">
@@ -64,7 +64,7 @@ const About = () => {
             className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold my-2 mb-8 "
             reveal
           >
-            <div className="text-white text-center " ref={textRef}></div>
+            <div className="text-white text-center ">About our Binary</div>
           </BinaryText>
           <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-16">
             <div className="md:col-span-5 flex flex-col items-start justify-start order-2 md:order-1 ">
@@ -78,9 +78,10 @@ const About = () => {
                 Hack4Bengal believes in building for the future, empowering people irrespective of their fields, to showcase their skills and creativity for solving real-life problems.
               </p>
             </div>
-            <div className="md:col-span-3 relative h-max opacity-70 gap-4 order-1 md:order-2">
+            <div className="md:col-span-3 flex h-max opacity-70 gap-4 order-1 md:order-2 items-center justify-center ">
+            <Image width={100} className="lg:hidden w-[60%] items-center justify-center" src={logo} alt="Binary Hackathon" />
               <ParticleImage
-                className="w-full md:w-[70%]"
+                className="w-full md:w-[70%] hidden lg:block"
                 src={"./binarylogo2.png"}
                 width={300}
                 scale={0.70}

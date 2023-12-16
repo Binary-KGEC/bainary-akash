@@ -1,116 +1,98 @@
-"use client";
-import Link from "next/link";
-
-import MaxWidthWrapper from "./MaxWidthWrapper";
-import { Button, buttonVariants } from "./ui/button";
+import { useState } from "react";
+import Image from "next/image";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { items } from "@/lib/config";
-import Image from "next/image";
 import NavItem from "./NavItem";
-import { useGlitch, GlitchHandle } from "react-powerglitch";
-import { Menu, X } from "lucide-react";
-import { useState } from "react";
-
+import MaxWidthWrapper from "./MaxWidthWrapper";
+import { Button } from "./ui/button";
+import logo from "../../public/thumbnail.png"
 const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   return (
-    <div className="">
-     
-     <div
+    <div>
+      <div
         className={cn("py-3 md:py-4 fixed top-0 z-50 w-full", {
-          "bg-black/0 transition-all duration-100": heroTopInView,
-          "bg-green-900 transition-all duration-100": !heroTopInView,
-          "bg-green-900": isOpen,
+          "backdrop-filter backdrop-blur-md bg-opacity-50 bg-green-950/40": heroTopInView,
+          "backdrop-filter backdrop-blur-md bg-opacity-50 bg-green-950/70 ": !heroTopInView,
+          "backdrop-filter backdrop-blur-md bg-opacity-50 bg-green-950/70": isOpen,
         })}
       >
-      <header>
-        <div>
-        <MaxWidthWrapper>
-          <div className="hidden md:flex justify-between ">
-            <div className="relative w-[150px] h-[60px]">
-              <Image
-                className="glitch"
-                src="/thumbnail.png"
-                alt="Binary Hackathon"
-                fill
-              />
-            </div>
+        <header>
+          <MaxWidthWrapper>
+            {/* Desktop and Tablet navigation */}
+            <div className="hidden lg:flex justify-between items-center">
+              <div className="relative w-[100px] h-[40px]">
+                <Image
+                  className="glitch"
+                  src={logo}
+                  alt="Binary Hackathon"
+                  
+                />
+              </div>
 
-            <ul className="flex justify-between gap-10 items-center">
-              {items.map((item) => {
-                return (
+              <ul className="flex gap-4">
+                {items.map((item) => (
                   <NavItem
                     key={item.name}
                     name={item.name}
                     link={item.link}
                     isActive={false}
+                  />
+                ))}
+              </ul>
+            </div>
+
+            {/* Mobile navigation */}
+            <div className="flex flex-col lg:hidden">
+              <div className="flex justify-between items-center">
+                <div className="relative w-[100px] h-[40px]">
+                  <Image
+                    className="glitch"
+                    src={logo}
+                    alt="Binary Hackathon"
                     
                   />
-                );
-              })}
-            </ul>
-          </div>
-        </MaxWidthWrapper>
-
-        <div className="flex flex-col md:hidden">
-          <MaxWidthWrapper>
-            <div className="flex justify-between">
-              <div className="relative w-[100px] h-[40px]">
-                <Image
-                  className="glitch"
-                  src="/thumbnail.png"
-                  alt="Binary Hackathon"
-                  fill
-                />
+                </div>
+                <Button
+                  variant="default"
+                  className="rounded-none bg-green-500 hover:bg-green-600"
+                  onFocus={() => setIsOpen(true)}
+                  onClick={() => setIsOpen((prev) => !prev)}
+                >
+                  {isOpen ? <X className="text-black" /> : <Menu className="text-black" />}
+                </Button>
               </div>
-              <Button
-                variant="default"
-                className="rounded-none bg-green-500 hover:bg-green-600"
-                onFocus={() => {
-                  setIsOpen(true);
-                }}
-                onClick={() => {
-                  setIsOpen((prev) => !prev);
-                }}
-              >
-                {isOpen ? (
-                  <X className="text-black" />
-                ) : (
-                  <Menu className="text-black" />
-                )}
-              </Button>
+
+              {/* Mobile menu */}
+              {isOpen && (
+                <div
+                  className={cn("absolute inset-x-0 top-full text-sm", {
+                    "animate-in fade-in-10 slide-in-from-top-5": !isOpen,
+                  })}
+                >
+                  <div className="absolute inset-0 top-1/2 shadow">
+                    <ul className="relative flex flex-col items-center gap-2 justify-around bg-black">
+                      {items.map((item) => (
+                        <NavItem
+                          key={item.name}
+                          name={item.name}
+                          link={item.link}
+                          isActive={false}
+                          setIsOpen={setIsOpen}
+                        />
+                      ))}
+                    </ul>
+                    <div className="h-[500px] bg-black"></div>
+                  </div>
+                </div>
+              )}
             </div>
           </MaxWidthWrapper>
-
-          {/* TODO: prevent scrolling while menu is open */}
-          {isOpen && (
-            <div
-              className={cn("absolute inset-x-0 top-full text-sm", {
-                "animate-in fade-in-10 slide-in-from-top-5": !isOpen,
-              })}
-            >
-              <div className="absolute inset-0 top-1/2 shadow">
-                <ul className="relative flex flex-col items-center gap-2 justify-around bg-black">
-                  {items.map((item) => {
-                    return (
-                      <NavItem
-                        key={item.name}
-                        name={item.name}
-                        link={item.link}
-                        isActive={false}
-                        setIsOpen={setIsOpen}
-                      />
-                    );
-                  })}
-                </ul>
-                <div className="h-[500px] bg-black"></div>
-              </div>
-            </div>
-          )}
-        </div></div>
-      </header>
-    </div></div>
+        </header>
+      </div>
+    </div>
   );
 };
 
