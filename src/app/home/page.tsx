@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import dynamic from 'next/dynamic';
 import Footer from "@/components/Footer";
+import Team from "@/components/Team";
 const Navbar = dynamic(() => import('@/components/Navbar'));
 const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
 const Hero = dynamic(() => import('@/components/Hero'));
@@ -37,6 +38,7 @@ const Landing = () => {
         <Tracks />
         <Prizes />
         <Mentors />
+        <Team/>
         <Sponsors />
         <FAQs />
       </MaxWidthWrapper>
