@@ -12,7 +12,6 @@ import Link from "next/link";
 import { Linkedin, Twitter } from "lucide-react";
 import { buttonVariants } from "./ui/button";
 import { cn } from "@/lib/utils";
-import Confetticomp from "./Confeetti";
 const spring = {
   type: "spring",
   stiffness: 300,
@@ -39,14 +38,15 @@ interface MemberComponentProps {
   twitterUrl:string;
 }
 
-
+// Styled component for the section
 const Section = styled.section<{ theme: { body: string } }>`
-  min-height: full;
-  width: full;
+  min-height: 10vh;
+  width: 100vw;
   background-color: ${(props) => props.theme.body};
   position: relative;
 `;
 
+// Styled component for the responsive card container
 const ResponsiveCardContainer = styled.div`
   width: 75%;
   margin: 2rem auto;
@@ -55,41 +55,44 @@ const ResponsiveCardContainer = styled.div`
   align-items: center;
   flex-wrap: wrap;
 
-  @media (max-width: 1200px) {
-    width: 100%;
-  }
-
   @media (max-width: 768px) {
     flex-direction: column;
-    width: 100%;
   }
 `;
 
 const Item = styled.div`
-  width: 90%; // Adjust as needed
+  width: calc(20rem - 4rem);
   padding: 1rem 0;
   color: white;
   margin: 2rem 1rem;
   position: relative;
-  transition: all 0.3s ease;
+  width: 15rem;
+transition: all 0.3s ease;
+ 
+ 
   border-radius: 20px;
-
   &:hover {
     transform: scale(1.1);
+    &:hover {
     .image-container {
-      transform: translateY(-2rem) scale(1.1);
+      transform: translateY(-2rem) scale(1.3);
     }
+  }
+    
   }
 `;
 
 const ImageContainer = styled.div`
-  width: 80%;
+  width: 15rem;
   margin: 0 1rem;
+ 
   border-radius: 20px;
   position: relative;
   transition: transform 0.3s ease;
-  cursor: pointer;
+cursor:pointer;
+ 
 `;
+
 // MemberComponent component definition
 const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", position = " " ,linkedinUrl="",twitterUrl=""}) => {
   const cardX = useMotionValue(0);
@@ -187,24 +190,26 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", po
 const Team: React.FC = () => {
   return (
     <PageSection id="tracks">
-      <Section>
-      <Confetticomp/>
     <div className="mt-[96px] md:mt-[116px]">
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
         <div className="text-white">Team</div>
       </BinaryText>
-
       <ResponsiveCardContainer className="">
-      <Confetticomp/>
+        {/* Use the extracted src property for the imgurl prop */}
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
-        <div className="mr-8 ml-8 md:mb-20">
-        <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" /></div>
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
+          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
+          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder"  twitterUrl="" linkedinUrl=""/>
+          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
+          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
+          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
+          
+          
+          
         {/* ... other MemberComponent instances */}
       </ResponsiveCardContainer>
-    </div></Section>
+    </div>
   </PageSection>
-);
+  );
 };
 
 export default Team;
