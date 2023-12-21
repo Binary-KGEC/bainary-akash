@@ -64,18 +64,18 @@ const About = () => {
             className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold my-2 mb-8 "
             reveal
           >
-            <div className="text-white text-center ">About our Binary</div>
+            <div className="text-white text-center  ">About our Binary</div>
           </BinaryText>
           <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-16">
             <div className="md:col-span-5 flex flex-col items-start justify-start order-2 md:order-1 ">
-              <h2 className="mb-4 text-lg font-bold uppercase text-green-400"> hi everyone</h2>
-              <p className="font-medium text-white">
+              <h2 className="mb-4  text-3xl uppercase text-green-400 font-pixelate font-bold"> hi everyone</h2>
+              <p className="font-bold text-white font-pixelate">
                 {/* about binary content */}
-                What started with three enthusiastic people in the year 2021, is now a community of over 1500 developers. Hack4Bengal has been growing from strength to strength and our aim is to go beyond the horizons and impact millions of tech talents by providing them with a platform to enhance their skills, collaborate and create. This time Hack4Bengal is back to leverage your expertise in the offline mode. See you there!
+                Binary is the annual hackathon of Kalyani Government Engineering College. It aims to be a stage for college students to showcase their creativity and resolve societal issues using technology. We hope to employ the current generation of innovators to think out of the box and bring transformative solutions to the forefront.
               </p>
-              <p className="font-medium mb-4 my-5 text-green-400">
+              <p className=" mb-4 my-5 text-green-400 font-pixelate font-bold">
                 {/* about content */}
-                Hack4Bengal believes in building for the future, empowering people irrespective of their fields, to showcase their skills and creativity for solving real-life problems.
+                We intend to host about 300 students with expertise in diverse domains of computer science. The BINARY will take place in the first half of March at the Kalyani Government Engineering College.
               </p>
             </div>
             <div className="md:col-span-3 flex h-max opacity-70 gap-4 order-1 md:order-2 items-center justify-center ">

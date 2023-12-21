@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                 </svg>
         </a>
     </div>
-    <div className='text-white font-pixelate text-center text-md hover:text-lg  hover:font-bold hover:text-white text-sm" ref={glitch.ref}' ref={glitch.ref}> <Link href="/PrisMa.pdf" target={'_blank'}>
+    <div className='text-white font-pixelate text-center text-md hover:text-lg  hover:font-bold hover:text-white text-sm" ref={glitch.ref}' ref={glitch.ref}> <Link href="/Hackathonbrochure.pdf" target={'_blank'}>
     Sponsorship Brochure
       </Link></div>
     <hr className="my-8 border-green-700 border-[2px] mr-20 ml-20" />

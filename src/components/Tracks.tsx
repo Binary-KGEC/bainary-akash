@@ -6,7 +6,7 @@ import useTextScramble from "./text";
 const Tracks = () => {
   return (
     <div id="tracks" className="mt-[96px] md:mt-[116px] flex justify-center items-center">
-      <div className="mt-40 text-center">
+      <div className="mt-20 text-center">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
           <div className="text-white">Tracks</div>
         </BinaryText>
