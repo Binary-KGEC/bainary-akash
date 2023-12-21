@@ -196,9 +196,9 @@ const Team: React.FC = () => {
       </BinaryText>
       <ResponsiveCardContainer className="">
         {/* Use the extracted src property for the imgurl prop */}
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
-          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
-          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder"  twitterUrl="" linkedinUrl=""/>
+        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 1" position="Position" twitterUrl="" linkedinUrl="" />
+          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="Demo Profile 2" position="Position" twitterUrl="" linkedinUrl="" />
+          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
           
           
           

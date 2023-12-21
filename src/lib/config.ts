@@ -115,27 +115,36 @@ export const sponsorItems = [
 
 export const faqItems = [
   {
-    question: "What is Binary?",
+    question: "Who can participate?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, expedita quo voluptatem quis commodi consectetur corrupti consequuntur dicta cupiditate. Voluptatibus culpa",
+      "Binary is open to anyone with a passion for technology and innovation. Whether you're a seasoned developer, designer, or a novice enthusiast, everyone is welcome to join and contribute (Generic, we know).",
   },
   {
-    question: "Who can participate in Binary?",
+    question: "Why should I participate?",
     answer:
-      "Lorem ipsum dolor xpedita quo voluptatem quis ta cupiditate. Voluptatibus culpa",
+      "There are many reasons why people attend hackathons: the challenge, the opportunity for creative expression, the networking, the community collaboration, the swag, and maybe even the prizes!",
   },
   {
-    question: "Is it offline?",
+    question: "Is there an entry fee?",
     answer:
-      "Lorem ipsum dolor si commodi consectetur corrupti consequuntur dicta cupiditate. Voluptatibus culpa",
+      "Nope, none of those stuff. In addition, we’ll have meals, snacks, and beverages onsite at the hackathon, in addition to swags and prizes.",
   },
   {
-    question: "What is the location?",
+    question: "What is the team size? Can I partipate without a team?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elitetur corrupti consequuntur dicta cupiditate. Voluptatibus culpa",
+      "The team size is specifically 4 members and unfortunately participants must be a member of a team to take part in Binary.",
   },
   {
-    question: "What is timeline?",
-    answer: "Lorem ipsum dolor sit amet consectetur adipisicing ulpa",
+    question: "What should I bring to the event?",
+    answer: "Bring your laptop, charger, any specific hardware you may need, and a positive attitude! Additionally, it's a good idea to bring personal items such as toiletries, a change of clothes, and anything else you might need for a comfortable and productive experience.",
   },
+  {
+    question:"How is the judging process conducted?",
+    answer:"Our judging process typically involves evaluating projects based on criteria such as creativity, functionality, innovation, and presentation. A panel of experienced judges will review and score each project to determine the winners.",
+  },
+  {
+    question:"I cannot travel, is there any way I could participate?",
+    answer:"Binary is an in-person hackathon, therefore online participation is not possible.",
+  }
+  
 ];

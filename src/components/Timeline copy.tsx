@@ -52,14 +52,14 @@ const Data2: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) 
       </figure>
       <motion.div  initial={{ opacity: 0, y: "36%" ,x:"36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3,delay:0.3 }} className="transform -top-[1px] -left-[160px] relative  inline-block w-[40px] h-[40px] bg-green-100 bg-opacity-60 bg z-10   "  />
+              transition={{ duration: 0.3,delay:0.3 }} className="transform -top-[1px] -left-[190px] relative  inline-block w-[40px] h-[40px] bg-green-100 bg-opacity-60 bg z-10   "  />
       <motion.div  initial={{ opacity: 0, y: "36%" ,x:"36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3, }} className="transform   py-2 px-4 relative inline-block w-[300px]  bg-green-700 z-10  "  style={{ pathLength: scrollYProgress }}>
+              transition={{ duration: 0.3, }} className="transform   py-2 px-4 relative inline-block w-[350px]  bg-green-700 z-10  "  style={{ pathLength: scrollYProgress }}>
       
        <motion.div  initial={{ opacity: 0, y: "36%" ,x:"36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3, }} className="transform  -mt-8 -ml-8 relative inline-block w-[300px]    bg-black   border-[3px] border-solid border-green-700 "  >
+              transition={{ duration: 0.3, }} className="transform  -mt-8 -ml-8 relative inline-block w-[350px]    bg-black   border-[3px] border-solid border-green-700 "  >
         <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-4 my-4 ">
           {head}{" "}
         </h3>{" "}
@@ -117,25 +117,25 @@ const Data: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps) =
       </figure>
       <motion.div  initial={{ opacity: 0, y: "-36%" ,x:"-36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3,delay:0.3 }}className="transform -top-[1px] -right-[160px] relative  inline-block w-[40px] h-[40px] bg-green-100 bg-opacity-60 bg z-10   "  />
+              transition={{ duration: 0.3,delay:0.3 }}className="transform -top-[1px] -right-[190px] relative  inline-block w-[40px] h-[40px] bg-green-100 bg-opacity-60 bg z-10   "  />
       <motion.div  initial={{ opacity: 0, y: "-36%" ,x:"-36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3, }}className="transform   py-2 px-4 relative inline-block w-[300px]    bg-green-700 z-10  "  style={{ pathLength: scrollYProgress }}>
+              transition={{ duration: 0.3, }}className="transform   py-2 px-4 relative inline-block w-[350px]    bg-green-700 z-10  "  style={{ pathLength: scrollYProgress }}>
       
        <motion.div  initial={{ opacity: 0, y: "-36%" ,x:"-36%"}}
               whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3, }}className="transform  -mt-8 -mr-8 relative inline-block w-[300px]    bg-black  border-[3px] border-solid border-green-700 "  >
+              transition={{ duration: 0.3, }}className="transform  -mt-8 -mr-8 relative inline-block w-[350px]    bg-black  border-[3px] border-solid border-green-700 "  >
         <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-4 my-4 ">
           {head}{" "}
         </h3>{" "}
         <a
-          className="capitalize font-small text-0.5xl font-pixelate text-green-100 mx-4 my-4 "
+          className="capitalize font-small text-0.5xl font-pixelate text-green-100  "
           href={links}
         ></a>
-        <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg text-white xs:text-sm mx-4 my-4 ">
+        <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg font-pixelate text-white xs:text-sm mx-4 my-4  opacity-60">
           {date}  {add}
         </span>
-        <p className="font-thin text-0.4xl  text-white sm:text-xl xs:text-lg w-full mx:text-sm mx-4 my-4 ">
+        <p className="font-thin text-lg  text-white sm:text-xl font-pixelate xs:text-lg w-full mx:text-sm mx-4 my-4 ">
           {des}
         </p>
       </motion.div></motion.div>
@@ -165,18 +165,22 @@ const Datamob: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps
               whileInView={{ opacity: 1, y: 0 ,x:0}}
               transition={{ duration: 0.3, }}> 
    <motion.div className="transform   py-2 px-4 relative inline-block w-fit
-  max-w-[300px]   bg-opacity-90  bg-green-700 z-10  mt-8 "  style={{ pathLength: scrollYProgress }}>
+  max-w-[350px]   bg-opacity-90  bg-green-700 z-10  mt-8 "  style={{ pathLength: scrollYProgress }}>
    
-    <motion.div className="transform  -mt-8 -ml-8 relative inline-block max-w-[300px]  w-fit  bg-black   border-[3px] border-solid border-green-700 "  >
-       <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-3 my-3 ">
-         {head}; </h3> <a className="capitalize font-small text-0.5xl font-pixelate text-green-100 mx-3 my-3" href={links}></a>
-      
-       <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg text-white xs:text-sm mx-3 my-3 ">
-         {date} | {add}
-       </span>
-       <p className="font-thin text-0.4xl  text-white sm:text-xl xs:text-lg w-full mx:text-sm mx-3 my-3 ">
-       {des}
-       </p>
+    <motion.div className="transform  -mt-8 -ml-8 relative inline-block max-w-[350px]  w-fit  bg-black   border-[3px] border-solid border-green-700 "  >
+    <h3 className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mx-4 my-4 ">
+          {head}{" "}
+        </h3>{" "}
+        <a
+          className="capitalize font-small text-0.5xl font-pixelate text-green-100  "
+          href={links}
+        ></a>
+        <span className="capitalize font-thin text-1.1xl  sm:text-xl xs:text-lg font-pixelate text-white xs:text-sm mx-4 my-4  opacity-60">
+          {date}  {add}
+        </span>
+        <p className="font-thin text-lg  text-white sm:text-xl font-pixelate xs:text-lg w-full mx:text-sm mx-4 my-4 ">
+          {des}
+        </p>
      </motion.div></motion.div></motion.div>
    </li>
  
@@ -214,27 +218,27 @@ const Timeline2 = () => {
               {/* Left side timeline items */}
               <div className="mt-[35%]">
               <Data
-                head="Registration to"
-                date="2023-01-01"
-                des="Boost your career without "
+                head="Registration Close"
+                date="March 15"
+                des="Registration close "
                 links="https://binary.com"
-                add="binary Address"
+                add=""
               /></div>
                <div className="mt-[47%]">
                <Data
-                head="Registration to"
-                date="2023-01-01"
-                des="Boost your career without "
+                head="Hackathon Start"
+                date="March 20"
+                des="Hackathon Start "
                 links="https://binary.com"
-                add="binary Address"
+                add=""
               /></div>
               <div className="mt-[46%]">
                <Data
-                head="Registration to"
-                date="2023-01-01"
-                des="Boost your career without "
+                head="Results"
+                date="March 21"
+                des="Results will be declared "
                 links="https://binary.com"
-                add="binary Address"
+                add=""
               /></div>
               {/* Add more Data components as needed */}
             </ul></div>
@@ -280,46 +284,46 @@ const Timeline2 = () => {
 <motion.div style={{scaleY:scrollYProgress}} className="absolute -left-11 top-0 w-[4px] h-full bg-green-600 origin-top mx:w-[3px] lg:w-[4px] xs:w-[2px] mx:left-[30px]   lg:left-9 xs:left-[20px]"/>
 <ul className="w-full flex flex-col items-start justify-between ml-4  xs:ml-2">
 <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Registration Start"
+              date="January 16"
+              des="Registration start "
               links="https://binary.com"
-              add="binary Address"
+              add=""
             />
             <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Registration Close"
+              date="March 15"
+              des="Registration close "
               links="https://binary.com"
-              add="binary Address"
+              add=""
             />
             <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Online Quiz"
+              date="March 15"
+              des="Online quiz round"
               links="https://binary.com"
-              add="binary Address"
+              add=""
             />
             <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Hackathon Start"
+              date="March 20"
+              des="Hackathon Start"
               links="https://Akash.com"
-              add="binary Address"
+              add=""
             />
             <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Submission"
+              date="March 21"
+              des="Last date of submission"
               links="https://binary.com"
-              add="binary Address"
+              add=""
             />
             <Datamob
-              head="Resistration to"
-              date="2023-01-01"
-              des="Boost your career without disturbing your daily work schedule. "
+              head="Results"
+              date="March 21"
+              des="Results will be declared"
               links="https://binary.com"
-              add="binary Address"
+              add=""
             />
 </ul>
       </div></div>

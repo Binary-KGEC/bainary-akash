@@ -5,6 +5,9 @@ import useTextScramble from "./text";
 import styled from "styled-components";
 import * as demoProfileImg from "../../public/demoprofile.png";
 import * as demoProfileImg2 from "../../public/demoprofile.png";
+import * as position1 from "../../public/Asset 2.png";
+import * as position2 from "../../public/Asset 3.png";
+import * as position3 from "../../public/Asset 4.png";
 import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react"
 import { motion, useMotionValue, useTransform } from "framer-motion";
@@ -29,6 +32,11 @@ const spring = {
 
 interface MemberComponentProps {
   imgurl: {
+    src: string;
+    width: number;
+    height: number;
+  };
+  imgurl2: {
     src: string;
     width: number;
     height: number;
@@ -91,7 +99,7 @@ const ImageContainer = styled.div`
   cursor: pointer;
 `;
 // MemberComponent component definition
-const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", position = " " ,linkedinUrl="",twitterUrl=""}) => {
+const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl,imgurl2, name = "", position = " " ,linkedinUrl="",twitterUrl=""}) => {
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
   const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
@@ -177,6 +185,14 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", po
             </Link>
           </div>
           </Item>
+
+          <Image
+                className="w-[70px] -top-[0px] absolute flex flex-col items-center justify-center"
+                src={imgurl2.src} // Use the imported image URL here
+                alt={name}
+                width={imgurl2.width} // Specify the width
+                height={imgurl2.height} // Specify the height
+              />
         </motion.div>
       </motion.div>
     </motion.div>
@@ -196,10 +212,10 @@ const Team: React.FC = () => {
 
       <ResponsiveCardContainer className="">
       
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
-        <div className="mr-8 ml-8 md:mb-20">
-        <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" /></div>
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
+        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 1 " position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position1.default.src, width: 10, height: 10 }}/>
+        <div className="mr-8 ml-8 ">
+        <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="Demo Profile 2" position="" twitterUrl="" linkedinUrl=""imgurl2={{ src: position2.default.src, width: 10, height: 10}} /></div>
+        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 3" position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position3.default.src, width: 10, height: 10 }}/>
         {/* ... other MemberComponent instances */}
       </ResponsiveCardContainer>
     </div></Section>
