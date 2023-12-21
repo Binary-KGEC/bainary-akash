@@ -191,7 +191,7 @@ const Team: React.FC = () => {
       {/*<Confetticomp/>*/}
     <div className="mt-[96px] md:mt-[116px]">
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-        <div className="text-white text-center">Prizes</div>
+        <div className="text-white/75 text-center">Prizes</div>
       </BinaryText>
 
       <ResponsiveCardContainer className="">

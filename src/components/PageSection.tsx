@@ -15,7 +15,7 @@ const PageSection = ({
     <div
       id={id}
       className={cn(
-        "min-h-[calc(100dvh-96px)] md:min-h-[calc(100dvh-116px)] py-3 md:py-5",
+        "min-h-[calc(100dvh-96px)] md:min-h-[calc(50dvh-116px)] py-3 md:py-5 ",
         className
       )}
     >
