@@ -4,6 +4,8 @@ import { useInView } from "react-intersection-observer";
 import dynamic from 'next/dynamic';
 import Footer from "@/components/Footer";
 import Team from "@/components/Team";
+import { motion } from 'framer-motion';
+import Transition from "@/components/Animation";
 const Navbar = dynamic(() => import('@/components/Navbar'));
 const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
 const Hero = dynamic(() => import('@/components/Hero'));
@@ -29,8 +31,12 @@ const Landing = () => {
   }, []);
 
   return (
-    <>
-      {typeof window !== 'undefined' && <Navbar heroTopInView={heroTopInView} />}
+    <> <Transition/><motion.div  initial={{ opacity: 0, y: 100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4, delay: 1.2 }}>
+      {typeof window !== 'undefined' && <motion.div  initial={{ opacity: 0, y: -100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 1.2 }}><Navbar heroTopInView={heroTopInView} /></motion.div>}
       <MaxWidthWrapper>
         <Hero heroTopRef={heroTopRef} />
         <About />
@@ -42,7 +48,9 @@ const Landing = () => {
         <Sponsors />
         <FAQs />
       </MaxWidthWrapper>
-      <Footer/>
+      <motion.div  initial={{ opacity: 0, y: 100 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 1.2 }}><Footer/></motion.div> </motion.div>
     </>
   );
 };
