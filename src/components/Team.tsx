@@ -189,19 +189,16 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", po
 // Team component definition
 const Team: React.FC = () => {
   return (
-    <PageSection id="tracks">
+    <PageSection id="team">
     <div className="mt-[96px] md:mt-[116px]">
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-        <div className="text-white">Team</div>
+        <div className="text-white text-center">Team</div>
       </BinaryText>
       <ResponsiveCardContainer className="">
         {/* Use the extracted src property for the imgurl prop */}
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
           <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder"  twitterUrl="" linkedinUrl=""/>
-          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
-          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
-          <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl=""/>
           
           
           

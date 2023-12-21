@@ -186,16 +186,16 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", po
 // Team component definition
 const Team: React.FC = () => {
   return (
-    <PageSection id="tracks">
+    <PageSection id="prizes">
       <Section>
-      <Confetticomp/>
+      {/*<Confetticomp/>*/}
     <div className="mt-[96px] md:mt-[116px]">
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-        <div className="text-white">Team</div>
+        <div className="text-white text-center">Prizes</div>
       </BinaryText>
 
       <ResponsiveCardContainer className="">
-      <Confetticomp/>
+      
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" />
         <div className="mr-8 ml-8 md:mb-20">
         <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="demo1" position="founder" twitterUrl="" linkedinUrl="" /></div>

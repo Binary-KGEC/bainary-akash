@@ -115,7 +115,6 @@ export default function Home() {
   return (
     <>
       <div className="bg-transparent w-full">
-        
       <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="relative flex-1">

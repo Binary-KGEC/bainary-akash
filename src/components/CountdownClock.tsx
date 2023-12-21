@@ -39,7 +39,7 @@ const CountdownClock: React.FC = () => {
   });
 
   const [countdownDate, setCountdownDate] = useState<number>(
-    new Date("1/23/2024").getTime()
+    new Date("2/16/2024").getTime()
   );
 
   const [state, setState] = useState<CountdownState>({

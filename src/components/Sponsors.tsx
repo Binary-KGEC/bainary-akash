@@ -18,7 +18,7 @@ const Sponsors = () => {
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            > <div className="text-white" >Sponsors</div>
+            > <div className="text-white text-center" >Sponsors</div>
              
             </BinaryText>
           </div>

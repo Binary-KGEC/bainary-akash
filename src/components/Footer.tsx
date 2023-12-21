@@ -1,6 +1,8 @@
 
 "use client";
+import Link from 'next/link';
 import { cn } from "@/lib/utils";
+import { useRouter } from 'next/navigation';
 import { Button } from "./ui/button";
 import styles from "./NavItem.module.css";
 import React, { useState, useRef, Dispatch, SetStateAction } from "react";
@@ -8,8 +10,14 @@ import { useGlitch } from "react-powerglitch";
 import MaxWidthWrapper from "./MaxWidthWrapper";
 import Image from "next/image";
 import logo from "../../public/thumbnail.png"
+
 const Footer: React.FC = () => {
-  
+  const router = useRouter();
+
+  const openPdfInNewTab = () => {
+    window.open('/PrisMa.pdf', '_blank');
+  };
+
   const glitch = useGlitch({
     playMode: "hover",
     createContainers: true,
@@ -55,6 +63,7 @@ const Footer: React.FC = () => {
         <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#track">Tracks</a>
         <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#prizes">Prizes</a>
         <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#mentors">Mentors</a>
+        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#team">Team</a>
         <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#faqs">Faqs</a>
     </nav>
 
@@ -81,6 +90,9 @@ const Footer: React.FC = () => {
                 </svg>
         </a>
     </div>
+    <div className='text-white font-pixelate text-center text-md hover:text-lg  hover:font-bold hover:text-white text-sm" ref={glitch.ref}' ref={glitch.ref}> <Link href="/PrisMa.pdf" target={'_blank'}>
+    Sponsorship Brochure
+      </Link></div>
     <hr className="my-8 border-green-700 border-[2px] mr-20 ml-20" />
     <p className="text-center text-white/60 font-medium ">&copy; {new Date().getFullYear()} Binary. All rights reserved.</p>
 </footer>  );
