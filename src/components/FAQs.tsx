@@ -19,7 +19,7 @@ const FAQs = () => {
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            ><div className="text-white"> Frequently Asked Questions</div>
+            ><div className="text-white text-center"> Frequently Asked Questions</div>
              
             </BinaryText>
           </div>

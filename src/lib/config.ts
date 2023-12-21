@@ -24,6 +24,10 @@ export const items = [
     link: "#mentors",
   },
   {
+    name: "Team",
+    link: "#team",
+  },
+  {
     name: "Sponsors",
     link: "#sponsors",
   },

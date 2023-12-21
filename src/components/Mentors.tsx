@@ -6,6 +6,8 @@ import PageSection from "./PageSection";
 import Marquee from "react-fast-marquee";
 import demoProfileImg from "../../public/demoprofile.png";
 import demoProfileImg2 from "../../public/demoprofile.png";
+import TypeAnimation2 from "./Textanimation";
+import { TypeAnimation } from "react-type-animation";
 
 const MENTOR_INFO = [
   {
@@ -73,13 +75,17 @@ const Mentors = () => {
         <BinaryText
           className="text-white font-pixelate text-[2rem] md:text-[3rem] text-center"
           reveal
-        >
-          Mentors
+        ><TypeAnimation2 text=" Mentors"/>
+         
         </BinaryText>
 
-        <span className="font-pixelate text-white md:text-[1.5rem]">
-          Meet our amazing mentors
-        </span>
+        <div className="font-pixelate text-green-500 md:text-[1.5rem] text-center font-bold">
+        <TypeAnimation
+                            sequence={[500, `Meet our amazing mentors`]}
+                            speed={80}
+                         />
+          
+        </div>
 
         <div className="mt-10">
           <div className="flex items-center">
