@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import BinaryText from "./BinaryText";
 import MentorCard from "./MentorCard";
-import PageSection from "./PageSection";
+import PageSection from './PageSection';
 import Marquee from "react-fast-marquee";
 import demoProfileImg from "../../public/demoprofile.png";
 import demoProfileImg2 from "../../public/demoprofile.png";
@@ -68,26 +68,23 @@ const MENTOR_INFO = [
   },
 ];
 
+
 const Mentors = () => {
   return (
-    <PageSection id="mentors">
+    <PageSection id="mentors" className="text-center">
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText
-          className="text-white font-pixelate text-[2rem] md:text-[3rem] text-center"
+          className="text-white font-pixelate text-[2rem] md:text-[3rem]"
           reveal
-        ><TypeAnimation2 text=" Mentors"/>
-         
+        >
+          <TypeAnimation2 text=" Mentors" />
         </BinaryText>
 
-        <div className="font-pixelate text-green-500 md:text-[1.5rem] text-center font-bold">
-        <TypeAnimation
-                            sequence={[500, `Meet our amazing mentors`]}
-                            speed={80}
-                         />
-          
+        <div className="font-pixelate text-green-500 md:text-[1.5rem] font-bold mt-7">
+          <TypeAnimation sequence={[500, `Meet our amazing mentors`]} speed={80} />
         </div>
 
-        <div className="mt-10">
+        <div className="mt-20 mx-auto">
           <div className="flex items-center">
             <Marquee gradient={false} pauseOnHover={true} direction="left" speed={70}>
               {MENTOR_INFO.map((mentor) => (

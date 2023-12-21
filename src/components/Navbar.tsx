@@ -57,11 +57,11 @@ const Navbar = ({ heroTopInView }: { heroTopInView: boolean }) => {
                 </div>
                 <Button
                   variant="default"
-                  className="rounded-none bg-green-500 hover:bg-green-600"
+                  className="rounded-none bg-transparent hover:bg-green-950/25"
                   onFocus={() => setIsOpen(true)}
                   onClick={() => setIsOpen((prev) => !prev)}
                 >
-                  {isOpen ? <X className="text-black" /> : <Menu className="text-black" />}
+                  {isOpen ? <X className="text-white text-lg" /> : <Menu className="text-white text-lg" />}
                 </Button>
               </div>
 

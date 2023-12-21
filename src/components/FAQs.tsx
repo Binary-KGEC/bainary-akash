@@ -13,7 +13,7 @@ const FAQs = () => {
 
   return (
     <PageSection>
-      <div id="faqs" className="flex flex-col mb-20 sm:mb-20 text-white">
+      <div id="faqs" className="flex flex-col items-center justify-center mb-20 sm:mb-20 text-white">
         <div>
           <div className="mt-[96px] md:mt-[116px]">
             <BinaryText

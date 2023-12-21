@@ -11,10 +11,10 @@ const Sponsors = () => {
     <PageSection>
       <div
         id="sponsors"
-        className="flex flex-col mb-20 sm:mb-20 text-white font-pixelate"
+        className="flex flex-col mb-10 sm:mb-10 text-white font-pixelate"
       >
         <div>
-          <div className="mt-[96px] md:mt-[116px]">
+          <div className="mt-[96px] md:mt-[116px] mb-20">
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
