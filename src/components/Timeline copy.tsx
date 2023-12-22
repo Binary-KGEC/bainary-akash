@@ -168,10 +168,7 @@ const Datamob: React.FC<DataProps> = ({ head, date, des, links, add }: DataProps
      </svg><svg className="absolute left-[20px] top-[5px] " height="15" viewBox="0 0 20 20">
        <path className="animate-pulse stroke-1 fill-green-100"viewBox="0 0 20 20"   d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" /></svg>
    </figure>
-    <motion.div  initial={{ opacity: 0, y: "36%" ,x:"36%"}}
-    viewport={{ once: true, amount: 0.8 }}
-              whileInView={{ opacity: 1, y: 0 ,x:0}}
-              transition={{ duration: 0.3, }}
+    <motion.div  
               className="w-fit"> 
               
    <motion.div className="transform   py-2 px-4 relative inline-block 
