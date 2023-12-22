@@ -38,7 +38,7 @@ const Landing = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 1.2 }}><Navbar heroTopInView={heroTopInView} /></motion.div>}
       <MaxWidthWrapper>
-        <Hero heroTopRef={heroTopRef} />
+        {<Hero heroTopRef={heroTopRef} />}
         <About />
         <Timeline2/>
         <Tracks />

@@ -86,38 +86,35 @@ const CountdownClock: React.FC = () => {
   }, [setNewTime]);
 
   return (
-    <div
-
-      className="w-full mx-auto "
-    >
-      <div className={cn("font-pixelate", styles.countdownWrapper)}>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">{state.days || "0"}</div>
-          <small className="time-text">Days</small>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">:</div>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">{state.hours || "00"}</div>
-          <small className="time-text">Hours</small>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">:</div>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">{state.minutes || "00"}</div>
-          <small className="time-text">Minutes</small>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">:</div>
-        </div>
-        <div className={styles.timeSection}>
-          <div className="text-[1rem] md:text-[3rem]">{state.seconds || "00"}</div>
-          <small className="time-text">Seconds</small>
-        </div>
+    <div className="w-full mx-auto">
+    <div className={cn("font-pixelate", styles.countdownWrapper)}>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">{state.days || "0"}</div>
+        <small className="time-text">Days</small>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">:</div>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">{state.hours || "00"}</div>
+        <small className="time-text">Hours</small>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">:</div>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">{state.minutes || "00"}</div>
+        <small className="time-text">Minutes</small>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">:</div>
+      </div>
+      <div className={styles.timeSection}>
+        <div className="text-bold md:text-3xl">{state.seconds || "00"}</div>
+        <small className="time-text">Seconds</small>
       </div>
     </div>
+  </div>
   );
 };
 

@@ -46,10 +46,9 @@ const Section = styled.section<{ theme: { body: string } }>`
   position: relative;
 `;
 
-// Styled component for the responsive card container
 const ResponsiveCardContainer = styled.div`
-  width: 75%;
-  margin: 2rem auto;
+  width: fit-content;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,31 +56,32 @@ const ResponsiveCardContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: center;
+    text-align: center; /* Center text within each card */
   }
 `;
 
 const Item = styled.div`
-  width: calc(20rem - 4rem);
+  width: 15rem;
   padding: 1rem 0;
   color: white;
   margin: 2rem 1rem;
   position: relative;
-  width: 15rem;
-transition: all 0.3s ease;
- 
- 
+  transition: all 0.3s ease;
   border-radius: 20px;
+
   &:hover {
     transform: scale(1.1);
-    &:hover {
     .image-container {
       transform: translateY(-2rem) scale(1.3);
     }
   }
-    
-  }
-`;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+`;
 const ImageContainer = styled.div`
   width: 15rem;
   margin: 0 1rem;
@@ -148,7 +148,7 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", po
       perspective: 800, // Set perspective on the card
     }}
     transition={{ velocity: 0 }}>
-   <Item className="bg-green-950/40 flex flex-col items-center justify-center image-container">
+   <Item className="bg-green-950/40 flex flex-col items-center justify-center image-container w-[13rem]">
             <ImageContainer className="w-[15rem] flex flex-col items-center justify-center image-container bg">
               <Image
                 className="w-[130px] h-[130px] flex flex-col items-center justify-center"
@@ -194,14 +194,11 @@ const Team: React.FC = () => {
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
         <div className="text-white text-center">Team</div>
       </BinaryText>
-      <ResponsiveCardContainer className="">
+      <ResponsiveCardContainer className="flex justify-center items-center">
         {/* Use the extracted src property for the imgurl prop */}
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 1" position="Position" twitterUrl="" linkedinUrl="" />
           <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="Demo Profile 2" position="Position" twitterUrl="" linkedinUrl="" />
           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-          
-          
-          
         {/* ... other MemberComponent instances */}
       </ResponsiveCardContainer>
     </div>

@@ -56,7 +56,7 @@ const Section = styled.section<{ theme: { body: string } }>`
 `;
 
 const ResponsiveCardContainer = styled.div`
-  width: 75%;
+  width:fit-content;
   margin: 2rem auto;
   display: flex;
   justify-content: center;
@@ -67,14 +67,14 @@ const ResponsiveCardContainer = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 864px) {
     flex-direction: column;
     width: 100%;
   }
 `;
 
 const Item = styled.div`
-  width: 90%; // Adjust as needed
+  width: 15rem; // Adjust as needed
   padding: 1rem 0;
   color: white;
   margin: 2rem 1rem;
@@ -210,10 +210,10 @@ const Team: React.FC = () => {
         <div className="text-white/75 text-center">Prizes</div>
       </BinaryText>
 
-      <ResponsiveCardContainer className="">
+      <ResponsiveCardContainer className="w-fit">
       
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 1 " position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position1.default.src, width: 10, height: 10 }}/>
-        <div className="mr-8 ml-8 ">
+        <div className=" ">
         <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="Demo Profile 2" position="" twitterUrl="" linkedinUrl=""imgurl2={{ src: position2.default.src, width: 10, height: 10}} /></div>
         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 3" position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position3.default.src, width: 10, height: 10 }}/>
         {/* ... other MemberComponent instances */}

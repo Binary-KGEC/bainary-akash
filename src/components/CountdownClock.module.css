@@ -1,9 +1,9 @@
-
+/* Common styles for all devices */
 .countdownWrapper {
-    width: 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
-  margin: 0 -8px 0 -8px;
+  margin: 0 auto;
 }
 
 .timeSection {
@@ -16,17 +16,14 @@
 }
 
 .time {
-    margin: 0;
+  margin: 0;
   font-size: 60px;
   font-weight: 800 !important;
 }
 
 .small {
-    font-size: 18px;
+  font-size: 18px;
 }
-
-
-
 
 .string {
   position: absolute;
@@ -40,7 +37,8 @@
 }
 
 .swiper {
-  width: 240px;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 240px; /* Added max-width for smaller screens */
   height: 320px;
 }
 
@@ -54,66 +52,17 @@
   color: #fff;
 }
 
-.swiper-slide:nth-child(1n) {
-  background-color: rgb(206, 17, 17);
+/* Media queries for responsiveness */
+@media only screen and (min-width: 768px) {
+  /* Styles for tablets and larger screens */
+  .swiper {
+    max-width: 400px;
+  }
 }
 
-.swiper-slide:nth-child(2n) {
-  background-color: rgb(0, 140, 255);
-}
-
-.swiper-slide:nth-child(3n) {
-  background-color: rgb(10, 184, 111);
-}
-
-.swiper-slide:nth-child(4n) {
-  background-color: rgb(211, 122, 7);
-}
-
-.swiper-slide:nth-child(5n) {
-  background-color: rgb(118, 163, 12);
-}
-
-.swiper-slide:nth-child(6n) {
-  background-color: rgb(180, 10, 47);
-}
-
-.swiper-slide:nth-child(7n) {
-  background-color: rgb(35, 99, 19);
-}
-
-.swiper-slide:nth-child(8n) {
-  background-color: rgb(0, 68, 255);
-}
-
-.swiper-slide:nth-child(9n) {
-  background-color: rgb(218, 12, 218);
-}
-
-.swiper-slide:nth-child(10n) {
-  background-color: rgb(54, 94, 77);
-}
-/* styles.css */
-
-/* Define your transition classes */
-.transition-group {
-  position: relative;
-}
-
-.fade-enter {
-  opacity: 0.01;
-}
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  transition: opacity 300ms ease-in;
-}
-
-.fade-exit {
-  opacity: 1;
-}
-
-.fade-exit.fade-exit-active {
-  opacity: 0.01;
-  transition: opacity 300ms ease-in;
+@media only screen and (min-width: 992px) {
+  /* Styles for desktops and larger screens */
+  .swiper {
+    max-width: 600px;
+  }
 }
