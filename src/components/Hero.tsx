@@ -35,7 +35,7 @@ const Hero = ({ heroTopRef }: { heroTopRef: (node?: Element | null | undefined) 
           <h1 className="text-green-500 text-center mt-3 font-pixelate font-bold">
             <TypeAnimation2 text="Binary Hackathon starts in" />
           </h1>
-          <div className="flex justify-center">
+          <div className="flex justify-center w-[60%]">
             <CountdownClock />
           </div>
         </div>

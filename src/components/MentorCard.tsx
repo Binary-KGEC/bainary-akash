@@ -18,10 +18,10 @@ transition: all 0.3s ease;
  
 border-radius: 20px;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1);
     &:hover {
     .image-container {
-      transform: translateY(-2rem) scale(1.3);
+      transform: translateY(-2rem) scale(1.1);
     }
   }
     
@@ -53,7 +53,7 @@ const MentorCard = ({
   }) => {
     
     return (
-      <Item className="w-30 h-62 md:w-64 md:h-76  scale-90 flex flex-col justify-between rounded-sm mx-0 md:mx-5 hover:scale-100 transition-transform duration-300 bg-green-950/40  items-center  image-container">
+      <Item className="w-30 md:w-64   scale-90 flex flex-col justify-between rounded-sm mx-0 md:mx-5 hover:scale-100 transition-transform duration-300 bg-green-950/40  items-center  image-container">
       
         <ImageContainer className=" py-3 md:py-7 w-[15rem] flex flex-col items-center justify-center image-container ">
       
