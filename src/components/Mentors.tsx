@@ -4,8 +4,8 @@ import BinaryText from "./BinaryText";
 import MentorCard from "./MentorCard";
 import PageSection from './PageSection';
 import Marquee from "react-fast-marquee";
-import demoProfileImg from "../../public/demoprofile.png";
-import demoProfileImg2 from "../../public/demoprofile.png";
+import demoProfileImg from "../../public/proakash.jpg";
+import demoProfileImg2 from "../../public/proakash.jpg";
 import TypeAnimation2 from "./Textanimation";
 import { TypeAnimation } from "react-type-animation";
 

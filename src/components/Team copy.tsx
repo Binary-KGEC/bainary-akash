@@ -376,10 +376,10 @@ const Mentors: React.FC = () => {
 
 
   return (
-<PageSection id="team">
+<PageSection id="mentors">
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-          <div className="text-white text-center">Team</div>
+          <div className="text-white text-center">Mentors</div>
         </BinaryText>
         <Slider {...sliderSettings} className="lg:mr-[4%] mr-10 ml-10 flex justify-center items-center lg:ml-[4%]">
           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 1" position="Position" twitterUrl="" linkedinUrl="" />
