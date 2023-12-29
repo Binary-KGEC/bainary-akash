@@ -445,7 +445,7 @@ const particlesLoaded = useCallback(async (container: Container | undefined) => 
             "1",
             
           ],
-          font: "SFPixelate",
+          font: "sfPixelate",
           style: "",
           weight: "400",
           fill: true

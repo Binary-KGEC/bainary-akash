@@ -2,10 +2,12 @@
 import { useEffect } from "react";
 import { useInView } from "react-intersection-observer";
 import dynamic from 'next/dynamic';
-import Footer from "@/components/Footer";
-import Team from "@/components/Team";
+
+
 import { motion } from 'framer-motion';
 import Transition from "@/components/Animation";
+import Mentors from "@/components/Mentors";
+
 const Navbar = dynamic(() => import('@/components/Navbar'));
 const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
 const Hero = dynamic(() => import('@/components/Hero'));
@@ -13,10 +15,11 @@ const About = dynamic(() => import('@/components/About'));
 const Timeline2 = dynamic(() => import('@/components/Timeline copy'));
 const Tracks = dynamic(() => import('@/components/Tracks'));
 const Prizes = dynamic(() => import('@/components/Prizes'));
-const Mentors = dynamic(() => import('@/components/Mentors'));
+const Mentor = dynamic(() => import('@/components/Team copy'));
+const Team = dynamic(() => import('@/components/Team'));
 const Sponsors = dynamic(() => import('@/components/Sponsors'));
 const FAQs = dynamic(() => import('@/components/FAQs'));
-
+const Footer = dynamic(() => import('@/components/Footer'));
 const Landing = () => {
   const [heroTopRef, heroTopInView] = useInView({
     threshold: 0.5,
@@ -43,7 +46,7 @@ const Landing = () => {
         <Timeline2/>
         <Tracks />
         <Prizes />
-        <Mentors />
+        <Mentor/>
         <Team/>
         <Sponsors />
         <FAQs />
