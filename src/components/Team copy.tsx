@@ -382,14 +382,14 @@ const Mentors: React.FC = () => {
 
 
   return (
-<PageSection id="team">
+<PageSection id="mentors">
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-          <div className="text-white text-center">Team</div>
+          <div className="text-white text-center">Mentors</div>
           
         </BinaryText>
         <div className="font-pixelate text-green-500 md:text-[1.5rem] font-bold mt-7 text-center">
-          {/*<TypeAnimation sequence={[500, `Meet our amazing mentors`]} speed={80} />*/}
+          <TypeAnimation sequence={[500, `Meet our amazing mentors`]} speed={80} />
         </div>
         <div className="mt-20 md:mt-10 mx-auto">
         <Slider {...sliderSettings} className="lg:mr-[4%] mr-8 ml-8 flex justify-center items-center lg:ml-[4%]">

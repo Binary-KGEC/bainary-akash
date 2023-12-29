@@ -32,7 +32,7 @@ const Sponsors = () => {
                 <h2 className="text-[1.5em] md:text-[2rem] text-center font-bold mb-8">
                   {sponsorItem.title}
                 </h2>
-                <div className="w-[calc(80vw)] md:w-[calc(60vw)] backdrop-blur-sm bg-black/5 p-5 grid grid-cols-1 gap-4 border-2 rounded-lg border-sky-200 shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#1C1,0_0_15px_#0A0,0_0_30px_#060]">
+                <div className="w-[calc(80vw)] md:w-[calc(60vw)] backdrop-blur-sm bg-black/5 p-5 grid grid-cols-1 gap-4 border-2 rounded-lg border-green-700 shadow-md shadow-green-700/65">
                   {sponsorItem.sponsors.length == 0 ? (
                     sponsorItem.sponsors.map((sponsor) => (
                       <div className="text-center" key={sponsor.link}>
