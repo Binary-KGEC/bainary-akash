@@ -1,13 +1,13 @@
+// Import necessary modules and components
 "use client"
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { useInView } from "react-intersection-observer";
 import dynamic from 'next/dynamic';
 
-
 import { motion } from 'framer-motion';
 import Transition from "@/components/Animation";
-import Mentors from "@/components/Mentors";
 
+// Lazy-loaded components
 const Navbar = dynamic(() => import('@/components/Navbar'));
 const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
 const Hero = dynamic(() => import('@/components/Hero'));
@@ -20,6 +20,7 @@ const Team = dynamic(() => import('@/components/Team'));
 const Sponsors = dynamic(() => import('@/components/Sponsors'));
 const FAQs = dynamic(() => import('@/components/FAQs'));
 const Footer = dynamic(() => import('@/components/Footer'));
+
 const Landing = () => {
   const [heroTopRef, heroTopInView] = useInView({
     threshold: 0.5,
@@ -28,34 +29,60 @@ const Landing = () => {
 
   useEffect(() => {
     if (window && performance.navigation.type === performance.navigation.TYPE_RELOAD) {
-     
       window.location.href = "/";
     }
   }, []);
 
   return (
-    <> <Transition/><motion.div  initial={{ opacity: 0, y: 100 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: 1.2 }}>
-      {typeof window !== 'undefined' && <motion.div  initial={{ opacity: 0, y: -100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1.2 }}><Navbar heroTopInView={heroTopInView} /></motion.div>}
-      <MaxWidthWrapper>
-        {<Hero heroTopRef={heroTopRef} />}
-        <About />
-        <Timeline2/>
-        <Tracks />
-        <Prizes />
-        <Mentor/>
-        <Team/>
-        <Sponsors />
-        <FAQs />
-      </MaxWidthWrapper>
-      <motion.div  initial={{ opacity: 0, y: 100 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 1.2 }}><Footer/></motion.div> </motion.div>
+    <>
+      <Transition />
+      <motion.div
+          initial={{ opacity: 0 }}  // Set initial opacity to 1
+          animate={{ opacity: 1 }}  // Animate opacity to 0
+          transition={{ duration: 3 }}  // Adjust duration and delay as needed
+        >
+     
+        {typeof window !== 'undefined' && (
+         
+            <Navbar heroTopInView={heroTopInView} />
+          
+        )}
+        <MaxWidthWrapper>
+        <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 3,  }}
+      >
+          <Hero heroTopRef={heroTopRef} />
+          <About />
+          <Timeline2 />
+          <Tracks />
+          <Prizes />
+          <Mentor />
+          <Team />
+          <Sponsors />
+          <FAQs />
+          </motion.div>
+        </MaxWidthWrapper>
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 3 }}
+        >
+          <Footer />
+        </motion.div>
+       
+          {/* This div will fade out the entire page after a delay */}
+        </motion.div>
+     
     </>
   );
 };
 
-export default Landing;
+const App = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <Landing />
+  </Suspense>
+);
+
+export default App;
