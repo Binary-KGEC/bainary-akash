@@ -16,7 +16,7 @@ import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import logo from "../../public/binarylogo2.png"
-
+import { TypeAnimation } from "react-type-animation";
 
 
   // Custom arrow component for previous
@@ -77,7 +77,12 @@ transition: all 0.3s ease;
  
 border-radius: 20px;
   &:hover {
-    transform: scale(1);
+    transform: scale(0.95);
+    @media (max-width: 768px) {
+    
+    transform:  scale(0.8);
+
+}
     &:hover {
     .image-container {
       transform: translateY(-2rem) translateX(1rem) scale(0.6);
@@ -100,11 +105,12 @@ const ProductCard = styled.div`
 .card {
     position: relative;
     margin: 0 auto;
-    width: 250px;
+    width: fit-content;
     height: 350px;
-    background: #232323;
+ 
     border-radius: 20px;
     overflow: hidden;
+    
   }
   .card:before {
     content: '';
@@ -128,7 +134,7 @@ const ProductCard = styled.div`
   .card .contentBx {
     position: absolute;
     bottom: 0;
-    width: 100%;
+    width: fit-content;
     height: 100px;
     text-align: center;
     transition: 1s;
@@ -269,11 +275,11 @@ cursor:pointer;
 // MemberComponent component definition
 const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl, name = "", position = " " ,linkedinUrl="",twitterUrl=""}) => {
  
-  return (<><div className="flex justify-center  items-center ">
-  <Item className="  rounded-sm transition-transform duration-300 flex justify-center flex-col  items-center  image-container scale-90 hover:scale-100">
+  return (<><div className="flex justify-center  items-center">
+  <Item className=" w-fit rounded-sm transition-transform duration-300 flex justify-center flex-col  items-center  image-container md:scale-[0.9] scale-75   ">
   <ProductCard className="flex justify-center items-center w-fit">
-  <div className="container">
-    <div className="card">
+  <div className="container w-fit">
+    <div className="card w-fit bg-neutral-800/60 shadow-md  shadow-green-700/75">
     <ImageContainer className=" py-3 md:py-7 w-[8rem] flex flex-col items-center justify-center image-container ">
   
     <Image
@@ -380,20 +386,25 @@ const Mentors: React.FC = () => {
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
           <div className="text-white text-center">Team</div>
+          
         </BinaryText>
-        <Slider {...sliderSettings} className="lg:mr-[4%] mr-10 ml-10 flex justify-center items-center lg:ml-[4%]">
+        <div className="font-pixelate text-green-500 md:text-[1.5rem] font-bold mt-7 text-center">
+          {/*<TypeAnimation sequence={[500, `Meet our amazing mentors`]} speed={80} />*/}
+        </div>
+        <div className="mt-20 md:mt-10 mx-auto">
+        <Slider {...sliderSettings} className="lg:mr-[4%] mr-8 ml-8 flex justify-center items-center lg:ml-[4%]">
           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 1" position="Position" twitterUrl="" linkedinUrl="" />
           <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 50, height: 50 }} name="Demo Profile 2" position="Position" twitterUrl="" linkedinUrl="" />
          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-     <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
-           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 3" position="Position"  twitterUrl="" linkedinUrl=""/>
+         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 4" position="Position"  twitterUrl="" linkedinUrl=""/>
+     <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 5" position="Position"  twitterUrl="" linkedinUrl=""/>
+         <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 6" position="Position"  twitterUrl="" linkedinUrl=""/>
+          <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 7" position="Position"  twitterUrl="" linkedinUrl=""/>
+           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 8" position="Position"  twitterUrl="" linkedinUrl=""/>
+           <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 50, height: 50 }} name="Demo Profile 9" position="Position"  twitterUrl="" linkedinUrl=""/>
 
           {/* ... other MemberComponent instances */}
-        </Slider>
+        </Slider></div>
       </div>
     </PageSection>
   );
