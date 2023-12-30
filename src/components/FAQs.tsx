@@ -24,7 +24,7 @@ const FAQs = () => {
             </BinaryText>
           </div>
           <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">
-            <ul className="max-w-2xl mx-auto mt-20 divide-y backdrop-blur-sm bg-black/50 shadow shadow-green-700 rounded-xl">
+            <ul className="max-w-2xl mx-auto mt-20 divide-y backdrop-blur-sm bg-black/30 shadow-md border-green-700/80 border-2 shadow-green-700/80 rounded-xl">
               {faqItems.map((faq, index) => {
                 return (
                   <li key={index} className="group">
@@ -36,10 +36,10 @@ const FAQs = () => {
                       }}
                       className="flex items-center justify-between gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer shadow-green-700"
                     >
-                      <span className="text-lg">{faq.question}</span>
+                      <span className="text-lg text-white/85">{faq.question}</span>
 
                       <svg
-                        className={`w-5 h-5 text-gray-500 transition group-hover:text-gray-300 group-active:text-gray-200 ${
+                        className={`w-5 h-5 text-gray-400 transition group-hover:text-gray-300 group-active:text-gray-200 ${
                           expandedItemIndex === index ? "rotate-90" : ""
                         }`}
                         xmlns="http://www.w3.org/2000/svg"
@@ -62,9 +62,9 @@ const FAQs = () => {
                           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full mx-1"></div>
                           <div className="w-2.5 h-2.5 bg-red-500 rounded-full mx-1"></div>
                         </div> */}
-                        <p className="px-4 opacity-70">
+                        <p className="px-4 text-white/85">
                           <TypeAnimation
-                            sequence={[500, `${faq.answer}`]}
+                            sequence={[50, `${faq.answer}`]}
                             speed={80}
                           />
                         </p>

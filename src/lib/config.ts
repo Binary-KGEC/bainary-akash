@@ -1,3 +1,48 @@
+export const itemsdes1 = [
+  {
+    name: "Home",
+    link: "#hero",
+  },
+  {
+    name: "About",
+    link: "#about",
+  },
+  {
+    name: "Timeline",
+    link: "#timeline",
+  },
+  {
+    name: "Tracks",
+    link: "#tracks",
+  },
+];
+export const itemsdes2 = [
+  
+  
+  {
+    name: "Prizes",
+    link: "#prizes",
+  },
+  {
+    name: "Mentors",
+    link: "#mentors",
+  },
+  {
+    name: "Team",
+    link: "#team",
+  },
+  {
+    name: "Sponsors",
+    link: "#sponsors",
+  },
+  {
+    name: "FAQs",
+    link: "#faqs",
+  },
+];
+
+
+
 export const items = [
   {
     name: "Home",
