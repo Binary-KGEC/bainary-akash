@@ -62,7 +62,7 @@ const FAQs = () => {
                           <div className="w-2.5 h-2.5 bg-yellow-500 rounded-full mx-1"></div>
                           <div className="w-2.5 h-2.5 bg-red-500 rounded-full mx-1"></div>
                         </div> */}
-                        <p className="px-4 text-green-500/85">
+                        <p className="px-4 text-white/85">
                           <TypeAnimation
                             sequence={[50, `${faq.answer}`]}
                             speed={80}

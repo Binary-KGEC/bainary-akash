@@ -20,29 +20,20 @@ import { TypeAnimation } from "react-type-animation";
 
 
   // Custom arrow component for previous
-  const CustomPrevArrow: React.FC = ({ onClick }: any) => {
-    console.log('onClick prop:', onClick);
-  
-    return (<>
-      <div className="custom-arrow absolute -left-[35px] top-1/2 transform -translate-y-1/2" onClick={onClick}>
-        <FaChevronLeft size={50} color="#fff" />
-      </div></>
-    );
-  };
+  const CustomPrevArrow: React.FC = ({ onClick }: any) => (
+    <div className="custom-arrow absolute -left-[35px] top-1/2 transform -translate-y-1/2" onClick={onClick}>
+      <FaChevronLeft size={50} color="#fff" />
+    </div>
+  );
   
   const CustomNextArrow: React.FC = ({ onClick }: any) => (
     <div
       className="custom-arrow absolute -right-[35px] top-1/2 transform -translate-y-1/2"
-      onClick={() => {
-        console.log("Next arrow clicked");
-        onClick();
-      }}
+      onClick={onClick}
     >
       <FaChevronRight size={50} color="#fff" />
     </div>
   );
-
-  
 /**
 * 3D Flip
 * Created By Joshua Guo
