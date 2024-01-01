@@ -119,3 +119,39 @@
 .dud {
   color: #757575;
 }
+.landingSectionTitle::before {
+  content: "";
+  position: absolute;
+  left: 105%;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100vw;
+  background-color: rgb(21 128 61);
+}
+.shad{
+  text-shadow: 2px 4px 4px rgb(21 128 61);
+}
+.landingSectionTitle2::before {
+  display: flex;
+  flex-direction: row-reverse;
+  content: "";
+  position: absolute;
+  left: 0px; /* Change to 0% */
+  right: 105%; /* Change to 0px */
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100vw;
+  background-color: rgb(21 128 61);
+}
+.landingSectionTitle2 {
+  /* Your existing styles for .landingSectionTitle go here */
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.landingSectionTitle2 span {
+  margin-left: 4px; /* Adjust as needed for spacing between the lines */
+}

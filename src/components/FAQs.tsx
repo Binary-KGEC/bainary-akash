@@ -13,14 +13,29 @@ const FAQs = () => {
 
   return (
     <PageSection>
-      <div id="faqs" className="flex flex-col items-center justify-center mb-20 sm:mb-20 text-white">
+      <div id="faqs" className="  mb-20 sm:mb-20 text-white">
         <div>
           <div className="mt-[96px] md:mt-[116px]">
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            ><div className="text-white text-center"> Frequently Asked Questions</div>
-             
+            ><div className="text-white text-center"></div>
+               <div className="text-white text-shadow-lg md:hidden text-center shad " > Frequently Asked Questions</div>
+          <div className="overflow-x-hidden w-full pt-5 md:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-auto md:mx-0 font-pixelate text-center md:text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="text-AAsecondary font-Header text-green-500 relative">
+      08.
+    </span>
+    <span className="flex-none text-3xl mt-6 text-gray-200 opacity-85 font-bold tracking-wider pl-4">
+    Frequently Asked Questions
+    </span>
+    
+    <div className="flex flex-col item-center justify-center ">
+    
+    <div className="right-full top-[55%] transform h-[4px] w-screen bg-green-500 mt-[25px] ml-4"></div></div>
+  </h2>
+</div>
+    
             </BinaryText>
           </div>
           <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">
