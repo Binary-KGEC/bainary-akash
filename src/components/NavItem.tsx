@@ -1,7 +1,7 @@
+// NavItem.tsx
 "use client";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-
 import React, { useState, useRef, Dispatch, SetStateAction } from "react";
 import { useGlitch } from "react-powerglitch";
 
@@ -10,11 +10,13 @@ const NavItem = ({
   link,
   isActive,
   setIsOpen,
+  closeMobileMenu,
 }: {
   name: string;
   link: string;
   isActive: boolean;
   setIsOpen?: Dispatch<SetStateAction<boolean>>;
+  closeMobileMenu?: () => void; // Add closeMobileMenu prop
 }) => {
   const glitch = useGlitch({
     playMode: "hover",
@@ -43,21 +45,19 @@ const NavItem = ({
     pulse: false,
   });
 
- 
-
   return (
     <li
       ref={glitch.ref}
       className="relative flex py-2 h-12 items-center"
       onClick={() => {
         if (setIsOpen) setIsOpen(false);
+        if (closeMobileMenu) closeMobileMenu(); // Call closeMobileMenu if provided
       }}
     >
       <a
         href={link}
         className={cn(
           "gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm",
-          
         )}
       >
         <span>{name}</span>

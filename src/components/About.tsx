@@ -97,7 +97,7 @@ const About = () => {
             </div>
             <div className="md:col-span-3 flex h-max  gap-4 order-1 md:order-2 items-center justify-center   ">
             <span ref={glitch.ref} className="flex item-center justify-center">
-            <Image width={100} className="lg:hidden w-[60%] flex items-center justify-center " src={logo} alt="Binary Hackathon" />
+            <Image width={100} className="lg:hidden w-[60%] flex items-center justify-center " src={logo} alt="Binary Hackathon" /></span>
               <ParticleImage
                 className="w-full md:w-[70%] hidden lg:block"
                 src={"./binarylogo2.png"}
@@ -109,7 +109,7 @@ const About = () => {
                 mouseMoveForce={motionForce}
                 touchMoveForce={motionForce}
                 backgroundColor="transparent"
-              /></span>
+              />
             </div>
           </div>
         </div>

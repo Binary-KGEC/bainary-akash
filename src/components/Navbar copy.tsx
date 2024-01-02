@@ -1,17 +1,19 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useState, useEffect } from 'react';
-import { AiOutlineClose, AiOutlineMail } from 'react-icons/ai';
+import React, { useState, useEffect, Fragment } from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
 import { RiMenu4Line } from 'react-icons/ri';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
 import { useGlitch } from "react-powerglitch";
 import NavLogo from '../../public/thumbnail.png';
 import { itemsdes1, itemsdes2, items } from '../lib/config';
 import NavItem from './NavItem';
 
+
+
 const Navbar = () => {
+  
   const glitch = useGlitch({
     playMode: "hover",
     createContainers: true,
@@ -45,25 +47,30 @@ const Navbar = () => {
   const handleNav = () => {
     setNav(!nav);
   };
-
+  const closeMobileMenu = () => {
+    setNav(false);
+  };
   useEffect(() => {
-    const handleShadow = () => {
-      if (window.scrollY >= 90) {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      if (scrollY >= 90) {
         setShadow(true);
       } else {
         setShadow(false);
       }
     };
-    window.addEventListener('scroll', handleShadow);
 
-    // Cleanup the event listener on component unmount
+    // Subscribe to scroll events
+    window.addEventListener('scroll', handleScroll);
+
+    // Unsubscribe when component unmounts
     return () => {
-      window.removeEventListener('scroll', handleShadow);
+      window.removeEventListener('scroll', handleScroll);
     };
-  }, [shadow]); // Include 'shadow' in the dependency array
+  }, []);
 
   return (
-    <div className={shadow ? 'fixed w-full h-[60px] shadow-xl shadow-black z-[100] ease-in-out duration-300' : 'fixed w-full h-[60px] z-[100]'}>
+    <div className={shadow ? 'fixed w-full h-[60px] shadow-xl shadow-black z-[100] ease-in-out duration-300' : 'fixed w-full h-[60px] z-[100] '}>
     <div className='flex justify-between items-center w-full h-full px-2 2xl:px-16 bg-green-950 backdrop-filter backdrop-blur-xl bg-opacity-50 '>
       <Link href='/'>
         <Image src={NavLogo} alt='/' className='cursor-pointer ml-4 md:w-[110px] w-[100px]' />
@@ -73,7 +80,7 @@ const Navbar = () => {
           <ul className='hidden md:flex text-white font-pixelate mr-11'>
             <ul className='flex gap-2'>
               {itemsdes1.map((itemsdes1) => (
-                <NavItem key={itemsdes1.name} name={itemsdes1.name} link={itemsdes1.link} isActive={false} />
+                <NavItem key={itemsdes1.name} name={itemsdes1.name} link={itemsdes1.link} isActive={false}   />
               ))}
             
               <Menu as="div" className="">
@@ -119,6 +126,7 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <motion.div
+                  
                     whileTap={{ scale: 0.6, rotate: 90 }} // Scale down when tapped
                     transition={{ type: 'spring', stiffness: 400, damping: 20 }}
                   >
@@ -146,24 +154,25 @@ const Navbar = () => {
                   <div className='flex w-full items-center justify-between'>
                     <Link href='/'>
                       <Image src={NavLogo} width='87' height='35' alt='/' />
-                    </Link>
+                    </Link>  <motion.div
+                    initial={{opacity:1}}
+                    whileTap={{ scale: 0.6, rotate: -90 ,opacity:0 }} // Scale down when tapped
+                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+                  >
                     <div
                       onClick={handleNav}
                       className='rounded-full shadow-lg shadow-green-700 bg-green-950 text-white font-bold p-3 cursor-pointer animate-bounce'
                     >
-                      <motion.div
-                    whileTap={{ scale: 0.6, rotate: -90 ,opacity:0 }} // Scale down when tapped
-                    transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-                  >
-                      <AiOutlineClose size={22} /></motion.div>
-                    </div>
+                    
+                      <AiOutlineClose size={22} />
+                    </div></motion.div>
                   </div>
                 </div>
                 <div className='py-4 flex flex-col'>
                   <ul className='uppercase font-pixelate text-white'>
                     <ul className='relative flex flex-col items-center gap-2 justify-around '>
                       {items.map((item) => (
-                        <NavItem key={item.name} name={item.name} link={item.link} isActive={false} />
+                        <NavItem key={item.name} name={item.name} link={item.link} isActive={false} closeMobileMenu={closeMobileMenu} />
                       ))}
                     </ul>
                   </ul>
