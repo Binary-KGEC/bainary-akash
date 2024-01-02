@@ -6,9 +6,9 @@ import dynamic from 'next/dynamic';
 
 import { motion } from 'framer-motion';
 import Transition from "@/components/Animation";
+
+
 import styled from 'styled-components';
-
-
 const Navbar = dynamic(() => import('@/components/Navbar copy'));
 const MaxWidthWrapper = dynamic(() => import('@/components/MaxWidthWrapper'));
 const Hero = dynamic(() => import('@/components/Hero'));
@@ -21,13 +21,13 @@ const Team = dynamic(() => import('@/components/Team'));
 const Sponsors = dynamic(() => import('@/components/Sponsors'));
 const FAQs = dynamic(() => import('@/components/FAQs'));
 const Footer = dynamic(() => import('@/components/Footer'));
-
 const Section = styled.section<{ theme: { body: string } }>`
   min-height: full;
   width: full;
   background-color: ${(props) => props.theme.body};
   position: relative;
 `;
+
 const Landing = () => {
   const [heroTopRef, heroTopInView] = useInView({
     threshold: 0.5,
@@ -42,9 +42,9 @@ const Landing = () => {
   }, []);
 
   return (
-    <> <Section>
+    <> 
     <Transition/>
-   
+   <Section>
       {typeof window !== 'undefined' && <motion.div  initial={{  y: -100 }}
               animate={{  y: 0 }}
               transition={{ duration: 0.3, delay: 3 }}><Navbar /></motion.div>}
