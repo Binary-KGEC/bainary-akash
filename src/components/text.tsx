@@ -50,7 +50,7 @@ class TextScramble {
           char = this.randomChar();
           this.queue[i].char = char;
         }
-        output += `<span className="text-gray-500" >${char}</span>`;
+        output += `<span className="text-green-500" >${char}</span>`;
       } else {
         output += from;
       }

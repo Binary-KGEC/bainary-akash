@@ -4,7 +4,7 @@ import PageSection from "./PageSection";
 import useTextScramble from "./text";
 import styled from "styled-components";
 import * as demoProfileImg from "../../public/demoprofile.png";
-import * as demoProfileImg2 from "../../public/demoprofile.png";
+import * as logo from "../../public/binarylogo2.png";
 import * as position1 from "../../public/Asset 2.png";
 import * as position2 from "../../public/Asset 3.png";
 import * as position3 from "../../public/Asset 4.png";
@@ -42,9 +42,9 @@ interface MemberComponentProps {
     height: number;
   };
   name: string;
-  position?: string;
-  linkedinUrl: string;
-  twitterUrl:string;
+TotalPrize:string;
+ CashPrize:string;
+ 
 }
 
 
@@ -80,12 +80,12 @@ const Item = styled.div`
   margin: 2rem 1rem;
   position: relative;
   transition: all 0.3s ease;
-  border-radius: 20px;
+
 
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1);
     .image-container {
-      transform: translateY(-2rem) scale(1.1);
+      transform: translateY(-2rem) scale(1);
     }
   }
 `;
@@ -99,7 +99,7 @@ const ImageContainer = styled.div`
   cursor: pointer;
 `;
 // MemberComponent component definition
-const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl,imgurl2, name = "", position = " " ,linkedinUrl="",twitterUrl=""}) => {
+const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl,imgurl2, name = "",  CashPrize = " " , TotalPrize=""}) => {
   const cardX = useMotionValue(0);
   const cardY = useMotionValue(0);
   const rotateX = useTransform(cardY, [-300, 300], [10, -10]); // Reversed values
@@ -121,6 +121,7 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl,imgurl2, name 
   };
 
   return (<motion.div
+  className="lg:m-4 md:m-0"
     style={{
       perspective: 800,
       display: "flex",
@@ -152,47 +153,40 @@ const MemberComponent: React.FC<MemberComponentProps> = ({ imgurl,imgurl2, name 
       transformStyle: "preserve-3d",
       perspective: 800, // Set perspective on the card
     }}
-    transition={{ velocity: 0 }}>
-   <Item className="bg-green-950/40 flex flex-col items-center justify-center image-container">
-            <ImageContainer className="w-[15rem] flex flex-col items-center justify-center image-container bg">
-              <Image
-                className="w-[130px] h-[130px] flex flex-col items-center justify-center"
+    transition={{ velocity: 0 }}>  <div className=" p-6 w-[100px]  absolute top-16 right-2 ">
+            
+    <Image
+          className=" w-40 justify-center flex"
+          src={imgurl2.src} // Use the imported image URL here
+          alt={name}
+          width={imgurl2.width} // Specify the width
+          height={imgurl2.height} // Specify the height
+        /></div>
+        <div className="capitalize font-bold text-1.5xl font-pixelate text-white shad ml-20 mr-4 sm:text-xl xs:text-lg  text-center mt-2 bg-green-700 -skew-x-12 shadow-md shadow-green-700 ">
+              {name}
+            </div>
+   <Item className=" flex flex-col items-center justify-center image-container bg-transparent border-2 border-green-700 rounded-b-lg">
+           
+           
+            <div className="flex flex-col gap-6 mt-6">
+            <div className="flex flex-col mt-10 ">
+            <h1 className="text-green-500 font-semibold text-md font-pixelate  w-[90%]  mx:text-sm text-start ml-4">TotalPrize</h1><p className="text-white font-thin text-sm font-pixelate  w-[90%]  mx:text-sm text-start ml-4">{CashPrize}</p>
+            </div>
+            <div className="flex flex-col  ">
+            <h1 className="text-green-500 font-semibold text-md font-pixelate  w-[90%]  mx:text-sm text-start ml-4">CashPrize</h1><p className="mb-10 text-white font-thin text-sm font-pixelate  w-[90%]  mx:text-sm text-start ml-4">{TotalPrize}</p>
+            </div></div>
+          </Item>
+         
+          <div className=" p-6 w-[100px] bg-black overflow-hidden border-solid border-2 hover: border-green-700 absolute -top-0 -left-2 ">
+            
+          <Image
+                className=" w-40 justify-center flex"
                 src={imgurl.src} // Use the imported image URL here
                 alt={name}
                 width={imgurl.width} // Specify the width
                 height={imgurl.height} // Specify the height
-              />
-            </ImageContainer>
-            <div className="capitalize font-bold text-1.5xl font-pixelate text-green-600 sm:text-xl xs:text-lg mt-4 text-center ">
-              {name}
-            </div>
-            <div className="text-white/50 font-thin text-0.4xl font-pixelate sm:text-xl xs:text-lg w-full mt-3 mb-3 mx:text-sm text-center">
-              {position}
-            </div>
-            <div className="flex justify-center">
-            <Link
-              href={twitterUrl}
-              className={cn(buttonVariants({ variant: "link" }), "text-white  hover:text-green-600")}
-            >
-              <Twitter />
-            </Link>
-  
-            <Link
-              href={linkedinUrl}
-              className={cn(buttonVariants({ variant: "link" }), "text-white hover:text-green-600")}
-            >
-              <Linkedin />
-            </Link>
-          </div>
-          </Item>
-
-          <Image
-                className="w-[70px] -top-[0px] absolute flex flex-col items-center justify-center"
-                src={imgurl2.src} // Use the imported image URL here
-                alt={name}
-                width={imgurl2.width} // Specify the width
-                height={imgurl2.height} // Specify the height
-              />
+              /></div>
+         
         </motion.div>
       </motion.div>
     </motion.div>
@@ -207,15 +201,29 @@ const Team: React.FC = () => {
       {/*<Confetticomp/>*/}
     <div className="mt-[96px] md:mt-[116px]">
       <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-        <div className="text-white/75 text-center">Prizes</div>
+      <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Prizes</div>
+          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
+      04.
+    </span>
+    <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-4">
+      Prizes
+    </span>
+    
+    <div className="flex flex-col item-center justify-center ">
+    
+    <div className="right-full top-[55%] transform h-[4px] w-[70vh] bg-green-500 mt-[25px] ml-4"></div></div>
+  </h2>
+</div>
       </BinaryText>
 
       <ResponsiveCardContainer className="w-fit">
-      
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 1 " position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position1.default.src, width: 10, height: 10 }}/>
-        <div className=" ">
-        <MemberComponent imgurl={{ src: demoProfileImg2.default.src, width: 100, height: 100 }} name="Demo Profile 2" position="" twitterUrl="" linkedinUrl=""imgurl2={{ src: position2.default.src, width: 10, height: 10}} /></div>
-        <MemberComponent imgurl={{ src: demoProfileImg.default.src, width: 100, height: 100 }} name="Demo Profile 3" position="" twitterUrl="" linkedinUrl="" imgurl2={{ src: position3.default.src, width: 10, height: 10 }}/>
+      <div className="lg:order-1 lg:mb-20">
+        <MemberComponent imgurl={{ src: position1.default.src, width: 10, height: 10 }} name="1st Prize " CashPrize="Total Prize of Worth $" TotalPrize="Total Prize of Worth $"  imgurl2={{ src: logo.default.src, width: 10, height: 10 }}/></div>
+        <div className="lg:mt-0 mt-20 mb-20 lg:mb-0 lg:order-2 ">
+        <MemberComponent imgurl={{ src: position2.default.src, width: 10, height: 10 }} name="2nd Prize" CashPrize="Total Prize of Worth $"  TotalPrize="Total Prize of Worth $" imgurl2={{ src: logo.default.src, width: 10, height: 10}} /></div>
+        <MemberComponent imgurl={{ src: position3.default.src, width: 10, height: 10 }} name="3rd Prize" CashPrize="Total Prize of Worth $"  TotalPrize="Total Prize of Worth $"  imgurl2={{ src: logo.default.src, width: 10, height: 10 }}/>
         {/* ... other MemberComponent instances */}
       </ResponsiveCardContainer>
     </div></Section>

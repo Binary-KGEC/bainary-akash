@@ -13,14 +13,29 @@ const FAQs = () => {
 
   return (
     <PageSection>
-      <div id="faqs" className="flex flex-col items-center justify-center mb-20 sm:mb-20 text-white">
+      <div id="faqs" className="  mb-20 sm:mb-20 text-white">
         <div>
           <div className="mt-[96px] md:mt-[116px]">
             <BinaryText
               className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold"
               reveal
-            ><div className="text-white text-center"> Frequently Asked Questions</div>
-             
+            ><div className="text-white text-center"></div>
+               <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Have a question?</div>
+          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
+      07.
+    </span>
+    <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-4">
+    Have a question?
+    </span>
+    
+    <div className="flex flex-col item-center justify-center ">
+    
+    <div className="right-full top-[55%] transform h-[4px] w-[70vh] bg-green-500 mt-[25px] ml-4"></div></div>
+  </h2>
+</div>
+    
             </BinaryText>
           </div>
           <div className="max-w-3xl mx-auto md:w-[calc(50vw)] mt-8 space-y-4 md:mt-16 font-pixelate font-[1rem] md:font-[2rem]">
@@ -34,7 +49,7 @@ const FAQs = () => {
                           prevIndex === index ? null : index
                         );
                       }}
-                      className="flex items-center justify-between gap-3 px-4 py-3 font-medium marker:content-none hover:cursor-pointer shadow-green-700"
+                      className="flex items-center justify-between gap-3 font-bold px-4 py-3 shad marker:content-none hover:cursor-pointer shadow-green-700"
                     >
                       <span className="text-lg text-white/85">{faq.question}</span>
 

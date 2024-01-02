@@ -12,17 +12,24 @@ import BinaryLogo2 from '@/components/BinaryLogo copy';
 import TextScramble from "@/components/text"
 import { motion } from 'framer-motion';
 import Transition from '@/components/Animation';
+import styled from 'styled-components';
+const Section = styled.section<{ theme: { body: string } }>`
+  min-height: full;
+  width: full;
+  background-color: ${(props) => props.theme.body};
+  position: relative;
+`;
 const DelayedComponent = () => {
   const phrases1 = [
     "By"
    ];
    const phrases2 = [
-    "DEV-SOCITY-KGEC"
+    "DEV-Community-KGEC"
    ];
   const textRef = useTextScramble(phrases1);
   const textRef2 = useTextScramble(phrases2);
-  return <div><div className=''> <div className="font-pixelate text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl text-center" ref={textRef}></div></div>
-  <div className=''><div className="font-pixelate text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center mt-2" ref={textRef2}></div></div></div>;
+  return <Section><div><div className=''> <div className="font-pixelate font-bold opacity-100 text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl text-center uppercase shad" ref={textRef}></div></div>
+  <div className=''><div className="font-pixelate font-bold opacity-100 shad text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center uppercase mt-2" ref={textRef2}></div></div></div></Section>;
 };
 export default function Home() {
 
@@ -113,7 +120,7 @@ export default function Home() {
   }, 5000);
 
   return (
-    <>
+    <><Section>
       <div className="bg-transparent w-full">
       <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
         <div className="flex flex-col md:flex-row md:justify-between">
@@ -147,15 +154,15 @@ export default function Home() {
               variant={"trapbutton"}
               onClick={handleClick}
               disabled={isNavigating}
-              ref={glitch.ref}
-              className="glitch font-SFPixelate"
+              
+              className="glitch font-SFPixelate mt-2 "
             >
              <h1 className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</h1> 
             </Button>
           )}
         </motion.div>
       </div>
-    </div>
+    </div></Section>
     </>
   );
 }

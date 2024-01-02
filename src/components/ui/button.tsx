@@ -19,7 +19,7 @@ const buttonVariants = cva(
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         enter:" bg-white bg-opacity-20 hover:bg-opacity-80 text-green-500 hover:text-green-600 font-Bold py-2 px-6 rounded-full shadow-lg transition duration-300",
-        trapbutton:"transform skew-x-12  text-white py-2 px-4 relative inline-block  hover:bg-opacity-80 text-green-500 hover:text-green-600 font-Bold  bg-white bg-opacity-20 hover:bg-opacity-80",
+        trapbutton:"transform skew-x-12 text-white py-2 px-4 button12   hover:bg-opacity-80  font-bold hover:scale-105 hover:text-white hover:font-bold  font-Bold  shadow-md shadow-green-700 ",
         trapbutton2:"transform  max-w-screen-lg mx-auto w-[250px]  text-white py-2 px-4 relative inline-block  hover:bg-opacity-80 text-green-500 hover:text-green-600 font-Bold  bg-white bg-opacity-20 hover:bg-opacity-80",
      button3:"i h-16 w-64 bg-pink-600 items-center rounded-2xl shadow-2xl cursor-pointer absolute overflow-hidden transform hover:scale-x-110 hover:scale-y-105 transition duration-300 ease-out",
       },

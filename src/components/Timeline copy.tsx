@@ -205,12 +205,27 @@ const Timeline2 = () => {
   return (
     <PageSection id="timeline">
       <div className="mb-10">
-        <BinaryText
-          className="text-white font-pixelate text-[3rem] mx:text-[4rem] font-bold mb-10 text-center mt-20"
-          reveal
+        <div
+          className="text-white font-pixelate text-[3rem] mx:text-[4rem] font-bold mb-10  mt-20"
+          
         >
-          <div className="text-white">Timeline</div>
-        </BinaryText>
+        
+        <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Timeline</div>
+          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
+      02.
+    </span>
+    <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-4">
+    timeline
+    </span>
+    
+    <div className="flex flex-col item-center justify-center ">
+    
+    <div className="right-full top-[55%] transform h-[4px] w-[70vh] bg-green-500 mt-[25px] ml-4"></div></div>
+  </h2>
+</div>
+</div>
         < div ref={ref1} className="lg:flex lg:justify-between">
         <div className="hidden lg:block w-full lg:w-[4px] relative left-[50%]">
             <motion.div
