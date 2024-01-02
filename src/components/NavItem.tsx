@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
-import styles from "./NavItem.module.css";
+
 import React, { useState, useRef, Dispatch, SetStateAction } from "react";
 import { useGlitch } from "react-powerglitch";
 
@@ -43,7 +43,7 @@ const NavItem = ({
     pulse: false,
   });
 
-  const underlineClass = isActive ? styles.underloine : "";
+ 
 
   return (
     <li
@@ -56,8 +56,8 @@ const NavItem = ({
       <a
         href={link}
         className={cn(
-          "gap-5 w-[84px] bg-black/0 text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm",
-          underlineClass
+          "gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm",
+          
         )}
       >
         <span>{name}</span>

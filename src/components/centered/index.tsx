@@ -55,7 +55,7 @@ const PixelBackground: React.FC = () => {
       return shuffledIndexes.map((randomIndex, index) => (
         <motion.div
           key={index}
-          className="w-full md:h-20 h-[5vw] bg-green-700 border-2 border-green-700 shadow-md shadow-green-700"
+          className="w-full md:h-20 h-[5vw] bg-green-700 border-2 border-green-700"
           variants={anim}
           initial="initial"
           animate={isOpen ? 'open' : 'closed'}

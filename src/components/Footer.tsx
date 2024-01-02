@@ -57,14 +57,14 @@ const Footer: React.FC = () => {
               </div>
 
     <nav className="flex justify-center flex-wrap gap-6 text-white font-sm mt-8 font-pixelate" >
-        <a className=" text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm" ref={glitch.ref} href="#hero">Home</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"  ref={glitch.ref}  href="#about">About</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref}  href="#timeline">Timeline</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#track">Tracks</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#prizes">Prizes</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#mentors">Mentors</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#team">Team</a>
-        <a className="text-white text-md hover:text-lg font-pixelate hover:font-bold hover:text-white text-sm"ref={glitch.ref} href="#faqs">Faqs</a>
+        <a className=" gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm" ref={glitch.ref} href="#hero">Home</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"  ref={glitch.ref}  href="#about">About</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref}  href="#timeline">Timeline</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref} href="#track">Tracks</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref} href="#prizes">Prizes</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref} href="#mentors">Mentors</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref} href="#team">Team</a>
+        <a className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold hover:text-white rounded-none flex justify-center text-sm"ref={glitch.ref} href="#faqs">Faqs</a>
     </nav>
 
     <div className="flex justify-center space-x-5">
@@ -90,7 +90,7 @@ const Footer: React.FC = () => {
                 </svg>
         </a>
     </div>
-    <div className='text-white font-pixelate text-center text-md hover:text-lg  hover:font-bold hover:text-white text-sm" ref={glitch.ref}' ref={glitch.ref}> <Link href="/Hackathonbrochure.pdf" target={'_blank'}>
+    <div className='text-white font-pixelate text-center text-md hover:text-md  hover:font-bold hover:text-white text-sm" ref={glitch.ref}' ref={glitch.ref}> <Link href="/Hackathonbrochure.pdf" target={'_blank'}>
     Sponsorship Brochure
       </Link></div>
     <hr className="my-8 border-green-700 border-[2px] mr-20 ml-20" />

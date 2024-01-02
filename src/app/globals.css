@@ -155,3 +155,35 @@
 .landingSectionTitle2 span {
   margin-left: 4px; /* Adjust as needed for spacing between the lines */
 }
+.button12{
+  position: relative;
+  align-items: center;
+  text-align: center;
+  width: fit-content;
+  height: fit-content;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: 0.5s;
+ 
+}
+.button12:hover{
+  border: 1px solid transparent;
+  background: black url(https://i.postimg.cc/wBXGXbWN/pixel.png);
+  transition-delay: 0.8s;
+  background-size: 180px;
+  animation: animate 0.8s steps(8) forwards;
+}
+.button12:last-of-type{
+  
+}
+.button12:last-of-type:hover{
+  background:  url(https://i.postimg.cc/FzBWFtKM/pixel2.png);
+}
+@keyframes animate {
+  0%{
+      background-position-y: 0;
+  }
+  100%{
+      background-position-y: -480px;
+  }
+}

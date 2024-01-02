@@ -78,7 +78,7 @@ const Navbar = () => {
             
               <Menu as="div" className="">
                 <div>
-                  <Menu.Button ref={glitch.ref} className="inline-flex mt-[14px] w-full px-auto py-auto text-sm font-medium text-white bg-transparent border-none mr-2 ml-2 gap-5 w-[84px] text-md hover:text-lg font-pixelate hover:font-bold hover:text-white rounded-none justify-center ">
+                  <Menu.Button ref={glitch.ref} className="gap-5 w-[84px] bg-black/0 text-white text-md hover:text-md font-pixelate hover:font-bold mt-[14px] hover:text-white rounded-none flex justify-center text-sm ">
                     More
                   </Menu.Button>
                 </div>

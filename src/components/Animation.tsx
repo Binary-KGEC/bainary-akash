@@ -17,7 +17,7 @@ const Transition = () => {
    initial={{x:"100%",width:"100%"}}
    animate={{x:"0%",width:"0%"}}
    transition={{duration:0.4,ease:"easeInOut"}} />*/}
-   <PixelBackground/>
+   <div ><PixelBackground /></div>
    </>
   );
 }
