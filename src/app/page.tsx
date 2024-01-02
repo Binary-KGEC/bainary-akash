@@ -150,15 +150,15 @@ export default function Home() {
           }}
         >
           {showButton && (
-            <Button
-              variant={"trapbutton"}
+            <button
+              
               onClick={handleClick}
               disabled={isNavigating}
               
-              className="glitch font-SFPixelate mt-2"
+              className="glitch font-SFPixelate mt-2 transform skew-x-12 text-white py-2 px-4 button12   hover:bg-opacity-80  font-bold hover:scale-105 hover:text-white hover:font-bold  font-Bold animate-bounce shadow-md shadow-green-700"
             >
              <h1 className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</h1> 
-            </Button>
+            </button>
           )}
         </motion.div>
       </div>
