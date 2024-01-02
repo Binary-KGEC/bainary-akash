@@ -13,6 +13,7 @@ import TextScramble from "@/components/text"
 import { motion } from 'framer-motion';
 import Transition from '@/components/Animation';
 import styled from 'styled-components';
+import PixelBackground from "../../src/components/centered";
 const Section = styled.section<{ theme: { body: string } }>`
   min-height: full;
   width: full;
@@ -32,11 +33,12 @@ const DelayedComponent = () => {
   <div className=''><div className="font-pixelate font-bold opacity-100 shad text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center uppercase mt-2" ref={textRef2}></div></div></div></Section>;
 };
 export default function Home() {
-
+  const [isAnimationActive, setIsAnimationActive] = useState(false);
   const [showDelayedComponent, setShowDelayedComponent] = useState(false);
   const [showFunction1, setShowFunction1] = useState(true);
   const [showButton, setShowButton] = useState(false);
   const handleClick = () => {
+    setIsNavigating(true);
     function1();
 
     // Call the second function
@@ -45,6 +47,10 @@ export default function Home() {
     // Call the third function
     function3();
     function4();
+    setTimeout(() => {
+      setIsAnimationActive(true);
+    }, 3500);
+
     
   };
   const function1 = () => {
@@ -70,7 +76,7 @@ export default function Home() {
    
     setTimeout(() => {
       router.push('/home');
-    }, 3700); 
+    }, 4500); 
   };
   
   const glitch: GlitchHandle = useGlitch({
@@ -120,8 +126,13 @@ export default function Home() {
   }, 5000);
 
   return (
-    <><Section>
-      <div className="bg-transparent w-full">
+    <>
+    <PixelBackground active={isAnimationActive} />
+    <Section className="bg-transparent w-full">
+       
+      
+        
+      
       <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
         <div className="flex flex-col md:flex-row md:justify-between">
           <div className="relative flex-1">
@@ -154,15 +165,14 @@ export default function Home() {
               variant={"trapbutton"}
               onClick={handleClick}
               disabled={isNavigating}
-              
               className="glitch font-SFPixelate mt-2 "
             >
-             <h1 className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</h1> 
+             <div className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</div> 
             </Button>
           )}
         </motion.div>
       </div>
-    </div></Section>
+   </Section>
     </>
   );
 }
