@@ -210,14 +210,14 @@ const Timeline2 = () => {
           
         >
         
-         <div className="text-white text-shadow-lg md:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Timeline</div>
-          <div className="overflow-x-hidden w-full pt-5 md:block hidden shad relative">
-  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-auto md:mx-0 font-pixelate text-center md:text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
-  <span className=" font-Header text-6xl text-green-500 relative">
-      01.
+        <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Timeline</div>
+          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
+      02.
     </span>
     <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-4">
-      Timeline
+    timeline
     </span>
     
     <div className="flex flex-col item-center justify-center ">

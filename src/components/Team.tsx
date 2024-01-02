@@ -376,19 +376,19 @@ const Mentors: React.FC = () => {
 <PageSection id="team">
       <div className="mt-[96px] md:mt-[116px]">
         <BinaryText className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold" reveal>
-        <div className="text-white text-shadow-lg md:hidden text-center shad " >Team</div>
-          <div className="overflow-x-hidden w-full pt-5 md:block hidden shad relative">
-  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-auto md:mx-0 font-pixelate text-center md:text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
-  <span className="text-AAsecondary font-Header text-6xl text-green-500 relative">
+        <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >Team</div>
+          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
       06.
     </span>
     <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-4">
-    Team
+      Team
     </span>
     
     <div className="flex flex-col item-center justify-center ">
     
-    <div className="right-full top-[55%] transform h-[4px] w-screen bg-green-500 mt-[25px] ml-4"></div></div>
+    <div className="right-full top-[55%] transform h-[4px] w-[70vh] bg-green-500 mt-[25px] ml-4"></div></div>
   </h2>
 </div>
           

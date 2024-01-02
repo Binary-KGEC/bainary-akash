@@ -22,10 +22,9 @@ const Sponsors = dynamic(() => import('@/components/Sponsors'));
 const FAQs = dynamic(() => import('@/components/FAQs'));
 const Footer = dynamic(() => import('@/components/Footer'));
 const Section = styled.section<{ theme: { body: string } }>`
-  min-height: full;
-  width: full;
+ 
   background-color: ${(props) => props.theme.body};
-  position: relative;
+  position:relative;
 `;
 
 const Landing = () => {
