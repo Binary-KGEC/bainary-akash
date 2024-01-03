@@ -66,9 +66,23 @@ const About = () => {
             className="text-white font-pixelate text-[2rem] md:text-[3rem] font-bold my-2 mb-8  "
           
           >
-         <div className="text-white text-shadow-lg sm:hidden text-center shad index-z skew-x-6 mb-20 shadow-md bg-gradient-to-br from-green-950/40 to-green-700/40 shadow-green-700  " >About Binary</div>
-          <div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
-  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max relative">
+        
+          <div className="overflow-x-hidden w-full pt-5 sm:hidden text-xl shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 uppercase md:w-max relative">
+  <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-1">
+      01.
+    </span>
+    <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider pl-2">
+      About Binary
+    </span>
+    
+    <div className="flex flex-col item-center justify-center ">
+    
+    <div className="right-full  transform h-[4px] w-[70vh] bg-green-500 mt-[10px] ml-4"></div></div>
+  </h2>
+</div>
+<div className="overflow-x-hidden w-full pt-5 sm:block hidden shad relative">
+  <h2 className=" flex flex-row max-w-sm md:max-w-max mx-0  font-pixelate  text-left font-bold mb-10 pt-4 md:pt-0 md:w-max uppercase relative">
   <span className="flex-none text-green-500 opacity-85 font-bold tracking-wider pl-4">
       01.
     </span>
@@ -85,7 +99,7 @@ const About = () => {
           </div>
           <div className="grid w-full grid-cols-1 md:grid-cols-8 gap-16">
             <div className="md:col-span-5 flex flex-col items-start justify-start order-2 md:order-1 ">
-              <h2 className="mb-4  text-3xl uppercase text-green-400 font-pixelate font-bold"> hi everyone</h2>
+              <h2 className="mb-4  text-xl uppercase text-green-400 font-pixelate font-bold"> hi everyone</h2>
               <p className="font-bold text-white font-pixelate">
                 {/* about binary content */}
                 Binary is the annual hackathon of Kalyani Government Engineering College. It aims to be a stage for college students to showcase their creativity and resolve societal issues using technology. We hope to employ the current generation of innovators to think out of the box and bring transformative solutions to the forefront.

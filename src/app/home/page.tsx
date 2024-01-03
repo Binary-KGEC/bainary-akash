@@ -42,14 +42,14 @@ const Landing = () => {
 
   return (
     <> 
-    <Transition/>
+   <Transition/>
    <Section>
       {typeof window !== 'undefined' && <motion.div  initial={{  y: -100 }}
               animate={{  y: 0 }}
-              transition={{ duration: 0.3, delay: 3 }}><Navbar /></motion.div>}
+              transition={{ duration: 0.3, delay: 1 }}><Navbar /></motion.div>}
                <motion.div  initial={{ opacity: 0, y: 100 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.3, delay: 3 }}>
+    transition={{ duration: 0.3, delay: 1 }}>
       <MaxWidthWrapper>
         {<Hero heroTopRef={heroTopRef} />}
         <About />

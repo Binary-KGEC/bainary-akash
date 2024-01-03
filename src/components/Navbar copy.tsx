@@ -161,7 +161,7 @@ const Navbar = () => {
                   >
                     <div
                       onClick={handleNav}
-                      className='rounded-full shadow-lg shadow-green-700 bg-green-950 text-white font-bold p-3 cursor-pointer animate-bounce'
+                      className='rounded-full shadow-md shadow-green-700  font-extrabold text-white  p-3 cursor-pointer '
                     >
                     
                       <AiOutlineClose size={22} />

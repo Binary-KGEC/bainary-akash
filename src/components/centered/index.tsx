@@ -1,6 +1,11 @@
-import React, { useEffect,useState } from 'react';
 
+'use client';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+
+interface PixelBackgroundProps {
+  active: boolean;
+}
 
 const anim = {
   initial: {
@@ -16,16 +21,13 @@ const anim = {
   }),
 };
 
-const PixelBackground: React.FC = () => {
+const PixelBackground: React.FC<PixelBackgroundProps> = ({ active }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleAnimation = () => {
     setIsOpen(!isOpen);
   };
-  /**
-   * Shuffles array in place (Fisher–Yates shuffle).
-   * @param {Array} a items An array containing the items.
-   */
+
   const shuffle = (a: number[]) => {
     let j, x, i;
     for (i = a.length - 1; i > 0; i--) {
@@ -36,14 +38,23 @@ const PixelBackground: React.FC = () => {
     }
     return a;
   };
- 
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsOpen(false); // Close the animation after a delay
-    }, 2000); // Adjust the delay as needed
+    setIsOpen(active);
+  }, [active]);
 
-    return () => clearTimeout(timer);
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   const getBlocks = () => {
@@ -63,29 +74,18 @@ const PixelBackground: React.FC = () => {
         />
       ));
     } else {
-      return null; // Handle the case where window is not defined (e.g., during SSR)
+      return null;
     }
   };
 
-  useEffect(() => {
-    const handleResize = () => {
-      // Handle resize logic if needed
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
   return (
     <div className="flex h-screen w-screen overflow-hidden fixed z-10 pointer-events-none" onClick={toggleAnimation}>
-      {[...Array(20)].map((_, index) => (
-        <div key={index} className="md:w-20 w-[5vw] h-full flex flex-col">
-          {getBlocks()}
-        </div>
-      ))}
-    </div>
+    {[...Array(20)].map((_, index) => (
+      <div key={index} className="md:w-20 w-[5vw] h-full flex flex-col">
+        {getBlocks()}
+      </div>
+    ))}
+  </div>
   );
 };
 
