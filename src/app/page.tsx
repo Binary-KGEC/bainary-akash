@@ -63,7 +63,7 @@ const Home: React.FC = () => {
     function4();
     setTimeout(() => {
       setIsAnimationActive(true);
-    }, 3400);
+    }, 3720);
   };
 
   const function1 = () => {
@@ -82,7 +82,7 @@ const Home: React.FC = () => {
     setIsNavigating(true);
     setTimeout(() => {
       router.push('/home');
-    }, 5000);
+    }, 5100);
   };
 
   const handleEnterKeyPress = useCallback(
