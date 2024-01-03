@@ -1,4 +1,4 @@
-// PixelBackground.tsx
+
 'use client';
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -46,7 +46,7 @@ const PixelBackground: React.FC<PixelBackgroundProps> = ({ active }) => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const handleResize = () => {
-        // Handle resize logic if needed
+        
       };
 
       window.addEventListener('resize', handleResize);
@@ -80,12 +80,12 @@ const PixelBackground: React.FC<PixelBackgroundProps> = ({ active }) => {
 
   return (
     <div className="flex h-screen w-screen overflow-hidden fixed z-10 pointer-events-none" onClick={toggleAnimation}>
-      {[...Array(20)].map((_, index) => (
-        <div key={index} className="md:w-20 w-[5vw] h-full flex flex-col">
-          {getBlocks()}
-        </div>
-      ))}
-    </div>
+    {[...Array(20)].map((_, index) => (
+      <div key={index} className="md:w-20 w-[5vw] h-full flex flex-col">
+        {getBlocks()}
+      </div>
+    ))}
+  </div>
   );
 };
 

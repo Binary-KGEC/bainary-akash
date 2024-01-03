@@ -6,7 +6,7 @@ import { loadFull } from "tsparticles";
 import Particles from "react-tsparticles";
 import useTextScramble from "@/components/text";
 import "./globals.css";
-import { useState,useCallback,useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import BinaryLogo2 from '@/components/BinaryLogo copy';
 import TextScramble from "@/components/text"
@@ -14,165 +14,147 @@ import { motion } from 'framer-motion';
 import Transition from '@/components/Animation';
 import styled from 'styled-components';
 import PixelBackground from "../../src/components/centered";
+
 const Section = styled.section<{ theme: { body: string } }>`
   min-height: full;
   width: full;
   background-color: ${(props) => props.theme.body};
   position: relative;
 `;
+
 const DelayedComponent = () => {
   const phrases1 = [
     "By"
-   ];
-   const phrases2 = [
+  ];
+  const phrases2 = [
     "DEV-Community-KGEC"
-   ];
+  ];
   const textRef = useTextScramble(phrases1);
   const textRef2 = useTextScramble(phrases2);
-  return <Section><div><div className=''> <div className="font-pixelate font-bold opacity-100 text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl text-center uppercase shad" ref={textRef}></div></div>
-  <div className=''><div className="font-pixelate font-bold opacity-100 shad text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center uppercase mt-2" ref={textRef2}></div></div></div></Section>;
+
+  return (
+    <Section>
+      <div>
+        <div className=''>
+          <div className="font-pixelate font-bold opacity-100 text-white text-lg sm:text-xl md:text-0.5xl lg:text-1.3xl xl:text-1.7xl text-center uppercase shad" ref={textRef}></div>
+        </div>
+        <div className=''>
+          <div className="font-pixelate font-bold opacity-100 shad text-white text-lg sm:text-xl md:text-1xl lg:text-2xl xl:text-3xl text-center uppercase mt-2" ref={textRef2}></div>
+        </div>
+      </div>
+    </Section>
+  );
 };
-export default function Home() {
+
+const Home: React.FC = () => {
   const [isAnimationActive, setIsAnimationActive] = useState(false);
   const [showDelayedComponent, setShowDelayedComponent] = useState(false);
   const [showFunction1, setShowFunction1] = useState(true);
   const [showButton, setShowButton] = useState(false);
+  const [isNavigating, setIsNavigating] = useState(false);
+
+  const router = useRouter();
+
   const handleClick = () => {
     setIsNavigating(true);
     function1();
-
-    // Call the second function
     function2();
-
-    // Call the third function
     function3();
     function4();
     setTimeout(() => {
       setIsAnimationActive(true);
     }, 3500);
-
-    
   };
+
   const function1 = () => {
     setShowFunction1(!showFunction1);
-   
   };
 
   const function2 = () => {
-    // Logic for the second function
-    return <div className="">
-    <BinaryLogo2/></div>;
+    return <div className=""><BinaryLogo2/></div>;
   };
 
   const function3 = () => {
-    // Logic for the third function
-    return <div className=" ">
-    <BinaryLogo/></div>;
+    return <div className=" "><BinaryLogo/></div>;
   };
 
   const function4 = () => {
     setIsNavigating(true);
-
-   
     setTimeout(() => {
       router.push('/home');
-    }, 4500); 
+    }, 4400);
   };
-  
-  const glitch: GlitchHandle = useGlitch({
-    "playMode": "hover",
-    "createContainers": true,
-    "hideOverflow": false,
-    "timing": {
-      "duration": 250,
-      "iterations": 1
+
+  const handleEnterKeyPress = useCallback(
+    (event: React.KeyboardEvent<HTMLButtonElement>) => {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        handleClick();
+      }
     },
-    "glitchTimeSpan": {
-      "start": 0,
-      "end": 1
-    },
-    "shake": {
-      "velocity": 15,
-      "amplitudeX": 0.2,
-      "amplitudeY": 0.2
-    },
-    "slice": {
-      "count": 6,
-      "velocity": 15,
-      "minHeight": 0.02,
-      "maxHeight": 0.15,
-      "hueRotate": true
-    },
-    "pulse": false
-  });
-  const router = useRouter();
-  const [isNavigating, setIsNavigating] = useState(false);
-  
-  
+    [handleClick]
+  );
 
   useEffect(() => {
-    // Set showDelayedComponent to true after 3 seconds
     const timeout = setTimeout(() => {
       setShowDelayedComponent(true);
     }, 3000);
-
-    // Clear the timeout to avoid memory leaks when the component unmounts
     return () => clearTimeout(timeout);
-    // clearTimeout(timeout2);
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
 
-  const timeout2 = setTimeout(() => {
-    setShowButton(true);
-  }, 5000);
+  useEffect(() => {
+    const timeout2 = setTimeout(() => {
+      setShowButton(true);
+    }, 5000);
+    return () => clearTimeout(timeout2);
+  }, []);
 
   return (
     <>
-    <PixelBackground active={isAnimationActive} />
-    <Section className="bg-transparent w-full">
-       
-      
-        
-      
-      <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
-        <div className="flex flex-col md:flex-row md:justify-between">
-          <div className="relative flex-1">
-            {showFunction1 ? function2() : function3()}
+      <PixelBackground active={isAnimationActive} />
+      <Section className=" w-full">
+        <div className="container mx-auto flex flex-col pb-10 md:pb-40 items-center justify-center h-screen px-10 ">
+          <div className="flex flex-col md:flex-row md:justify-between">
+            <div className="relative flex-1">
+              {showFunction1 ? function2() : function3()}
+            </div>
           </div>
-          
-        </div>
 
-        <div className="mt-5 md:mt-10">
-          {showDelayedComponent && <DelayedComponent />}
-        </div>
+          <div className="mt-5 md:mt-10">
+            {showDelayedComponent && <DelayedComponent />}
+          </div>
 
-        <motion.div
-          className="flex flex-col md:flex-row items-center justify-center mt-4"
-          initial={{ y: "2%", scale: 0, opacity: 0 }}
-          animate={{ y: "0%", scale: 1, opacity: 1 }}
-          transition={{
-            duration: 0.3,
-            delay: 5,
-            scale: {
-              type: "spring",
-              damping: 20,
-              stiffness: 100,
-              restDelta: 0.001,
-            },
-          }}
-        >
-          {showButton && (
-            <Button
-              variant={"trapbutton"}
-              onClick={handleClick}
-              disabled={isNavigating}
-              className="glitch font-SFPixelate mt-2 "
-            >
-             <div className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</div> 
-            </Button>
-          )}
-        </motion.div>
-      </div>
-   </Section>
+          <motion.div
+            className="flex flex-col md:flex-row items-center justify-center mt-4"
+            initial={{ y: "2%", scale: 0, opacity: 0 }}
+            animate={{ y: "0%", scale: 1, opacity: 1 }}
+            transition={{
+              duration: 0.3,
+              delay: 5,
+              scale: {
+                type: "spring",
+                damping: 20,
+                stiffness: 100,
+                restDelta: 0.001,
+              },
+            }}
+          >
+            {showButton && (
+              <Button
+                variant={"trapbutton"}
+                onClick={handleClick}
+                onKeyDown={handleEnterKeyPress}
+                disabled={isNavigating}
+                className="glitch font-SFPixelate mt-2 "
+                tabIndex={0}
+              >
+                <div className='lg:ml-[150px] ml-[100px] mr-[100px] lg:mr-[150px]'>Enter</div>
+              </Button>
+            )}
+          </motion.div>
+        </div>
+      </Section>
     </>
   );
 }
+export default Home;
