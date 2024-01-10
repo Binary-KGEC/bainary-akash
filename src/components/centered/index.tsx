@@ -66,7 +66,7 @@ const PixelBackground: React.FC<PixelBackgroundProps> = ({ active }) => {
       return shuffledIndexes.map((randomIndex, index) => (
         <motion.div
           key={index}
-          className="w-full md:h-20 h-[5vw] bg-green-700 border-2 border-green-700"
+          className="min-w-screen h-full md:min-h-20 min-h-[5vw] bg-green-700 border-2 border-green-700"
           variants={anim}
           initial="initial"
           animate={isOpen ? 'open' : 'closed'}
@@ -80,8 +80,8 @@ const PixelBackground: React.FC<PixelBackgroundProps> = ({ active }) => {
 
   return (
     <div className="flex h-screen w-screen overflow-hidden fixed z-10 pointer-events-none" onClick={toggleAnimation}>
-    {[...Array(20)].map((_, index) => (
-      <div key={index} className="md:w-20 w-[5vw] h-full flex flex-col">
+    {[...Array(30)].map((_, index) => (
+      <div key={index} className="md:min-w-20 min-w-[5vw] h-full flex flex-col">
         {getBlocks()}
       </div>
     ))}
